@@ -14,8 +14,17 @@
 ~~~C
 uint32_r  *uartdr = (uint32_t*)(UART_BASE_ADDR + UARTDR_OFFSET);
 *uartdr = (data) << UARTDR_DATA;
-bool fe = (bool
+bool fe = (bool)((*uartdr >> UARTDR_FE) & 0x1);
+bool pe = (bool)((*uartdr >> UARTDR_PE) & 0x1);
+bool be = (bool)((*uartdr >> UARTDR_BE) & 0x1);
+bool oe = (bool)((*uartdr >> UARTDR_OE) & 0x1);
+
+if (fe || pe || be || oe){
+ 에러 처리 ...
+ }
 ~~~
+
+- 다음 방법은 구조체를 이용하는 방법이다.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTYwNjAyNzg4LC0xNjQ5NzkxNjcyXX0=
+eyJoaXN0b3J5IjpbOTk0ODE5OTgzLC0xNjQ5NzkxNjcyXX0=
 -->
