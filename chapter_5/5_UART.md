@@ -25,6 +25,46 @@ if (fe || pe || be || oe){
 ~~~
 
 - 다음 방법은 구조체를 이용하는 방법이다.
+
+~~~C
+#ifndef HAL_RVPB_UART_H_
+#define HAL_RVPB_UART_H_
+
+typedef union UARTDR_t
+{
+    uint32_t all;
+    struct {
+        uint32_t DATA:8;    // 7:0
+        uint32_t FE:1;      // 8
+        uint32_t PE:1;      // 9
+        uint32_t BE:1;      // 10
+        uint32_t OE:1;      // 11
+        uint32_t reserved:20;
+    } bits;
+} UARTDR_t;
+...
+typedef union UARTCR_t
+{
+    uint32_t all;
+    struct {
+        uint32_t UARTEN:1;      // 0
+        uint32_t SIREN:1;       // 1
+        uint32_t SIRLP:1;       // 2
+        uint32_t Reserved1:4;   // 6:3
+        uint32_t LBE:1;         // 7
+        uint32_t TXE:1;         // 8
+        uint32_t RXE:1;         // 9
+        uint32_t DTR:1;         // 10
+        uint32_t RTS:1;         // 11
+        uint32_t Out1:1;        // 12
+        uint32_t Out2:1;        // 13
+        uint32_t RTSEn:1;       // 14
+        uint32_t CTSEn:1;       // 15
+        uint32_t reserved2:16;
+    } bits;
+} UARTCR_t;
+~~~
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTk0ODE5OTgzLC0xNjQ5NzkxNjcyXX0=
+eyJoaXN0b3J5IjpbMjEzOTE5NjQ2NiwtMTY0OTc5MTY3Ml19
 -->
