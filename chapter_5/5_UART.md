@@ -120,9 +120,12 @@ volatile PL011_t*   Uart    = (PL011_t*)UART_BASE_ADDRESS0;
 - 이러한 공용 인터페이스를 HAL (Hardware Abstraction Layer) 라고 한다.
 - 다른 하드웨어를 추상화 계층이 중계해주는 모양새이다.
 - HAL은 hal 디렉토리 바로 아래에 위치 시키도록 하자.
-- 그럼 이제 공용 HAL API를 정의해 보도록 하자.
-- 
+- 그럼 이제 공용 HAL API를 만들자.
+HalUart.h
+~~~C
+
+~~~
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQyMjUwODQwLDE1ODExODQzNDQsLTE2ND
-k3OTE2NzJdfQ==
+eyJoaXN0b3J5IjpbLTIxMzgzMTA5MjUsMTU4MTE4NDM0NCwtMT
+Y0OTc5MTY3Ml19
 -->
