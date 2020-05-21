@@ -89,7 +89,16 @@ typedef struct PL011_t
     UARTDMACR_t uartdmacr;      //0x048
 } PL011_t;
 ~~~
-- 다음은 위의 구조체를 이용해 에러 처리를 하는
+- 다음은 위의 구조체를 이용해 에러 처리를 하는 부분이다.
+
+~~~C
+PL011_t* Uart = (PL011_t*)UART_BASE_ADDR;
+Uart->uartdr.DATA = data & 0xFF;
+if(Uart->uartdr.FE || Uart->uartdr.PE ||
+  Uart->uartdt.BE || Uart->uartdr.OE) {
+  에러처리 ...
+  }
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkwNTM3MjYxNywtMTY0OTc5MTY3Ml19
+eyJoaXN0b3J5IjpbLTEyMjEwOTU2NjMsLTE2NDk3OTE2NzJdfQ
+==
 -->
