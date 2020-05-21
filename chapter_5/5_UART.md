@@ -104,6 +104,15 @@ if(Uart->uartdr.FE || Uart->uartdr.PE ||
 - 본 Repo에서는 두번째 방식으로 코딩을 진행한다.
 - 이제 구조체 추상화가 끝났으니, UART 하드웨어 베이스 값을 할당해 주면 나머지 레지스터는 Offset에 맞춰 접근이 가능하게 된다.
 - UART 하드웨어를 제어할 수 있는 변수를 선언해 Reg.s에 적는다. Reg.c 에는 RealViewPB의 레지스터들을 선언될 페이지이다.
+- UART 부분을 코드로 작성하면 아래와 같다.
+~~~C
+#include "stdint.h"
+#include "Uart.h"
+
+volatile PL011_t*   Uart    = (PL011_t*)UART_BASE_ADDRESS0;
+~~~
+##
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEwOTIxODc1MywtMTY0OTc5MTY3Ml19
+eyJoaXN0b3J5IjpbMTU4MTE4NDM0NCwtMTY0OTc5MTY3Ml19
 -->
