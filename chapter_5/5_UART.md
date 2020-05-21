@@ -1,4 +1,4 @@
-### 5.2 Uart
+### 5. Uart
 - 이제 UART 코딩을 시작해 보자.
 - RealView Board에 있는 UART는 PL011을 사용한다.
 - 그럼 먼저 PL011 DataSheet에 있는 Uart Register를 코드로 옮겨보자.
@@ -112,7 +112,10 @@ if(Uart->uartdr.FE || Uart->uartdr.PE ||
 volatile PL011_t*   Uart    = (PL011_t*)UART_BASE_ADDRESS0;
 ~~~
 ##
-
+### 5.1.1 UART 공용 인터페이스
+- PL011은 앞서 말했다시피 RealViewPB의 UART이다.
+- 공용 인터페이스를 제작하면, OS가 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU4MTE4NDM0NCwtMTY0OTc5MTY3Ml19
+eyJoaXN0b3J5IjpbMTA5MDgyMDk5MiwxNTgxMTg0MzQ0LC0xNj
+Q5NzkxNjcyXX0=
 -->
