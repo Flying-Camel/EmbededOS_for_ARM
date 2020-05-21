@@ -67,6 +67,29 @@ typedef union UARTCR_t
 - 코드를 보면 공용체를 사용해 구현했다.
 - 매크로를 이용한 것보다 어려워 보이지만 기본적인 개념은 동일하다.
 - 공용체는 선언된 자료형 중 가장 큰 자료형의 크기를 갖고, 공용체 멤버끼리 주소를 공유한다.
+- 위와 같은 레지스터값이 쓰인 공용체를 하나의 구조체로 모아 다음과 같이 하나의 구조체로 코딩할 수 있다.
+~~~C
+typedef struct PL011_t
+{
+    UARTDR_t    uartdr;         //0x000
+    UARTRSR_t   uartrsr;        //0x004
+    uint32_t    reserved0[4];   //0x008-0x014
+    UARTFR_t    uartfr;         //0x018
+    uint32_t    reserved1;      //0x01C
+    UARTILPR_t  uartilpr;       //0x020
+    UARTIBRD_t  uartibrd;       //0x024
+    UARTFBRD_t  uartfbrd;       //0x028
+    UARTLCR_H_t uartlcr_h;      //0x02C
+    UARTCR_t    uartcr;         //0x030
+    UARTIFLS_t  uartifls;       //0x034
+    UARTIMSC_t  uartimsc;       //0x038
+    UARTRIS_t   uartris;        //0x03C
+    UARTMIS_t   uartmis;        //0x040
+    UARTICR_t   uarticr;        //0x044
+    UARTDMACR_t uartdmacr;      //0x048
+} PL011_t;
+~~~
+- 다음은 위의 구조체를 이용해 에러 처리를 하는
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NzYwNTM1NSwtMTY0OTc5MTY3Ml19
+eyJoaXN0b3J5IjpbLTkwNTM3MjYxNywtMTY0OTc5MTY3Ml19
 -->
