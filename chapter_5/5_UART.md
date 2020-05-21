@@ -66,7 +66,7 @@ typedef union UARTCR_t
 ~~~
 - 코드를 보면 공용체를 사용해 구현했다.
 - 매크로를 이용한 것보다 어려워 보이지만 기본적인 개념은 동일하다.
-- 공용체는 선언된 자료형 중 가장 큰 자료형의 크기를 갖고, 
+- 공용체는 선언된 자료형 중 가장 큰 자료형의 크기를 갖고, 공용체 멤버끼리 주소를 공유한다.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ3NjM0MDU4OCwtMTY0OTc5MTY3Ml19
+eyJoaXN0b3J5IjpbLTE3NzYwNTM1NSwtMTY0OTc5MTY3Ml19
 -->
