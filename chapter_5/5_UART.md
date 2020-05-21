@@ -135,8 +135,12 @@ void    Hal_uart_put_char(uint8_t ch);
 - 위의 코드는 Uart를 출력하는 부분이다.
 - `Hal_uart_init()` 은 Uart를 초기화 하는 부분이다.
 - `Hal_uart_put_char()`는  알파벳 한 글자를 출력하는 함수이다.
-- 이렇게 만들어 놓으면, 나중에 컴파일 할 때, 보드의 환경에 따라 지정된 H
+- 이렇게 만들어 놓으면, 나중에 컴파일 할 때, 보드의 환경에 따라 지정된 타깃의 H/W에 맞는 코드를 찾아 컴파일 한다.
+- 예를들어 만약 라즈베리 파이 보드를 사용한다면, hal/rvpb/Uart.c 대신 hal/rasppi/Uart.c 를 사용하게 되는 것이다.
+##
+### 5.1.2 Uart 공용 인터페이스 구현
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTY0MzI5ODY1LDE1ODExODQzNDQsLTE2ND
-k3OTE2NzJdfQ==
+eyJoaXN0b3J5IjpbMTc4ODE5OTU4OSwxNTgxMTg0MzQ0LC0xNj
+Q5NzkxNjcyXX0=
 -->
