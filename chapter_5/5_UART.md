@@ -10,7 +10,12 @@
 .
 ...
 ~~~
-- 위의 경우로 코딩된 부분을 에러 비트 검사를 ㅎ
+- 위의 경우로 코딩된 부분을 에러 비트 검사를 한다고 할 경우 아래와 같이 나타낼 수 있다.
+~~~C
+uint32_r  *uartdr = (uint32_t*)(UART_BASE_ADDR + UARTDR_OFFSET);
+*uartdr = (data) << UARTDR_DATA;
+bool fe = (bool
+~~~
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg1MTMwOTY5MiwtMTY0OTc5MTY3Ml19
+eyJoaXN0b3J5IjpbOTYwNjAyNzg4LC0xNjQ5NzkxNjcyXX0=
 -->
