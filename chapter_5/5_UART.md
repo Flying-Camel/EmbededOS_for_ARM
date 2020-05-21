@@ -100,6 +100,8 @@ if(Uart->uartdr.FE || Uart->uartdr.PE ||
   }
 ~~~
 - 위의 두 가지 방식 중 더 편한 방식대로 구현하면 된다.
+- 본 Repo에서는 두번째 방식으로 코딩을 진행한다.
+- 이제 구조체 추상화가 끝났으니, UART 하드웨어 베이스 값을 할당해 주면 나머지 레지스터는 Offset에 맞춰 접근이 가능하게 된다.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTE4MjQxNjgxLC0xNjQ5NzkxNjcyXX0=
+eyJoaXN0b3J5IjpbLTU1NzIwNzU4MSwtMTY0OTc5MTY3Ml19
 -->
