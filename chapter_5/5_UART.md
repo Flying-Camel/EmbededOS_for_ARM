@@ -114,8 +114,11 @@ volatile PL011_t*   Uart    = (PL011_t*)UART_BASE_ADDRESS0;
 ##
 ### 5.1.1 UART 공용 인터페이스
 - PL011은 앞서 말했다시피 RealViewPB의 UART이다.
-- 공용 인터페이스를 제작하면, OS가 
+- 공용 인터페이스를 제작하면, Board가 어떤 하드웨어를 사용하던지, OS에서 공용 인터페이스를 이용해 제어가 가능하다.
+- 따라서 아주 간단한 디바이스 드라이버라고 할 수 있다.
+- 윈도우나 리눅스에서 사용되는 디바이스 드라이버는, 많은 하드웨어를 만족시켜야 하기 때문에 굉
+- 그래서 이제 공용 인터페이스 API를 정의해 보도록 하자.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA5MDgyMDk5MiwxNTgxMTg0MzQ0LC0xNj
+eyJoaXN0b3J5IjpbMTI3NDEzMTY3MiwxNTgxMTg0MzQ0LC0xNj
 Q5NzkxNjcyXX0=
 -->
