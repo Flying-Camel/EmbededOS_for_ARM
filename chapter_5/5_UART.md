@@ -119,13 +119,20 @@ volatile PL011_t*   Uart    = (PL011_t*)UART_BASE_ADDRESS0;
 - 윈도우나 리눅스에서 사용되는 디바이스 드라이버는, 많은 하드웨어를 만족시켜야 하기 때문에 굉장히 복잡;하지만, 보통 펌웨어에서는 적당한 수준의 범용성만 만족시키면 된다.
 - 이러한 공용 인터페이스를 HAL (Hardware Abstraction Layer) 라고 한다.
 - 다른 하드웨어를 추상화 계층이 중계해주는 모양새이다.
-- HAL은 hal 디렉토리 바로 아래에 위치 시키도록 하자.
 - 그럼 이제 공용 HAL API를 만들자.
 HalUart.h
 ~~~C
+#ifndef HAL_HALUART_H_
+#define HAL_HALUART_H_
 
+void    Hal_uart_init(void);
+void    Hal_uart_put_char(uint8_t ch);
+
+#endif /* HAL_HALUART_H_ */
 ~~~
+- HalUart.h은 hal 디렉토리 바로 아래에 위치 시키도록 하자.
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMzgzMTA5MjUsMTU4MTE4NDM0NCwtMT
-Y0OTc5MTY3Ml19
+eyJoaXN0b3J5IjpbLTkyOTkyMzM1NSwxNTgxMTg0MzQ0LC0xNj
+Q5NzkxNjcyXX0=
 -->
