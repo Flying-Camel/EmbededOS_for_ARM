@@ -98,7 +98,8 @@ if(Uart->uartdr.FE || Uart->uartdr.PE ||
   Uart->uartdt.BE || Uart->uartdr.OE) {
   에러처리 ...
   }
+~~~
+- 위의 두 가지 방식 중 더 편한 방식대로 구현하면 된다.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMjEwOTU2NjMsLTE2NDk3OTE2NzJdfQ
-==
+eyJoaXN0b3J5IjpbOTE4MjQxNjgxLC0xNjQ5NzkxNjcyXX0=
 -->
