@@ -131,8 +131,9 @@ void    Hal_uart_put_char(uint8_t ch);
 #endif /* HAL_HALUART_H_ */
 ~~~
 - HalUart.h은 hal 디렉토리 바로 아래에 위치 시키도록 하자.
-- 
+- 그래야 만약 보드가 RealViewPB 보드가 아닌 다른 보드의 다른 하드웨어를 제어 하더라도, HalUart.h API를 이용해 제어할 수 있기 때문이다.
+- 위의 코드는 Uart를 출력하는 부분이다.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkyOTkyMzM1NSwxNTgxMTg0MzQ0LC0xNj
+eyJoaXN0b3J5IjpbLTkzMzgxODEwMywxNTgxMTg0MzQ0LC0xNj
 Q5NzkxNjcyXX0=
 -->
