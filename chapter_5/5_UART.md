@@ -1,6 +1,7 @@
 ### 5.2 Uart
-- 이제 uart 코딩을 시작해 보자.
-- 먼저 PL011 DataSheet에 있는 Uart Register를 코드로 옮겨보자.
+- 이제 UART 코딩을 시작해 보자.
+- RealView Board에 있는 UART는 PL011을 사용한다.
+- 그럼 먼저 PL011 DataSheet에 있는 Uart Register를 코드로 옮겨보자.
 - 레지스터를 코드로 구현하는 부분은 다음과 같이 나타낼 수 있다.
 ~~~C
 #define UART_BASE_ADDR 0x10009000
@@ -102,6 +103,7 @@ if(Uart->uartdr.FE || Uart->uartdr.PE ||
 - 위의 두 가지 방식 중 더 편한 방식대로 구현하면 된다.
 - 본 Repo에서는 두번째 방식으로 코딩을 진행한다.
 - 이제 구조체 추상화가 끝났으니, UART 하드웨어 베이스 값을 할당해 주면 나머지 레지스터는 Offset에 맞춰 접근이 가능하게 된다.
+- UART 하드웨어를 제어할 수 있는 변수를 선언해 Reg.s에 적는다. Reg.c 에는 RealViewPB의 레지스터들을 선언될 페이지이다.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU1NzIwNzU4MSwtMTY0OTc5MTY3Ml19
+eyJoaXN0b3J5IjpbMTEwOTIxODc1MywtMTY0OTc5MTY3Ml19
 -->
