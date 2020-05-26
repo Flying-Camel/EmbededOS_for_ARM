@@ -169,8 +169,12 @@ void Hal_uart_put_char(uint8_t ch){
 - TXE는 출력 RXE는 입력을 의미한다.
 - `while(Uart->uartfr.bits.TXFF);
     Uart->uartdr.all = (ch & 0xFF);`
-	- uartfr.bits
+	- uartfr.bits가 0이면, buffer가 비었음을 의미한다.
+	- buffer가 0이되면, 알파벳 하나를 출력한다.
+- 이제 main에 uart 코드를 작성 해보자.
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkxMDU1MTMxNCwxNzg4MTk5NTg5LDE1OD
-ExODQzNDQsLTE2NDk3OTE2NzJdfQ==
+eyJoaXN0b3J5IjpbLTUyNjQ2OTQ5LDE3ODgxOTk1ODksMTU4MT
+E4NDM0NCwtMTY0OTc5MTY3Ml19
 -->
