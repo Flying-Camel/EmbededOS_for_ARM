@@ -273,9 +273,20 @@ build/%.o: %.c
 - 이제 첫 프로그래밍 시 작성하는 Hello World! 를 출력해 보자.
 - 현재 printf() 함수가 존재하지 않기 때문에 직접 만들어줘야 한다.
 - lib 폴더를 만들고 stdio.c와 stdio.h 파일을 만들어 주자.
-- 당
+- 다음은 stdio.h의 내용이다.
+~~~C
+#ifndef LIB_STDIO_H_
+#define LIB_STDIO_H_
+
+uint32_t putstr(const char* s);
+
+#endif /* LIB_STDIO_H_ */
+~~~
+- 스트링을 출력하는 putstr() 함수를 만들어 라이브러리에 등록 했다.
+- 리턴은 전체 문자의 개수이다.
+- 파라미터는 `const char*` 로 설정 했는데, 이것으
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MjEyODc0NDAsLTE3ODg1NDgwNjYsNT
-I4ODI3NDgwLC01MjY0Njk0OSwxNzg4MTk5NTg5LDE1ODExODQz
-NDQsLTE2NDk3OTE2NzJdfQ==
+eyJoaXN0b3J5IjpbLTcwMjI3MDAyOCwtMTc4ODU0ODA2Niw1Mj
+g4Mjc0ODAsLTUyNjQ2OTQ5LDE3ODgxOTk1ODksMTU4MTE4NDM0
+NCwtMTY0OTc5MTY3Ml19
 -->
