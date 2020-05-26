@@ -284,9 +284,14 @@ uint32_t putstr(const char* s);
 ~~~
 - 스트링을 출력하는 putstr() 함수를 만들어 라이브러리에 등록 했다.
 - 리턴은 전체 문자의 개수이다.
-- 파라미터는 `const char*` 로 설정 했는데, 이것으
+- 파라미터는 `const char*` 로 설정 했는데, 이것은 읽기 전용으로만 파라미터를 사용할 때 유용하다.
+- const로 선언된 파라미터는 실수로 포인터를 변경하는 것을 줄여준다.
+- 이제 stdio.c를 만들어 보자.
+~~~C
+
+~~~
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcwMjI3MDAyOCwtMTc4ODU0ODA2Niw1Mj
-g4Mjc0ODAsLTUyNjQ2OTQ5LDE3ODgxOTk1ODksMTU4MTE4NDM0
-NCwtMTY0OTc5MTY3Ml19
+eyJoaXN0b3J5IjpbLTEzMjMzMzU2NTgsLTE3ODg1NDgwNjYsNT
+I4ODI3NDgwLC01MjY0Njk0OSwxNzg4MTk5NTg5LDE1ODExODQz
+NDQsLTE2NDk3OTE2NzJdfQ==
 -->
