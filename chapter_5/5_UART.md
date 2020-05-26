@@ -139,8 +139,31 @@ void    Hal_uart_put_char(uint8_t ch);
 - 예를들어 만약 라즈베리 파이 보드를 사용한다면, hal/rvpb/Uart.c 대신 hal/rasppi/Uart.c 를 사용하게 되는 것이다.
 ##
 ### 5.1.2 Uart 공용 인터페이스 구현
+- 헤더 파일을 만들었으니 이제 구현부를 만들어 보자
+~~~C
+#include "stdint.h"
+#include "Uart.h"
+#include "HalUart.h"
+
+extern volatile PL011_t* Uart;
+
+void Hal_uart_init(void){
+    // Enable Uart
+
+    Uart->uartcr.bits.UARTEN=0;
+    Uart->uartcr.bits.TXE=1;
+    Uart->uartcr.bits.RXE=1;
+    Uart->uartcr.bits.UARTEN=1;
+
+}
+
+void Hal_uart_put_char(uint8_t ch){
+    while(Uart->uartfr.bits.TXFF);
+    Uart->uartdr.all = (ch & 0xFF);
+}
+~~~
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc4ODE5OTU4OSwxNTgxMTg0MzQ0LC0xNj
-Q5NzkxNjcyXX0=
+eyJoaXN0b3J5IjpbOTg4NTI4MDMsMTc4ODE5OTU4OSwxNTgxMT
+g0MzQ0LC0xNjQ5NzkxNjcyXX0=
 -->
