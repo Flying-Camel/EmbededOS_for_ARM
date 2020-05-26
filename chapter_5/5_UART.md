@@ -162,8 +162,9 @@ void Hal_uart_put_char(uint8_t ch){
     Uart->uartdr.all = (ch & 0xFF);
 }
 ~~~
-
+- UART 초기화를 위해서, 위의 코드보다 더 복잡한 코드가 사용되어야 한다.
+- 하지만 QEMU에서 어느 정도 시뮬레이셔
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTg4NTI4MDMsMTc4ODE5OTU4OSwxNTgxMT
-g0MzQ0LC0xNjQ5NzkxNjcyXX0=
+eyJoaXN0b3J5IjpbMTk0NzMyODg1MywxNzg4MTk5NTg5LDE1OD
+ExODQzNDQsLTE2NDk3OTE2NzJdfQ==
 -->
