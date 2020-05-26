@@ -163,8 +163,11 @@ void Hal_uart_put_char(uint8_t ch){
 }
 ~~~
 - UART 초기화를 위해서, 위의 코드보다 더 복잡한 코드가 사용되어야 한다.
-- 하지만 QEMU에서 어느 정도 시뮬레이셔
+- 하지만 QEMU에서 어느 정도 시뮬레이션 되기 때문에 위의 코드만으로도 동작이 가능하다.
+- `Uart->uartcr.bits.UARTEN=0;`
+	- 하드웨어 제어 전에 미리 꺼놓는다.
+- TXE는 출력 RXE는 입력을 의미한다.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk0NzMyODg1MywxNzg4MTk5NTg5LDE1OD
+eyJoaXN0b3J5IjpbMTgyNTY2OTU5NCwxNzg4MTk5NTg5LDE1OD
 ExODQzNDQsLTE2NDk3OTE2NzJdfQ==
 -->
