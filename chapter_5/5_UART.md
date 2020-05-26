@@ -265,9 +265,17 @@ build/%.o: %.c
 ~~~
 
 - 위의 내용으로 변경 후 `make run` 명령을 실행하게 되면, "N"이 100개 출력 되는 것을 알 수 있다.
-- QUEMU를 UART로 입출력이 되도록 설정 했기 때
+- QUEMU를 UART로 입출력이 되도록 설정 했기 때문에 프로그램을 종료할 수 없다.
+- 따라서 kill 명령으로 process를 죽여줘야 한다.
+
+##
+### 5.2 안녕 세상!
+- 이제 첫 프로그래밍 시 작성하는 Hello World! 를 출력해 보자.
+- 현재 printf() 함수가 존재하지 않기 때문에 직접 만들어줘야 한다.
+- lib 폴더를 만들고 stdio.c와 stdio.h 파일을 만들어 주자.
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMzc1OTg3MDQsNTI4ODI3NDgwLC01Mj
+eyJoaXN0b3J5IjpbLTE3ODg1NDgwNjYsNTI4ODI3NDgwLC01Mj
 Y0Njk0OSwxNzg4MTk5NTg5LDE1ODExODQzNDQsLTE2NDk3OTE2
 NzJdfQ==
 -->
