@@ -200,8 +200,10 @@ static void Hw_init(void){
 }
 ~~~
 - 방금 만든 `Hal_uart_init()`을 통해 Uart를 Enable 시키고, N을 적는 코드이다.
-- 위의 코드를 컴파일 하기 위해
+- 위의 코드를 컴파일 하기 위해 Makefile도 수정해 준다.
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkwNjY1MzM1MywtNTI2NDY5NDksMTc4OD
-E5OTU4OSwxNTgxMTg0MzQ0LC0xNjQ5NzkxNjcyXX0=
+eyJoaXN0b3J5IjpbNTI4ODI3NDgwLC01MjY0Njk0OSwxNzg4MT
+k5NTg5LDE1ODExODQzNDQsLTE2NDk3OTE2NzJdfQ==
 -->
