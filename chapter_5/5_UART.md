@@ -273,9 +273,9 @@ build/%.o: %.c
 - 이제 첫 프로그래밍 시 작성하는 Hello World! 를 출력해 보자.
 - 현재 printf() 함수가 존재하지 않기 때문에 직접 만들어줘야 한다.
 - lib 폴더를 만들고 stdio.c와 stdio.h 파일을 만들어 주자.
-
+- 당
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3ODg1NDgwNjYsNTI4ODI3NDgwLC01Mj
-Y0Njk0OSwxNzg4MTk5NTg5LDE1ODExODQzNDQsLTE2NDk3OTE2
-NzJdfQ==
+eyJoaXN0b3J5IjpbLTE5MjEyODc0NDAsLTE3ODg1NDgwNjYsNT
+I4ODI3NDgwLC01MjY0Njk0OSwxNzg4MTk5NTg5LDE1ODExODQz
+NDQsLTE2NDk3OTE2NzJdfQ==
 -->
