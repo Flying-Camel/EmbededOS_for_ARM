@@ -167,7 +167,10 @@ void Hal_uart_put_char(uint8_t ch){
 - `Uart->uartcr.bits.UARTEN=0;`
 	- 하드웨어 제어 전에 미리 꺼놓는다.
 - TXE는 출력 RXE는 입력을 의미한다.
+- `while(Uart->uartfr.bits.TXFF);
+    Uart->uartdr.all = (ch & 0xFF);`
+	- uartfr.bits
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgyNTY2OTU5NCwxNzg4MTk5NTg5LDE1OD
+eyJoaXN0b3J5IjpbLTkxMDU1MTMxNCwxNzg4MTk5NTg5LDE1OD
 ExODQzNDQsLTE2NDk3OTE2NzJdfQ==
 -->
