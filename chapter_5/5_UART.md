@@ -172,9 +172,36 @@ void Hal_uart_put_char(uint8_t ch){
 	- uartfr.bits가 0이면, buffer가 비었음을 의미한다.
 	- buffer가 0이되면, 알파벳 하나를 출력한다.
 - 이제 main에 uart 코드를 작성 해보자.
+~~~C
+#include "stdint.h"
+#include "HalUart.h"
 
+static void Hw_init(void);
 
+int main(void){
+
+    Hw_innit();
+
+    uint32_t i = 100;
+
+    while(i--){
+        Hal_Uart_put_char("N");
+    }
+
+    /*
+    uint32_t* dummyAddr = (uint32_t*)(1024*1024*100);
+    *dummyAddr = sizeof(long);
+    reurn 0;
+    */
+}
+
+static void Hw_init(void){
+    Hal_uart_init();
+}
+~~~
+- 방금 만든 `Hal_uart_init()`을 통해 Uart를 Enable 시키고, N을 적는 코드이다.
+- 위의 코드를 컴파일 하기 위해
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUyNjQ2OTQ5LDE3ODgxOTk1ODksMTU4MT
-E4NDM0NCwtMTY0OTc5MTY3Ml19
+eyJoaXN0b3J5IjpbLTkwNjY1MzM1MywtNTI2NDY5NDksMTc4OD
+E5OTU4OSwxNTgxMTg0MzQ0LC0xNjQ5NzkxNjcyXX0=
 -->
