@@ -287,11 +287,46 @@ uint32_t putstr(const char* s);
 - 파라미터는 `const char*` 로 설정 했는데, 이것은 읽기 전용으로만 파라미터를 사용할 때 유용하다.
 - const로 선언된 파라미터는 실수로 포인터를 변경하는 것을 줄여준다.
 - 이제 stdio.c를 만들어 보자.
-~~~C
 
+~~~C
+#include "stdint.h"
+#include "HalUart.h"
+#include "stdio.h"
+
+uint32_t putstr(const char* s){
+
+    uint32_t c=0;
+    while(*s){
+        Hal_uart_put_char(*s++);
+        c++;
+    }
+    return c;
+}
 ~~~
+
+- 아래는 수정된 Makefile이다.
+- lib 폴더만 추가해 주면 된다.
+~~~Makefile
+VPATH = boot \
+        hal/$(TARGET) \
+		lib
+
+C_SRCS  = $(notdir $(wildcard boot/*.c))
+C_SRCS += $(notdir $(wildcard hal/$(TARGET)/*.c))
+C_SRCS += $(notdir $(wildcard lib/*.c))
+C_OBJS = $(patsubst %.c, build/%.o, $(C_SRCS))
+
+INC_DIRS  = -I include 			\
+            -I hal	   			\
+            -I hal/$(TARGET)	\
+			-I lib
+            
+CFLAGS = -c -g -std=c11
+~~~
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMjMzMzU2NTgsLTE3ODg1NDgwNjYsNT
-I4ODI3NDgwLC01MjY0Njk0OSwxNzg4MTk5NTg5LDE1ODExODQz
-NDQsLTE2NDk3OTE2NzJdfQ==
+eyJoaXN0b3J5IjpbMjE2MzYyMzg4LC0xMzIzMzM1NjU4LC0xNz
+g4NTQ4MDY2LDUyODgyNzQ4MCwtNTI2NDY5NDksMTc4ODE5OTU4
+OSwxNTgxMTg0MzQ0LC0xNjQ5NzkxNjcyXX0=
 -->
