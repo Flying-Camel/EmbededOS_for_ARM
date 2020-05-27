@@ -324,9 +324,10 @@ INC_DIRS  = -I include 			\
 CFLAGS = -c -g -std=c11
 ~~~
 
-
+- makeFile까지 작성이 끝나면, 이제 Hello World가 제대로 출력되는지 확인해 보자.
+- make run을 해보면 된다.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjE2MzYyMzg4LC0xMzIzMzM1NjU4LC0xNz
-g4NTQ4MDY2LDUyODgyNzQ4MCwtNTI2NDY5NDksMTc4ODE5OTU4
-OSwxNTgxMTg0MzQ0LC0xNjQ5NzkxNjcyXX0=
+eyJoaXN0b3J5IjpbLTcxMDM5NTcyLDIxNjM2MjM4OCwtMTMyMz
+MzNTY1OCwtMTc4ODU0ODA2Niw1Mjg4Mjc0ODAsLTUyNjQ2OTQ5
+LDE3ODgxOTk1ODksMTU4MTE4NDM0NCwtMTY0OTc5MTY3Ml19
 -->
