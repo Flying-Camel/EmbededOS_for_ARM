@@ -382,10 +382,10 @@ void Hal_uart_get_char(void){
 - 컴퓨터에서 사용하는 컴파일러마다 크기가 다르게 나오겠지만, 내가 사용하는 환경에서는 총 116바이트가 나왔다.
 - 이제 실행 해 보도록 하자. 
 - 아래와 같이 main 함수를 작성한다.
-- 
+~~~ㅊ
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MTE3NjE4OSw2MTY1OTE4MDcsNDMwMj
-cxMzgzLDIxNjM2MjM4OCwtMTMyMzMzNTY1OCwtMTc4ODU0ODA2
-Niw1Mjg4Mjc0ODAsLTUyNjQ2OTQ5LDE3ODgxOTk1ODksMTU4MT
-E4NDM0NCwtMTY0OTc5MTY3Ml19
+eyJoaXN0b3J5IjpbMjc4MjUxMjQyLC0xNzExNzYxODksNjE2NT
+kxODA3LDQzMDI3MTM4MywyMTYzNjIzODgsLTEzMjMzMzU2NTgs
+LTE3ODg1NDgwNjYsNTI4ODI3NDgwLC01MjY0Njk0OSwxNzg4MT
+k5NTg5LDE1ODExODQzNDQsLTE2NDk3OTE2NzJdfQ==
 -->
