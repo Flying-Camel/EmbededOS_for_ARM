@@ -326,8 +326,12 @@ CFLAGS = -c -g -std=c11
 
 - makeFile까지 작성이 끝나면, 이제 Hello World가 제대로 출력되는지 확인해 보자.
 - make run을 해보면 된다.
+##
+### 5.3 UART로 입력 받기
+- uart 출력 부분의 구현을 완료 했으니, 이제 입력 부분을 만들어 보자.
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcxMDM5NTcyLDIxNjM2MjM4OCwtMTMyMz
+eyJoaXN0b3J5IjpbNDMwMjcxMzgzLDIxNjM2MjM4OCwtMTMyMz
 MzNTY1OCwtMTc4ODU0ODA2Niw1Mjg4Mjc0ODAsLTUyNjQ2OTQ5
 LDE3ODgxOTk1ODksMTU4MTE4NDM0NCwtMTY0OTc5MTY3Ml19
 -->
