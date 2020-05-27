@@ -377,10 +377,15 @@ void Hal_uart_get_char(void){
 - 최적화 점검을 위해 arm-none-eabi-objdump를 이용했다.
 - 먼저 Uart.o 오브젝트 파일을 생성 후
 	- `arm-none-eabi-gcc -c ./Uart.c -I ../`
-- objdump로 
+- objdump로 함수의 사이즈를 측정했다.
+	- `arm-none-eabi-objdump -d Uart.o`
+- 컴퓨터에서 사용하는 컴파일러마다 크기가 다르게 나오겠지만, 내가 사용하는 환경에서는 총 116바이트가 나왔다.
+- 이제 실행 해 보도록 하자. 
+- 아래와 같이 main 함수를 작성한다.
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTc2OTg2MDg3LDYxNjU5MTgwNyw0MzAyNz
-EzODMsMjE2MzYyMzg4LC0xMzIzMzM1NjU4LC0xNzg4NTQ4MDY2
-LDUyODgyNzQ4MCwtNTI2NDY5NDksMTc4ODE5OTU4OSwxNTgxMT
-g0MzQ0LC0xNjQ5NzkxNjcyXX0=
+eyJoaXN0b3J5IjpbLTE3MTE3NjE4OSw2MTY1OTE4MDcsNDMwMj
+cxMzgzLDIxNjM2MjM4OCwtMTMyMzMzNTY1OCwtMTc4ODU0ODA2
+Niw1Mjg4Mjc0ODAsLTUyNjQ2OTQ5LDE3ODgxOTk1ODksMTU4MT
+E4NDM0NCwtMTY0OTc5MTY3Ml19
 -->
