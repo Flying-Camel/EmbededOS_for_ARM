@@ -329,9 +329,12 @@ CFLAGS = -c -g -std=c11
 ##
 ### 5.3 UART로 입력 받기
 - uart 출력 부분의 구현을 완료 했으니, 이제 입력 부분을 만들어 보자.
+- 출려과 비슷하게, 버퍼가 채워져 있는지 확인한 후 버터를 Flush 해주면 된다. 
+- 아래는 코드이다.
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDMwMjcxMzgzLDIxNjM2MjM4OCwtMTMyMz
-MzNTY1OCwtMTc4ODU0ODA2Niw1Mjg4Mjc0ODAsLTUyNjQ2OTQ5
-LDE3ODgxOTk1ODksMTU4MTE4NDM0NCwtMTY0OTc5MTY3Ml19
+eyJoaXN0b3J5IjpbNjE2NTkxODA3LDQzMDI3MTM4MywyMTYzNj
+IzODgsLTEzMjMzMzU2NTgsLTE3ODg1NDgwNjYsNTI4ODI3NDgw
+LC01MjY0Njk0OSwxNzg4MTk5NTg5LDE1ODExODQzNDQsLTE2ND
+k3OTE2NzJdfQ==
 -->
