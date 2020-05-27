@@ -353,11 +353,13 @@ void Hal_uart_put_char(uint8_t ch){
     Uart->uartdr.all = (ch & 0xFF);
 }
 
-void Hal_uart_get_char(void){
+uint8_t Hal_uart_get_char(void){
 
-    uint32_t uartdr = Uart->uartdr.all;
+    uint32_t uartdr;
 
     while(Uart->uartfr.bits.RXFE);
+
+    uartdr = Uart->uartdr.all;
 
     // check Error
     if(uartdr & 0xffffff00){
@@ -424,8 +426,9 @@ static void Hw_init(void){
 - 이제 다시 make를 진행한 후 `make run` 을 통해 프로그램을 구동하면 아래와 같은 결과를 얻을 수 있다.
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAzMDc5ODMyMSwtMTcxMTc2MTg5LDYxNj
-U5MTgwNyw0MzAyNzEzODMsMjE2MzYyMzg4LC0xMzIzMzM1NjU4
-LC0xNzg4NTQ4MDY2LDUyODgyNzQ4MCwtNTI2NDY5NDksMTc4OD
-E5OTU4OSwxNTgxMTg0MzQ0LC0xNjQ5NzkxNjcyXX0=
+eyJoaXN0b3J5IjpbMTEyNjAwMzU1NywyMDMwNzk4MzIxLC0xNz
+ExNzYxODksNjE2NTkxODA3LDQzMDI3MTM4MywyMTYzNjIzODgs
+LTEzMjMzMzU2NTgsLTE3ODg1NDgwNjYsNTI4ODI3NDgwLC01Mj
+Y0Njk0OSwxNzg4MTk5NTg5LDE1ODExODQzNDQsLTE2NDk3OTE2
+NzJdfQ==
 -->
