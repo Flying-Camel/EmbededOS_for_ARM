@@ -376,8 +376,10 @@ uint8_t Hal_uart_get_char(void){
 - 예를들어, Error Flag Check를 위해 하나의 비트마다 '||'를 이용해 검사하기 보다 0xFFFFFF00 으로 연산하여 에러가 발생 했는지 검사한다.
 - 또한 레지스터에 접근하는 것이 Ram에 접근하는 것보다 훨씬 느리므로, 여러번 접근하는 Register는 변수에 넣어서 한번만 접근하도록 한다.
 
-> - ***여기서 내가 잘못 코딩한 부분이 하나 있다.***
-	- `uint32_t uartdr;` 부분에 변수를 선언함과 
+>  ***여기서 내가 잘못 코딩한 부분이 하나 있다.***
+	- `uint32_t uartdr;` 부분에 변수를 선언함과 동시에 `Uart->uartdr.all` 를 할당해 버렸다.
+	- 그렇게 코딩하게 되면 키보드 한글자를 누르면 바로 출력 되는것이 아니라 다음번 키보드를 누를 때 출력하게 된다.
+	
 - 위는 최적화가 완료된 코드이다.
 - 최적화 점검을 위해 arm-none-eabi-objdump를 이용했다.
 - 먼저 Uart.o 오브젝트 파일을 생성 후
@@ -429,9 +431,9 @@ static void Hw_init(void){
 - 이제 다시 make를 진행한 후 `make run` 을 통해 프로그램을 구동하면 아래와 같은 결과를 얻을 수 있다.
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5OTc1NDYwNDQsMjAzMDc5ODMyMSwtMT
-cxMTc2MTg5LDYxNjU5MTgwNyw0MzAyNzEzODMsMjE2MzYyMzg4
-LC0xMzIzMzM1NjU4LC0xNzg4NTQ4MDY2LDUyODgyNzQ4MCwtNT
-I2NDY5NDksMTc4ODE5OTU4OSwxNTgxMTg0MzQ0LC0xNjQ5Nzkx
-NjcyXX0=
+eyJoaXN0b3J5IjpbMTIyMjE2ODI3LDIwMzA3OTgzMjEsLTE3MT
+E3NjE4OSw2MTY1OTE4MDcsNDMwMjcxMzgzLDIxNjM2MjM4OCwt
+MTMyMzMzNTY1OCwtMTc4ODU0ODA2Niw1Mjg4Mjc0ODAsLTUyNj
+Q2OTQ5LDE3ODgxOTk1ODksMTU4MTE4NDM0NCwtMTY0OTc5MTY3
+Ml19
 -->
