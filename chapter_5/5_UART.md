@@ -382,10 +382,50 @@ void Hal_uart_get_char(void){
 - 컴퓨터에서 사용하는 컴파일러마다 크기가 다르게 나오겠지만, 내가 사용하는 환경에서는 총 116바이트가 나왔다.
 - 이제 실행 해 보도록 하자. 
 - 아래와 같이 main 함수를 작성한다.
-~~~ㅊ
+~~~C
+#include "stdint.h"
+#include "HalUart.h"
+#include "stdio.h"
+
+static void Hw_init(void);
+
+int main(void){
+
+    Hw_init();
+
+    uint32_t i = 100;
+
+    while(i--){
+        Hal_uart_put_char('N');
+    }
+
+    Hal_uart_put_char('\n');
+
+    putstr("Hello World!!\n");
+
+    i=100;
+
+    while(i--){        
+        uint8_t ch = Hal_uart_get_char();
+        Hal_uart_put_char(ch);
+    }
+
+    /*
+    uint32_t* dummyAddr = (uint32_t*)(1024*1024*100);
+    *dummyAddr = sizeof(long);
+    reurn 0;
+    */
+}
+
+static void Hw_init(void){
+    Hal_uart_init();
+}
+~~~
+- 이제 다시 make를 진행한 후 `make run` 을 통해 프로그램을 구동하면 아래와 같은 결과를 얻을 수 있다.
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjc4MjUxMjQyLC0xNzExNzYxODksNjE2NT
-kxODA3LDQzMDI3MTM4MywyMTYzNjIzODgsLTEzMjMzMzU2NTgs
-LTE3ODg1NDgwNjYsNTI4ODI3NDgwLC01MjY0Njk0OSwxNzg4MT
-k5NTg5LDE1ODExODQzNDQsLTE2NDk3OTE2NzJdfQ==
+eyJoaXN0b3J5IjpbMjAzMDc5ODMyMSwtMTcxMTc2MTg5LDYxNj
+U5MTgwNyw0MzAyNzEzODMsMjE2MzYyMzg4LC0xMzIzMzM1NjU4
+LC0xNzg4NTQ4MDY2LDUyODgyNzQ4MCwtNTI2NDY5NDksMTc4OD
+E5OTU4OSwxNTgxMTg0MzQ0LC0xNjQ5NzkxNjcyXX0=
 -->
