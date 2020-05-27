@@ -372,10 +372,15 @@ void Hal_uart_get_char(void){
 
 - 책에선 코드의 최적화를 위해 다양한 노력을 한다.
 - 예를들어, Error Flag Check를 위해 하나의 비트마다 '||'를 이용해 검사하기 보다 0xFFFFFF00 으로 연산하여 에러가 발생 했는지 검사한다.
-- 또한 중
+- 또한 레지스터에 접근하는 것이 Ram에 접근하는 것보다 훨씬 느리므로, 여러번 접근하는 Register는 변수에 넣어서 한번만 접근하도록 한다.
+- 위는 최적화가 완료된 코드이다.
+- 최적화 점검을 위해 arm-none-eabi-objdump를 이용했다.
+- 먼저 Uart.o 오브젝트 파일을 생성 후
+	- `arm-none-eabi-gcc -c ./Uart.c -I ../`
+- objdump로 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEyMzc3MDkwNSw2MTY1OTE4MDcsNDMwMj
-cxMzgzLDIxNjM2MjM4OCwtMTMyMzMzNTY1OCwtMTc4ODU0ODA2
-Niw1Mjg4Mjc0ODAsLTUyNjQ2OTQ5LDE3ODgxOTk1ODksMTU4MT
-E4NDM0NCwtMTY0OTc5MTY3Ml19
+eyJoaXN0b3J5IjpbNTc2OTg2MDg3LDYxNjU5MTgwNyw0MzAyNz
+EzODMsMjE2MzYyMzg4LC0xMzIzMzM1NjU4LC0xNzg4NTQ4MDY2
+LDUyODgyNzQ4MCwtNTI2NDY5NDksMTc4ODE5OTU4OSwxNTgxMT
+g0MzQ0LC0xNjQ5NzkxNjcyXX0=
 -->
