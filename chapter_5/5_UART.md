@@ -331,10 +331,51 @@ CFLAGS = -c -g -std=c11
 - uart 출력 부분의 구현을 완료 했으니, 이제 입력 부분을 만들어 보자.
 - 출려과 비슷하게, 버퍼가 채워져 있는지 확인한 후 버터를 Flush 해주면 된다. 
 - 아래는 코드이다.
-- 
+~~~C
+#include "stdint.h"
+#include "Uart.h"
+#include "HalUart.h"
+
+extern volatile PL011_t* Uart;
+
+void Hal_uart_init(void){
+    // Enable Uart
+
+    Uart->uartcr.bits.UARTEN=0;
+    Uart->uartcr.bits.TXE=1;
+    Uart->uartcr.bits.RXE=1;
+    Uart->uartcr.bits.UARTEN=1;
+
+}
+
+void Hal_uart_put_char(uint8_t ch){
+    while(Uart->uartfr.bits.TXFF);
+    Uart->uartdr.all = (ch & 0xFF);
+}
+
+void Hal_uart_get_char(void){
+
+    uint32_t uartdr = Uart->uartdr.all;
+
+    while(Uart->uartfr.bits.RXFE);
+
+    // check Error
+    if(uartdr & 0xffffff00){
+        Uart->uartrsr.all = 0xff;
+        return 0;
+    }
+
+    return (uint8_t *)(uartdr & 0xff);
+    
+}
+~~~
+
+- 책에선 코드의 최적화를 위해 다양한 노력을 한다.
+- 예를들어, Error Flag Check를 위해 하나의 비트마다 '||'를 이용해 검사하기 보다 0xFFFFFF00 으로 연산하여 에러가 발생 했는지 검사한다.
+- 또한 중
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjE2NTkxODA3LDQzMDI3MTM4MywyMTYzNj
-IzODgsLTEzMjMzMzU2NTgsLTE3ODg1NDgwNjYsNTI4ODI3NDgw
-LC01MjY0Njk0OSwxNzg4MTk5NTg5LDE1ODExODQzNDQsLTE2ND
-k3OTE2NzJdfQ==
+eyJoaXN0b3J5IjpbMjEyMzc3MDkwNSw2MTY1OTE4MDcsNDMwMj
+cxMzgzLDIxNjM2MjM4OCwtMTMyMzMzNTY1OCwtMTc4ODU0ODA2
+Niw1Mjg4Mjc0ODAsLTUyNjQ2OTQ5LDE3ODgxOTk1ODksMTU4MT
+E4NDM0NCwtMTY0OTc5MTY3Ml19
 -->
