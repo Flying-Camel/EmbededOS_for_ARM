@@ -455,10 +455,12 @@ uint32_t debug_printf(const char* format , ...){
     return puststr(printf_buf);
 }
 ~~~
+- va_list, va_start, va_end 와 같은 자료형들이 가변인자를 처리해 %u, %d 등의 형식 문자를 처리한다.
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjM1MzYwNjg3LC0xNDI4NTYxNzc1LDIwMz
-A3OTgzMjEsLTE3MTE3NjE4OSw2MTY1OTE4MDcsNDMwMjcxMzgz
-LDIxNjM2MjM4OCwtMTMyMzMzNTY1OCwtMTc4ODU0ODA2Niw1Mj
-g4Mjc0ODAsLTUyNjQ2OTQ5LDE3ODgxOTk1ODksMTU4MTE4NDM0
-NCwtMTY0OTc5MTY3Ml19
+eyJoaXN0b3J5IjpbLTMwMDI0MzE4NCwtMTQyODU2MTc3NSwyMD
+MwNzk4MzIxLC0xNzExNzYxODksNjE2NTkxODA3LDQzMDI3MTM4
+MywyMTYzNjIzODgsLTEzMjMzMzU2NTgsLTE3ODg1NDgwNjYsNT
+I4ODI3NDgwLC01MjY0Njk0OSwxNzg4MTk5NTg5LDE1ODExODQz
+NDQsLTE2NDk3OTE2NzJdfQ==
 -->
