@@ -483,13 +483,12 @@ typedef __builtin_va_list va_list;
 - `#include  "stdarg.h"`
 - 그럼 이제 vsprintf()를 만들어 보도록 하자.
 - 만드는 중간 utoa() 함수를 사용하게 되는데 이것도 만들어 줘야 한다.
-- 아래는 최종 결과본들이다.
-- sdtio.c
+- 최종 결과본은 본 Repo에서 확인 바란다.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc0MDI3MjUyMywtMTM1Njk1MjgzOCw5OT
-Y1Mzg3OSw2NjgyMzMwODQsMTA0MDI0Nzc5MiwtMTUzMTMwNDE1
-LC0xNDI4NTYxNzc1LDIwMzA3OTgzMjEsLTE3MTE3NjE4OSw2MT
-Y1OTE4MDcsNDMwMjcxMzgzLDIxNjM2MjM4OCwtMTMyMzMzNTY1
-OCwtMTc4ODU0ODA2Niw1Mjg4Mjc0ODAsLTUyNjQ2OTQ5LDE3OD
-gxOTk1ODksMTU4MTE4NDM0NCwtMTY0OTc5MTY3Ml19
+eyJoaXN0b3J5IjpbNDgxMDI3NTkxLC0xMzU2OTUyODM4LDk5Nj
+UzODc5LDY2ODIzMzA4NCwxMDQwMjQ3NzkyLC0xNTMxMzA0MTUs
+LTE0Mjg1NjE3NzUsMjAzMDc5ODMyMSwtMTcxMTc2MTg5LDYxNj
+U5MTgwNyw0MzAyNzEzODMsMjE2MzYyMzg4LC0xMzIzMzM1NjU4
+LC0xNzg4NTQ4MDY2LDUyODgyNzQ4MCwtNTI2NDY5NDksMTc4OD
+E5OTU4OSwxNTgxMTg0MzQ0LC0xNjQ5NzkxNjcyXX0=
 -->
