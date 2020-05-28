@@ -459,10 +459,24 @@ uint32_t debug_printf(const char* format , ...){
 - 이제 위의 자료형들을 헤더 파일에 추가해 보자.
 - 원래 기본적으로 표준 라이브러리가 아니라 컴파일러의 빌트인 함수로 지원이 된다.
 - include 디렉토리에 stdarg.h 에 위의 자료형들을 작성해 주자.
+~~~ C
+#ifdef  INCLUDE_STDARG_H_
+#define INCLUDE_STDARG_H_
+
+typedef __builtin_va_list va_list;
+
+#define va_start(v,l)   __builtin_va_start(v,l)
+#define va_end(v,l)   __builtin_va_end(v,l)
+#define va_arg(v,l)   __builtin_va_arg(v,l)
+
+#endif
+~~~
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MzEzMDQxNSwtMTQyODU2MTc3NSwyMD
-MwNzk4MzIxLC0xNzExNzYxODksNjE2NTkxODA3LDQzMDI3MTM4
-MywyMTYzNjIzODgsLTEzMjMzMzU2NTgsLTE3ODg1NDgwNjYsNT
-I4ODI3NDgwLC01MjY0Njk0OSwxNzg4MTk5NTg5LDE1ODExODQz
-NDQsLTE2NDk3OTE2NzJdfQ==
+eyJoaXN0b3J5IjpbLTM3NTMwNzIxNiwtMTUzMTMwNDE1LC0xND
+I4NTYxNzc1LDIwMzA3OTgzMjEsLTE3MTE3NjE4OSw2MTY1OTE4
+MDcsNDMwMjcxMzgzLDIxNjM2MjM4OCwtMTMyMzMzNTY1OCwtMT
+c4ODU0ODA2Niw1Mjg4Mjc0ODAsLTUyNjQ2OTQ5LDE3ODgxOTk1
+ODksMTU4MTE4NDM0NCwtMTY0OTc5MTY3Ml19
 -->
