@@ -471,10 +471,12 @@ typedef __builtin_va_list va_list;
 
 #endif
 ~~~
-
-
+- 이제 stdio.h에서 #include로 포함해 주면 위의 자료형들을 사용할 수 있다.
+- 이제 vsprintf() 함수를 만들어 보자.
+- 이 함수는 가변 인자의 정보를 담고 있는 val_list 타입의 파라미터를 받아서 처리한다.
+- 우리가 printf()라고 알고 있는 함수들은 사실상 vsprintf()에 구현되어 있다.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM3NTMwNzIxNiwtMTUzMTMwNDE1LC0xND
+eyJoaXN0b3J5IjpbMTM4MDE3MzQ3MCwtMTUzMTMwNDE1LC0xND
 I4NTYxNzc1LDIwMzA3OTgzMjEsLTE3MTE3NjE4OSw2MTY1OTE4
 MDcsNDMwMjcxMzgzLDIxNjM2MjM4OCwtMTMyMzMzNTY1OCwtMT
 c4ODU0ODA2Niw1Mjg4Mjc0ODAsLTUyNjQ2OTQ5LDE3ODgxOTk1
