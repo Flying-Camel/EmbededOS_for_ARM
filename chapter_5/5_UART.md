@@ -478,11 +478,14 @@ typedef __builtin_va_list va_list;
 - 모든 기능을 모두 구현하기엔 복잡하므로 다음의 사항들은 고려하지 않는다.
 	- 길이 옵션과 채우기 옵션은 구현하지 않는다.
 	- %c, %u, %x, %s 이외에는 구현하지 않는다.
+- stdio.h 파일에 아래의 줄을 추가해 준다.
+- `uint32_t  vsprintf(char*  buf, const  char*  format, va_list  arg);`
+- `#include  "stdarg.h"`
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0ODUwNTMwMzksLTE1MzEzMDQxNSwtMT
-QyODU2MTc3NSwyMDMwNzk4MzIxLC0xNzExNzYxODksNjE2NTkx
-ODA3LDQzMDI3MTM4MywyMTYzNjIzODgsLTEzMjMzMzU2NTgsLT
-E3ODg1NDgwNjYsNTI4ODI3NDgwLC01MjY0Njk0OSwxNzg4MTk5
-NTg5LDE1ODExODQzNDQsLTE2NDk3OTE2NzJdfQ==
+eyJoaXN0b3J5IjpbMTA0MDI0Nzc5MiwtMTUzMTMwNDE1LC0xND
+I4NTYxNzc1LDIwMzA3OTgzMjEsLTE3MTE3NjE4OSw2MTY1OTE4
+MDcsNDMwMjcxMzgzLDIxNjM2MjM4OCwtMTMyMzMzNTY1OCwtMT
+c4ODU0ODA2Niw1Mjg4Mjc0ODAsLTUyNjQ2OTQ5LDE3ODgxOTk1
+ODksMTU4MTE4NDM0NCwtMTY0OTc5MTY3Ml19
 -->
