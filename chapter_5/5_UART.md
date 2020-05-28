@@ -444,11 +444,21 @@ Annyung SeSang!!!!!
 - `uint32_t  debug_printf(const  char*  format , ...);`
 - 다들 알겠지만 (...)는 가변 인자 지정이다.
 - 그럼 위에서 작성한 인터페이스를 구현해 보자.
-- 
+- stdio.c에 추가해 주자.
+~~~C
+uint32_t debug_printf(const char* format , ...){
+    va_list args;
+    va_start(args, format);
+    vsprintf(printf_buf, format, args);
+    va_end(args);
+
+    return puststr(printf_buf);
+}
+~~~
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc5OTk5NTMzMSwtMTQyODU2MTc3NSwyMD
-MwNzk4MzIxLC0xNzExNzYxODksNjE2NTkxODA3LDQzMDI3MTM4
-MywyMTYzNjIzODgsLTEzMjMzMzU2NTgsLTE3ODg1NDgwNjYsNT
-I4ODI3NDgwLC01MjY0Njk0OSwxNzg4MTk5NTg5LDE1ODExODQz
-NDQsLTE2NDk3OTE2NzJdfQ==
+eyJoaXN0b3J5IjpbMjM1MzYwNjg3LC0xNDI4NTYxNzc1LDIwMz
+A3OTgzMjEsLTE3MTE3NjE4OSw2MTY1OTE4MDcsNDMwMjcxMzgz
+LDIxNjM2MjM4OCwtMTMyMzMzNTY1OCwtMTc4ODU0ODA2Niw1Mj
+g4Mjc0ODAsLTUyNjQ2OTQ5LDE3ODgxOTk1ODksMTU4MTE4NDM0
+NCwtMTY0OTc5MTY3Ml19
 -->
