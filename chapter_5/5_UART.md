@@ -481,11 +481,12 @@ typedef __builtin_va_list va_list;
 - stdio.h 파일에 아래의 줄을 추가해 준다.
 - `uint32_t  vsprintf(char*  buf, const  char*  format, va_list  arg);`
 - `#include  "stdarg.h"`
-- 
+- 그럼 이제 v
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA0MDI0Nzc5MiwtMTUzMTMwNDE1LC0xND
-I4NTYxNzc1LDIwMzA3OTgzMjEsLTE3MTE3NjE4OSw2MTY1OTE4
-MDcsNDMwMjcxMzgzLDIxNjM2MjM4OCwtMTMyMzMzNTY1OCwtMT
-c4ODU0ODA2Niw1Mjg4Mjc0ODAsLTUyNjQ2OTQ5LDE3ODgxOTk1
-ODksMTU4MTE4NDM0NCwtMTY0OTc5MTY3Ml19
+eyJoaXN0b3J5IjpbLTE2Mzc4NDM0NDYsMTA0MDI0Nzc5MiwtMT
+UzMTMwNDE1LC0xNDI4NTYxNzc1LDIwMzA3OTgzMjEsLTE3MTE3
+NjE4OSw2MTY1OTE4MDcsNDMwMjcxMzgzLDIxNjM2MjM4OCwtMT
+MyMzMzNTY1OCwtMTc4ODU0ODA2Niw1Mjg4Mjc0ODAsLTUyNjQ2
+OTQ5LDE3ODgxOTk1ODksMTU4MTE4NDM0NCwtMTY0OTc5MTY3Ml
+19
 -->
