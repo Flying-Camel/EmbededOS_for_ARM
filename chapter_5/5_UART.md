@@ -437,11 +437,13 @@ Annyung SeSang!!!!!
 
 ##
 ### 5.4 Printf 만들기
-
+- printf()는 필수라고 해도 과언이 아닌 함수다.  
+- 펌웨어에서도 로그나 디버깅등에 자주 사용되기 때문에 만들어 보도록 하자.
+- debug_printf()로 만들도록 할 것인데, 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0Mjg1NjE3NzUsMjAzMDc5ODMyMSwtMT
-cxMTc2MTg5LDYxNjU5MTgwNyw0MzAyNzEzODMsMjE2MzYyMzg4
-LC0xMzIzMzM1NjU4LC0xNzg4NTQ4MDY2LDUyODgyNzQ4MCwtNT
-I2NDY5NDksMTc4ODE5OTU4OSwxNTgxMTg0MzQ0LC0xNjQ5Nzkx
-NjcyXX0=
+eyJoaXN0b3J5IjpbNDYwMTkxNDY2LC0xNDI4NTYxNzc1LDIwMz
+A3OTgzMjEsLTE3MTE3NjE4OSw2MTY1OTE4MDcsNDMwMjcxMzgz
+LDIxNjM2MjM4OCwtMTMyMzMzNTY1OCwtMTc4ODU0ODA2Niw1Mj
+g4Mjc0ODAsLTUyNjQ2OTQ5LDE3ODgxOTk1ODksMTU4MTE4NDM0
+NCwtMTY0OTc5MTY3Ml19
 -->
