@@ -482,11 +482,12 @@ typedef __builtin_va_list va_list;
 - `uint32_t  vsprintf(char*  buf, const  char*  format, va_list  arg);`
 - `#include  "stdarg.h"`
 - 그럼 이제 vsprintf()를 만들어 보도록 하자.
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjY4MjMzMDg0LDEwNDAyNDc3OTIsLTE1Mz
-EzMDQxNSwtMTQyODU2MTc3NSwyMDMwNzk4MzIxLC0xNzExNzYx
-ODksNjE2NTkxODA3LDQzMDI3MTM4MywyMTYzNjIzODgsLTEzMj
-MzMzU2NTgsLTE3ODg1NDgwNjYsNTI4ODI3NDgwLC01MjY0Njk0
-OSwxNzg4MTk5NTg5LDE1ODExODQzNDQsLTE2NDk3OTE2NzJdfQ
-==
+eyJoaXN0b3J5IjpbOTk2NTM4NzksNjY4MjMzMDg0LDEwNDAyND
+c3OTIsLTE1MzEzMDQxNSwtMTQyODU2MTc3NSwyMDMwNzk4MzIx
+LC0xNzExNzYxODksNjE2NTkxODA3LDQzMDI3MTM4MywyMTYzNj
+IzODgsLTEzMjMzMzU2NTgsLTE3ODg1NDgwNjYsNTI4ODI3NDgw
+LC01MjY0Njk0OSwxNzg4MTk5NTg5LDE1ODExODQzNDQsLTE2ND
+k3OTE2NzJdfQ==
 -->
