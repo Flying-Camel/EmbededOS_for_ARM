@@ -439,11 +439,12 @@ Annyung SeSang!!!!!
 ### 5.4 Printf 만들기
 - printf()는 필수라고 해도 과언이 아닌 함수다.  
 - 펌웨어에서도 로그나 디버깅등에 자주 사용되기 때문에 만들어 보도록 하자.
-- debug_printf()로 만들도록 할 것인데, 
+- debug_printf()로 만들도록 할 것인데, printf()를 사용하게 되면 컴파일러가 puts()로 변경해 버리기 때문이다.
+- 그럼 stdio.h에 함수의 인터페이스를 작성해 주도록 하자.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDYwMTkxNDY2LC0xNDI4NTYxNzc1LDIwMz
-A3OTgzMjEsLTE3MTE3NjE4OSw2MTY1OTE4MDcsNDMwMjcxMzgz
-LDIxNjM2MjM4OCwtMTMyMzMzNTY1OCwtMTc4ODU0ODA2Niw1Mj
-g4Mjc0ODAsLTUyNjQ2OTQ5LDE3ODgxOTk1ODksMTU4MTE4NDM0
-NCwtMTY0OTc5MTY3Ml19
+eyJoaXN0b3J5IjpbLTQwMDg3OTEzOCwtMTQyODU2MTc3NSwyMD
+MwNzk4MzIxLC0xNzExNzYxODksNjE2NTkxODA3LDQzMDI3MTM4
+MywyMTYzNjIzODgsLTEzMjMzMzU2NTgsLTE3ODg1NDgwNjYsNT
+I4ODI3NDgwLC01MjY0Njk0OSwxNzg4MTk5NTg5LDE1ODExODQz
+NDQsLTE2NDk3OTE2NzJdfQ==
 -->
