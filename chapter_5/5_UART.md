@@ -456,9 +456,11 @@ uint32_t debug_printf(const char* format , ...){
 }
 ~~~
 - va_list, va_start, va_end 와 같은 자료형들이 가변인자를 처리해 %u, %d 등의 형식 문자를 처리한다.
-- 
+- 이제 위의 자료형들을 헤더 파일에 추가해 보자.
+- 원래 기본적으로 표준 라이브러리가 아니라 컴파일러의 빌트인 함수로 지원이 된다.
+- include 디렉토리에 stdarg.h 에 위의 자료형들을 작성해 주자.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMwMDI0MzE4NCwtMTQyODU2MTc3NSwyMD
+eyJoaXN0b3J5IjpbLTE1MzEzMDQxNSwtMTQyODU2MTc3NSwyMD
 MwNzk4MzIxLC0xNzExNzYxODksNjE2NTkxODA3LDQzMDI3MTM4
 MywyMTYzNjIzODgsLTEzMjMzMzU2NTgsLTE3ODg1NDgwNjYsNT
 I4ODI3NDgwLC01MjY0Njk0OSwxNzg4MTk5NTg5LDE1ODExODQz
