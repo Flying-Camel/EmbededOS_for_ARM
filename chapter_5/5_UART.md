@@ -475,10 +475,14 @@ typedef __builtin_va_list va_list;
 - 이제 vsprintf() 함수를 만들어 보자.
 - 이 함수는 가변 인자의 정보를 담고 있는 val_list 타입의 파라미터를 받아서 처리한다.
 - 우리가 printf()라고 알고 있는 함수들은 사실상 vsprintf()에 구현되어 있다.
+- 모든 기능을 모두 구현하기엔 복잡하므로 다음의 사항들은 고려하지 않는다.
+	- 길이 옵션과 채우기 옵션은 구현하지 않는다.
+	- %c, %u, %x, %s 이외에는 구현하지 않는다.
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM4MDE3MzQ3MCwtMTUzMTMwNDE1LC0xND
-I4NTYxNzc1LDIwMzA3OTgzMjEsLTE3MTE3NjE4OSw2MTY1OTE4
-MDcsNDMwMjcxMzgzLDIxNjM2MjM4OCwtMTMyMzMzNTY1OCwtMT
-c4ODU0ODA2Niw1Mjg4Mjc0ODAsLTUyNjQ2OTQ5LDE3ODgxOTk1
-ODksMTU4MTE4NDM0NCwtMTY0OTc5MTY3Ml19
+eyJoaXN0b3J5IjpbLTE0ODUwNTMwMzksLTE1MzEzMDQxNSwtMT
+QyODU2MTc3NSwyMDMwNzk4MzIxLC0xNzExNzYxODksNjE2NTkx
+ODA3LDQzMDI3MTM4MywyMTYzNjIzODgsLTEzMjMzMzU2NTgsLT
+E3ODg1NDgwNjYsNTI4ODI3NDgwLC01MjY0Njk0OSwxNzg4MTk5
+NTg5LDE1ODExODQzNDQsLTE2NDk3OTE2NzJdfQ==
 -->
