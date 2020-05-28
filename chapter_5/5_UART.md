@@ -482,12 +482,12 @@ typedef __builtin_va_list va_list;
 - `uint32_t  vsprintf(char*  buf, const  char*  format, va_list  arg);`
 - `#include  "stdarg.h"`
 - 그럼 이제 vsprintf()를 만들어 보도록 하자.
-- 
+- 만드는 중간 utoa() 함수를 사용하게 되는데 이것도 만들어 줘야 한다.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTk2NTM4NzksNjY4MjMzMDg0LDEwNDAyND
-c3OTIsLTE1MzEzMDQxNSwtMTQyODU2MTc3NSwyMDMwNzk4MzIx
-LC0xNzExNzYxODksNjE2NTkxODA3LDQzMDI3MTM4MywyMTYzNj
-IzODgsLTEzMjMzMzU2NTgsLTE3ODg1NDgwNjYsNTI4ODI3NDgw
-LC01MjY0Njk0OSwxNzg4MTk5NTg5LDE1ODExODQzNDQsLTE2ND
-k3OTE2NzJdfQ==
+eyJoaXN0b3J5IjpbLTEzNTY5NTI4MzgsOTk2NTM4NzksNjY4Mj
+MzMDg0LDEwNDAyNDc3OTIsLTE1MzEzMDQxNSwtMTQyODU2MTc3
+NSwyMDMwNzk4MzIxLC0xNzExNzYxODksNjE2NTkxODA3LDQzMD
+I3MTM4MywyMTYzNjIzODgsLTEzMjMzMzU2NTgsLTE3ODg1NDgw
+NjYsNTI4ODI3NDgwLC01MjY0Njk0OSwxNzg4MTk5NTg5LDE1OD
+ExODQzNDQsLTE2NDk3OTE2NzJdfQ==
 -->
