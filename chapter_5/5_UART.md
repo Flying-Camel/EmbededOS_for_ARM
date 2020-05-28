@@ -441,8 +441,12 @@ Annyung SeSang!!!!!
 - 펌웨어에서도 로그나 디버깅등에 자주 사용되기 때문에 만들어 보도록 하자.
 - debug_printf()로 만들도록 할 것인데, printf()를 사용하게 되면 컴파일러가 puts()로 변경해 버리기 때문이다.
 - 그럼 stdio.h에 함수의 인터페이스를 작성해 주도록 하자.
+- `uint32_t  debug_printf(const  char*  format , ...);`
+- 다들 알겠지만 (...)는 가변 인자 지정이다.
+- 그럼 위에서 작성한 인터페이스를 구현해 보자.
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQwMDg3OTEzOCwtMTQyODU2MTc3NSwyMD
+eyJoaXN0b3J5IjpbLTc5OTk5NTMzMSwtMTQyODU2MTc3NSwyMD
 MwNzk4MzIxLC0xNzExNzYxODksNjE2NTkxODA3LDQzMDI3MTM4
 MywyMTYzNjIzODgsLTEzMjMzMzU2NTgsLTE3ODg1NDgwNjYsNT
 I4ODI3NDgwLC01MjY0Njk0OSwxNzg4MTk5NTg5LDE1ODExODQz
