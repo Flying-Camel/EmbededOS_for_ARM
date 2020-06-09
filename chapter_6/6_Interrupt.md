@@ -9,8 +9,9 @@
 ### 6.1 인터럽트 컨트롤러
 - RealViewPB에는 Generic Interrupt Contoller라는 이름의 인터럽트 컨트롤러 하드웨어가 달려있다.
 - 먼저 GIC의 레지스터 구조체를 만든다.
--  hal/rvpb/Interrupt.h 파일에 작성한다
+-  hal/rvpb/Interrupt.h 파일에 작성한다.
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc5MDc4MzI3MCwtMTc0Mjg2NDE0LDE1OT
+eyJoaXN0b3J5IjpbMTc1MjM5NjQ4NywtMTc0Mjg2NDE0LDE1OT
 I5NzE4NzMsMTI2NzIxMzc3N119
 -->
