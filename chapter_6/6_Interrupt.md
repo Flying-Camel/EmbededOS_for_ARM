@@ -27,9 +27,10 @@ volatile PL011_t*            Uart        = (PL011_t*)UART_BASE_ADDRESS0;
 volatile GicCput_t*          GicCpu      = (GicCput_t*)GIC_CPU_BASE;
 volatile DistributorCtrl_t*  GicDist_t   = (GicDist_t*)GIC_DIST_BASE;
 ~~~
-
+- 이제 공용 API를 제작할 차례이다.
+- UART와 같이, 제조
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA4NTczNzA5MywxNzkzNzk2NTE5LDEyNj
-g0MTA2NTgsMTc1MjM5NjQ4NywtMTc0Mjg2NDE0LDE1OTI5NzE4
-NzMsMTI2NzIxMzc3N119
+eyJoaXN0b3J5IjpbLTEzODEwNjYwMjcsMjA4NTczNzA5MywxNz
+kzNzk2NTE5LDEyNjg0MTA2NTgsMTc1MjM5NjQ4NywtMTc0Mjg2
+NDE0LDE1OTI5NzE4NzMsMTI2NzIxMzc3N119
 -->
