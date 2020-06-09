@@ -13,9 +13,13 @@
 - GIC에 관한 내용은 Spec의 4.11.2장에 나와있다.
 - 앞부분만 조금 살펴 보자면 아래의 이미지와 같다.
 - ![GCC 설치확인 이미지](./img/GIC.png)
--  
+-  GIC는 크게 두 그룹으로 구분된다. 
+- 하나는 CPU Interface registers이고, 다른 하나는 distributor registers다.
+- 실제로 GIC는 작성한 레지스터보다 훨씬 더 많은 레지스터를 가지고 있지만, 대부분 사용하지 않는 것이기 때문에 적당한 추상과 과정을 거쳤다.
+- 이제 hal/rvpb/Regs.c 파일을 수정해 실제 인스턴스를 선언한다.
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExOTk5OTk2NjIsMTI2ODQxMDY1OCwxNz
-UyMzk2NDg3LC0xNzQyODY0MTQsMTU5Mjk3MTg3MywxMjY3MjEz
-Nzc3XX0=
+eyJoaXN0b3J5IjpbMTc5Mzc5NjUxOSwxMjY4NDEwNjU4LDE3NT
+IzOTY0ODcsLTE3NDI4NjQxNCwxNTkyOTcxODczLDEyNjcyMTM3
+NzddfQ==
 -->
