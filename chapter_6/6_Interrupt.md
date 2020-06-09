@@ -17,9 +17,19 @@
 - 하나는 CPU Interface registers이고, 다른 하나는 distributor registers다.
 - 실제로 GIC는 작성한 레지스터보다 훨씬 더 많은 레지스터를 가지고 있지만, 대부분 사용하지 않는 것이기 때문에 적당한 추상과 과정을 거쳤다.
 - 이제 hal/rvpb/Regs.c 파일을 수정해 실제 인스턴스를 선언한다.
-- 
+~~~C
+
+#include "stdint.h"
+#include "Uart.h"
+#include "Interrupt.h"
+
+volatile PL011_t*            Uart        = (PL011_t*)UART_BASE_ADDRESS0;
+volatile GicCput_t*          GicCpu      = (GicCput_t*)GIC_CPU_BASE;
+volatile DistributorCtrl_t*  GicDist_t   = (GicDist_t*)GIC_DIST_BASE;
+~~~
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc5Mzc5NjUxOSwxMjY4NDEwNjU4LDE3NT
-IzOTY0ODcsLTE3NDI4NjQxNCwxNTkyOTcxODczLDEyNjcyMTM3
-NzddfQ==
+eyJoaXN0b3J5IjpbMjA4NTczNzA5MywxNzkzNzk2NTE5LDEyNj
+g0MTA2NTgsMTc1MjM5NjQ4NywtMTc0Mjg2NDE0LDE1OTI5NzE4
+NzMsMTI2NzIxMzc3N119
 -->
