@@ -10,8 +10,9 @@
 - RealViewPB에는 Generic Interrupt Contoller라는 이름의 인터럽트 컨트롤러 하드웨어가 달려있다.
 - 먼저 GIC의 레지스터 구조체를 만든다.
 -  hal/rvpb/Interrupt.h 파일에 작성한다.
-- 
+- GIC에 관한 내용은 Spec의 4.11.2장에 나와있다.
+- 앞부분만 조금 살펴 보자면 아래의 이미지와 같다.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc1MjM5NjQ4NywtMTc0Mjg2NDE0LDE1OT
-I5NzE4NzMsMTI2NzIxMzc3N119
+eyJoaXN0b3J5IjpbMTA3MzgzODkzNSwxNzUyMzk2NDg3LC0xNz
+QyODY0MTQsMTU5Mjk3MTg3MywxMjY3MjEzNzc3XX0=
 -->
