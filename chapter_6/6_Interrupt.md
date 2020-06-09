@@ -12,7 +12,9 @@
 -  hal/rvpb/Interrupt.h 파일에 작성한다.
 - GIC에 관한 내용은 Spec의 4.11.2장에 나와있다.
 - 앞부분만 조금 살펴 보자면 아래의 이미지와 같다.
+- ![GCC 설치확인 이미지](./img/GIC.png)
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA3MzgzODkzNSwxNzUyMzk2NDg3LC0xNz
+eyJoaXN0b3J5IjpbMTI2ODQxMDY1OCwxNzUyMzk2NDg3LC0xNz
 QyODY0MTQsMTU5Mjk3MTg3MywxMjY3MjEzNzc3XX0=
 -->
