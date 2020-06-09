@@ -28,9 +28,30 @@ volatile GicCput_t*          GicCpu      = (GicCput_t*)GIC_CPU_BASE;
 volatile DistributorCtrl_t*  GicDist_t   = (GicDist_t*)GIC_DIST_BASE;
 ~~~
 - 이제 공용 API를 제작할 차례이다.
-- UART와 같이, 제조
+- UART와 같이, 제조사와 상관 없이 동작하도록 API를 만들어 주자.
+- hal/HalInterrupt.h 파일에 작성한다.
+- 초기화, 활성화, 비활성화, 핸들러 등록 등의 API를 작성한다.
+~~~C
+#ifndef HAL_HALINTERRUPT_H_
+#define HAL_INTERRUPT_H_
+
+#define INTERRUPT_HANDLER_NUM 255
+
+typedef void (*InterHdlr_fptr)(void);
+
+void Hal_interupt_init(void);
+void Hal_interupt_enable(uint32_t interrupt_num);
+void Hal_interupt_disable(uint32_t interrupt_num);
+void Hal_interupt_register_handler(InterHdlr_fptr handler, uint32_t interrupt_num);
+void Hal_interupt_run_handler(void);
+
+#endif
+~~~
+- 활성화, 비활성화 함수는 인자로 인터럽트의 번호를 할당 받는다.
+- 앞서 제작한 Uart는 44번이다. 따라서 Hal_inte
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzODEwNjYwMjcsMjA4NTczNzA5MywxNz
-kzNzk2NTE5LDEyNjg0MTA2NTgsMTc1MjM5NjQ4NywtMTc0Mjg2
-NDE0LDE1OTI5NzE4NzMsMTI2NzIxMzc3N119
+eyJoaXN0b3J5IjpbMTUwMjQ1MDAyLDIwODU3MzcwOTMsMTc5Mz
+c5NjUxOSwxMjY4NDEwNjU4LDE3NTIzOTY0ODcsLTE3NDI4NjQx
+NCwxNTkyOTcxODczLDEyNjcyMTM3NzddfQ==
 -->
