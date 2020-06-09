@@ -48,10 +48,14 @@ void Hal_interupt_run_handler(void);
 #endif
 ~~~
 - 활성화, 비활성화 함수는 인자로 인터럽트의 번호를 할당 받는다.
-- 앞서 제작한 Uart는 44번이다. 따라서 Hal_inte
+- 앞서 제작한 Uart는 44번이다. 따라서 Hal_interrupt_enable()에 44를 전달하면 UART 인터럽트를 키고, disable 함수에 전달하면 끄게 된다.
+- ARM은 모든 인터럽를 IRQ와 FIQ 핸들러로 처리하기 때문에, 개별 이터럽트의 핸들러를 구분해야 한다.
+- 그럼 이제 위에 선언한 함수를 구현해 보자.
+- 구현 위치는 hal/rvpb/Interrupt.c 이다.
+
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUwMjQ1MDAyLDIwODU3MzcwOTMsMTc5Mz
-c5NjUxOSwxMjY4NDEwNjU4LDE3NTIzOTY0ODcsLTE3NDI4NjQx
-NCwxNTkyOTcxODczLDEyNjcyMTM3NzddfQ==
+eyJoaXN0b3J5IjpbLTIxNDEwNTY3MzEsMjA4NTczNzA5MywxNz
+kzNzk2NTE5LDEyNjg0MTA2NTgsMTc1MjM5NjQ4NywtMTc0Mjg2
+NDE0LDE1OTI5NzE4NzMsMTI2NzIxMzc3N119
 -->
