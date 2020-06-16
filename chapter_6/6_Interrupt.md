@@ -126,10 +126,11 @@ void Hal_interrupt_run_handler(void){
     
 }
 ~~~
-
+- `static InterHdlr_fptr sHandlers[INTERRUPT_HANDLER_NUM]` 는 인터럽트 핸들러 이고, 255로 선언 되었다. 함수 포인터이다.
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM0NjkzNDk5NiwtMjE0MTA1NjczMSwyMD
-g1NzM3MDkzLDE3OTM3OTY1MTksMTI2ODQxMDY1OCwxNzUyMzk2
-NDg3LC0xNzQyODY0MTQsMTU5Mjk3MTg3MywxMjY3MjEzNzc3XX
-0=
+eyJoaXN0b3J5IjpbNDIzODU3ODY1LC0yMTQxMDU2NzMxLDIwOD
+U3MzcwOTMsMTc5Mzc5NjUxOSwxMjY4NDEwNjU4LDE3NTIzOTY0
+ODcsLTE3NDI4NjQxNCwxNTkyOTcxODczLDEyNjcyMTM3NzddfQ
+==
 -->
