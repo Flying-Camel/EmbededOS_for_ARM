@@ -137,10 +137,12 @@ void Hal_interrupt_run_handler(void){
 	- 0xF로 설정하게 되면 인터럽트의 우선순위가 0x0~0xE인 인터럽트를 허용한다.
 	- 위의 코드에서는 모든 인터럽트를 허용한다.
 	![인터럽트 허용](./img/GIC_INTERRUPT.PNG)
-	- 
+- GIC는 64개의 인터럽트를 관리할 수 있다.
+	- `setenable1` 과 `setenable2`로 관리한다.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU2NTEzNzUzOSw3NDExNTc1MzksMTEzMj
-EwMzM4OSw0MjM4NTc4NjUsLTIxNDEwNTY3MzEsMjA4NTczNzA5
-MywxNzkzNzk2NTE5LDEyNjg0MTA2NTgsMTc1MjM5NjQ4NywtMT
-c0Mjg2NDE0LDE1OTI5NzE4NzMsMTI2NzIxMzc3N119
+eyJoaXN0b3J5IjpbMTQyOTg4NzA1LC01NjUxMzc1MzksNzQxMT
+U3NTM5LDExMzIxMDMzODksNDIzODU3ODY1LC0yMTQxMDU2NzMx
+LDIwODU3MzcwOTMsMTc5Mzc5NjUxOSwxMjY4NDEwNjU4LDE3NT
+IzOTY0ODcsLTE3NDI4NjQxNCwxNTkyOTcxODczLDEyNjcyMTM3
+NzddfQ==
 -->
