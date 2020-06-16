@@ -131,14 +131,14 @@ void Hal_interrupt_run_handler(void){
 - `Hal_interrupt_init()`
 	- 이 함수는 스위치를 겨는 동작을 한다.
 	- Priority mask 레지스터를 이용해 키고 끈다.
-	-  ![GCC 설치확인 이미지](./img/Priority_mask.PNG)
+	![GCC 설치확인 이미지](./img/Priority_mask.PNG)
 	- 위의 설명에 나와있듯이, 4번부터 7번비트까지가 유효한 비트이다. 
 	- 0x0 으로 설정하게 되면 모든 비트를 마스크 한다.
 	- 0xF로 설정하게 되면 인터럽트의 우선순위가 0x0~0xE인 인터럽트를 허용한다.
 	- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NDM5ODQyODIsMTEzMjEwMzM4OSw0Mj
-M4NTc4NjUsLTIxNDEwNTY3MzEsMjA4NTczNzA5MywxNzkzNzk2
-NTE5LDEyNjg0MTA2NTgsMTc1MjM5NjQ4NywtMTc0Mjg2NDE0LD
-E1OTI5NzE4NzMsMTI2NzIxMzc3N119
+eyJoaXN0b3J5IjpbNzQxMTU3NTM5LDExMzIxMDMzODksNDIzOD
+U3ODY1LC0yMTQxMDU2NzMxLDIwODU3MzcwOTMsMTc5Mzc5NjUx
+OSwxMjY4NDEwNjU4LDE3NTIzOTY0ODcsLTE3NDI4NjQxNCwxNT
+kyOTcxODczLDEyNjcyMTM3NzddfQ==
 -->
