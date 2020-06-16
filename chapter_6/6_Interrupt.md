@@ -53,9 +53,83 @@ void Hal_interupt_run_handler(void);
 - 그럼 이제 위에 선언한 함수를 구현해 보자.
 - 구현 위치는 hal/rvpb/Interrupt.c 이다.
 
+~~~C
+#include "stdint.h"
+#include "memio.h"
+#include "Interrpt.h"
+#include "HalInterrupt.h"
+#include "armcpu.h"
+
+extern volatile GicCput_t* GicCpu;
+extern volatile GicDist_t* GicDist;
+
+static InterHdlr_fptr sHandlers[INTERRUPT_HANDLER_NUM];
+
+void Hal_interrupt_init(void){
+    GicCpu->cpucontrol.bits.Enable = 1;
+    GicCpu->prioritymask.bits.Prioritymask = GIC_PRIORITY_MASK_NONE;
+    GicDist->distributorctrl.bits.Enable = 1;
+
+    for(uint32_t i = 0; i < INTERRUPT_HANDLER_NUM ; i++){
+        sHandlers[i] = NULL;
+    }
+
+    enable_irq();
+}
+
+void Hal_interrupt_enable(uint32_t interrupt_num){
+    if ((interrupt_num < GIC_IRQ_START) || (GIC_IRQ_END < interrupt_num)){
+        return;
+    }
+
+    uint32_t bit_num = interrupt_num - GIC_IRQ_START;
+
+    if (bit_num < GIC_IRQ_START){
+        SET_BIT(GicDist->setenable1, bit_num);
+    }
+    else{
+        bit_num -= GIC_IRQ_START;
+        SET_BIT(GicDist->setenable2, bit_num);
+    }
+}
+
+void Hal_interrupt_disable(uint32_t interrupt_num){
+
+    if ((interrupt_num < GIC_IRQ_START) || (GIC_IRQ_END < interrupt_num)){
+        return;
+    }
+
+    uint32_t bit_num = interrupt_num - GIC_IRQ_START;
+
+    if( bit_num < GIC_IRQ_START){
+        CLR_BIT(GicDist->setenable1, bit_num);
+    }
+    else{
+        bit_num -= GIC_IRQ_START;
+        CLR_BIT(GicDist->setenable2, bit_num);
+    }
+
+}
+
+void Hal_interrupt_register_handler(InterHdlr_fptr handler, uint32_t interrupt_num){
+    sHandlers[interrupt_num] = handler;
+}
+
+void Hal_interrupt_run_handler(void){
+    uint32_t interrupt_num = GicCpu->interruptack.bits.InterruptID;
+
+    if(sHandlers[interrupt_num] != NULL){
+        sHandlers[interrupt_num]();
+    }
+    GicCpu->endofinterrupt.bits.InterruptID = interrupt_num;
+
+    
+}
+~~~
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxNDEwNTY3MzEsMjA4NTczNzA5MywxNz
-kzNzk2NTE5LDEyNjg0MTA2NTgsMTc1MjM5NjQ4NywtMTc0Mjg2
-NDE0LDE1OTI5NzE4NzMsMTI2NzIxMzc3N119
+eyJoaXN0b3J5IjpbLTM0NjkzNDk5NiwtMjE0MTA1NjczMSwyMD
+g1NzM3MDkzLDE3OTM3OTY1MTksMTI2ODQxMDY1OCwxNzUyMzk2
+NDg3LC0xNzQyODY0MTQsMTU5Mjk3MTg3MywxMjY3MjEzNzc3XX
+0=
 -->
