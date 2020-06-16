@@ -12,7 +12,7 @@
 -  hal/rvpb/Interrupt.h 파일에 작성한다.
 - GIC에 관한 내용은 Spec의 4.11.2장에 나와있다.
 - 앞부분만 조금 살펴 보자면 아래의 이미지와 같다.
-- ![GCC 설치확인 이미지](./img/GIC.png)
+- ![GIC](./img/GIC.png)
 -  GIC는 크게 두 그룹으로 구분된다. 
 - 하나는 CPU Interface registers이고, 다른 하나는 distributor registers다.
 - 실제로 GIC는 작성한 레지스터보다 훨씬 더 많은 레지스터를 가지고 있지만, 대부분 사용하지 않는 것이기 때문에 적당한 추상과 과정을 거쳤다.
@@ -126,11 +126,15 @@ void Hal_interrupt_run_handler(void){
     
 }
 ~~~
-- `static InterHdlr_fptr sHandlers[INTERRUPT_HANDLER_NUM]` 는 인터럽트 핸들러 이고, 255로 선언 되었다. 함수 포인터이다.
-- 
+- `static InterHdlr_fptr sHandlers[INTERRUPT_HANDLER_NUM]` 
+	- 인터럽트 핸들러 이고, 255로 선언 되었다. 함수 포인터이다.
+- `Hal_interrupt_init()`
+	- 이 함수는 스위치를 겨는 동작을 한다.
+	- Priority mask 레지스터를 이용해 키고 끈다.
+	-  ![GCC 설치확인 이미지](./img/priority_mask.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDIzODU3ODY1LC0yMTQxMDU2NzMxLDIwOD
-U3MzcwOTMsMTc5Mzc5NjUxOSwxMjY4NDEwNjU4LDE3NTIzOTY0
-ODcsLTE3NDI4NjQxNCwxNTkyOTcxODczLDEyNjcyMTM3NzddfQ
-==
+eyJoaXN0b3J5IjpbLTEzNDE2NDgwOTksNDIzODU3ODY1LC0yMT
+QxMDU2NzMxLDIwODU3MzcwOTMsMTc5Mzc5NjUxOSwxMjY4NDEw
+NjU4LDE3NTIzOTY0ODcsLTE3NDI4NjQxNCwxNTkyOTcxODczLD
+EyNjcyMTM3NzddfQ==
 -->
