@@ -131,10 +131,10 @@ void Hal_interrupt_run_handler(void){
 - `Hal_interrupt_init()`
 	- 이 함수는 스위치를 겨는 동작을 한다.
 	- Priority mask 레지스터를 이용해 키고 끈다.
-	-  ![GCC 설치확인 이미지](./img/priority_mask.png)
+	-  ![GCC 설치확인 이미지](./img/Priority_mask.PNG)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNDE2NDgwOTksNDIzODU3ODY1LC0yMT
-QxMDU2NzMxLDIwODU3MzcwOTMsMTc5Mzc5NjUxOSwxMjY4NDEw
-NjU4LDE3NTIzOTY0ODcsLTE3NDI4NjQxNCwxNTkyOTcxODczLD
-EyNjcyMTM3NzddfQ==
+eyJoaXN0b3J5IjpbMTEzMjEwMzM4OSw0MjM4NTc4NjUsLTIxND
+EwNTY3MzEsMjA4NTczNzA5MywxNzkzNzk2NTE5LDEyNjg0MTA2
+NTgsMTc1MjM5NjQ4NywtMTc0Mjg2NDE0LDE1OTI5NzE4NzMsMT
+I2NzIxMzc3N119
 -->
