@@ -133,10 +133,11 @@ void Hal_interrupt_run_handler(void){
 	- Priority mask 레지스터를 이용해 키고 끈다.
 	-  ![GCC 설치확인 이미지](./img/Priority_mask.PNG)
 	- 위의 설명에 나와있듯이, 4번부터 7번비트까지가 유효한 비트이다. 
-	- 0x0 으로 설정하게 되면 모든 비트를 마스크 하
+	- 0x0 으로 설정하게 되면 모든 비트를 마스크 한다.
+	- 0xF로 설정하게 되면 인터럽트의 우선순위가 0x0~0xE인 인터럽트를 허용한다.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ5MzA3Nzg1NywxMTMyMTAzMzg5LDQyMz
-g1Nzg2NSwtMjE0MTA1NjczMSwyMDg1NzM3MDkzLDE3OTM3OTY1
-MTksMTI2ODQxMDY1OCwxNzUyMzk2NDg3LC0xNzQyODY0MTQsMT
-U5Mjk3MTg3MywxMjY3MjEzNzc3XX0=
+eyJoaXN0b3J5IjpbOTAzNTAyNzg3LDExMzIxMDMzODksNDIzOD
+U3ODY1LC0yMTQxMDU2NzMxLDIwODU3MzcwOTMsMTc5Mzc5NjUx
+OSwxMjY4NDEwNjU4LDE3NTIzOTY0ODcsLTE3NDI4NjQxNCwxNT
+kyOTcxODczLDEyNjcyMTM3NzddfQ==
 -->
