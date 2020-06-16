@@ -139,11 +139,13 @@ void Hal_interrupt_run_handler(void){
 	![인터럽트 허용](./img/GIC_INTERRUPT.PNG)
 - GIC는 64개의 인터럽트를 관리할 수 있다.
 	- `setenable1` 과 `setenable2`로 관리한다.
-	- IRQ의 시작 번호는 32이다. 따라서 각 레지스터의 개별 비트를 IRQ ID32 부터 IRQ ID 95까지 연결했다.
+	- IRQ의 시작 번호는 32이다.
+	- GIC는 0번부터 15번까지를 Software Interrupt를 위해 사용하고, 16~31를 GIC software interrupt를 위해 reserve해 놓았다.
+	- 나머지가 IRQ Interrupt이다. 각 레지스터의 개별 비트를 IRQ ID32 부터 IRQ ID 95까지 연결했다.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA4NzI2ODE4MCwtNTY1MTM3NTM5LDc0MT
-E1NzUzOSwxMTMyMTAzMzg5LDQyMzg1Nzg2NSwtMjE0MTA1Njcz
-MSwyMDg1NzM3MDkzLDE3OTM3OTY1MTksMTI2ODQxMDY1OCwxNz
-UyMzk2NDg3LC0xNzQyODY0MTQsMTU5Mjk3MTg3MywxMjY3MjEz
-Nzc3XX0=
+eyJoaXN0b3J5IjpbLTIxMjAyMTYzOTgsMjA4NzI2ODE4MCwtNT
+Y1MTM3NTM5LDc0MTE1NzUzOSwxMTMyMTAzMzg5LDQyMzg1Nzg2
+NSwtMjE0MTA1NjczMSwyMDg1NzM3MDkzLDE3OTM3OTY1MTksMT
+I2ODQxMDY1OCwxNzUyMzk2NDg3LC0xNzQyODY0MTQsMTU5Mjk3
+MTg3MywxMjY3MjEzNzc3XX0=
 -->
