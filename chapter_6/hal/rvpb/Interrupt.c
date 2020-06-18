@@ -1,6 +1,6 @@
 #include "stdint.h"
 #include "memio.h"
-#include "Interrpt.h"
+#include "Interrupt.h"
 #include "HalInterrupt.h"
 #include "armcpu.h"
 
@@ -65,5 +65,5 @@ void Hal_interrupt_run_handler(void){
     if(sHandlers[interrupt_num] != NULL){
         sHandlers[interrupt_num]();
     }
-    GicCpu->endofinterrupt.bits.InterruptID = interrupt_num;
+    GicCpu->endofinterrupt.bits.InterruptID = interrupt_num;    
 }
