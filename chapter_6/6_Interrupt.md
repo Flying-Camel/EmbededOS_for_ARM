@@ -142,11 +142,12 @@ void Hal_interrupt_run_handler(void){
 	- IRQ의 시작 번호는 32이다.
 	- GIC는 0번부터 15번까지를 Software Interrupt를 위해 사용하고, 16~31를 GIC software interrupt를 위해 reserve해 놓았다.
 	- 나머지가 IRQ Interrupt이다. 각 레지스터의 개별 비트를 IRQ ID32 부터 IRQ ID 95까지 연결했다.
+- 시작번호가 32번부터 이기 때문에 오프셋을 구하기 위해선, ID에서 32를 빼고, 그래도 32보다 크다면 다시 32를 빼면 된다.
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjExNjc5MjYyMSwyMDg3MjY4MTgwLC01Nj
-UxMzc1MzksNzQxMTU3NTM5LDExMzIxMDMzODksNDIzODU3ODY1
-LC0yMTQxMDU2NzMxLDIwODU3MzcwOTMsMTc5Mzc5NjUxOSwxMj
-Y4NDEwNjU4LDE3NTIzOTY0ODcsLTE3NDI4NjQxNCwxNTkyOTcx
-ODczLDEyNjcyMTM3NzddfQ==
+eyJoaXN0b3J5IjpbMTI0OTY0MTg0OSwyMTE2NzkyNjIxLDIwOD
+cyNjgxODAsLTU2NTEzNzUzOSw3NDExNTc1MzksMTEzMjEwMzM4
+OSw0MjM4NTc4NjUsLTIxNDEwNTY3MzEsMjA4NTczNzA5MywxNz
+kzNzk2NTE5LDEyNjg0MTA2NTgsMTc1MjM5NjQ4NywtMTc0Mjg2
+NDE0LDE1OTI5NzE4NzMsMTI2NzIxMzc3N119
 -->
