@@ -230,12 +230,48 @@ __attribute__ ((interrupt ("FIQ"))) void Fiq_Handler(void){
 - `irq_handler_addr: .word  dummy_handler` 의 dummy_handler 부분을 `Irq_Handler` 로 변경한다.
 - `fiq_handler_addr: .word  dummy_handler` 의 dummy_handler 부분을 `Fiq_Handler` 로 변경한다.
 - 이제 잘 작동 하는지 실행 시켜 보자
+~~~
+tanagy@DESKTOP-3IQ83O6:/mnt/c/Folder/study/EmbededOS/chapter_6$ ./qemu_start.sh 
+shared memfd open() failed: Function not implemented
+pulseaudio: pa_context_connect() failed
+pulseaudio: Reason: Connection refused
+pulseaudio: Failed to initialize PA contextaudio: Could not init `pa' audio driver
+ALSA lib confmisc.c:767:(parse_card) cannot find card '0'
+ALSA lib conf.c:4528:(_snd_config_evaluate) function snd_func_card_driver returned error: No such file or directory
+ALSA lib confmisc.c:392:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:4528:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1246:(snd_func_refer) error evaluating name
+ALSA lib conf.c:4528:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5007:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2495:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+ALSA lib confmisc.c:767:(parse_card) cannot find card '0'
+ALSA lib conf.c:4528:(_snd_config_evaluate) function snd_func_card_driver returned error: No such file or directory
+ALSA lib confmisc.c:392:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:4528:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1246:(snd_func_refer) error evaluating name
+ALSA lib conf.c:4528:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5007:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2495:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+audio: Failed to create voice `lm4549.out'
+NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+Hello World!!
+This is a Test!!
+This is a Decimal : 1234
+This is a Hex : 85
+~~~
+ - 와 같이 나오며, uart로 입력이 가능하게 된다!
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNjQzMTA2NjQsLTE5NDA0MzUwODIsMj
-AwNzY4ODQ2Myw3Njc3NTE4NjMsODkwNTAxNTk2LC05OTAxNjcw
-MjAsLTE3NTU4Mzg4NjcsMTI0OTY0MTg0OSwyMTE2NzkyNjIxLD
-IwODcyNjgxODAsLTU2NTEzNzUzOSw3NDExNTc1MzksMTEzMjEw
-MzM4OSw0MjM4NTc4NjUsLTIxNDEwNTY3MzEsMjA4NTczNzA5My
-wxNzkzNzk2NTE5LDEyNjg0MTA2NTgsMTc1MjM5NjQ4NywtMTc0
-Mjg2NDE0XX0=
+eyJoaXN0b3J5IjpbNTYzMjU2NzcwLC0xMjY0MzEwNjY0LC0xOT
+QwNDM1MDgyLDIwMDc2ODg0NjMsNzY3NzUxODYzLDg5MDUwMTU5
+NiwtOTkwMTY3MDIwLC0xNzU1ODM4ODY3LDEyNDk2NDE4NDksMj
+ExNjc5MjYyMSwyMDg3MjY4MTgwLC01NjUxMzc1MzksNzQxMTU3
+NTM5LDExMzIxMDMzODksNDIzODU3ODY1LC0yMTQxMDU2NzMxLD
+IwODU3MzcwOTMsMTc5Mzc5NjUxOSwxMjY4NDEwNjU4LDE3NTIz
+OTY0ODddfQ==
 -->
