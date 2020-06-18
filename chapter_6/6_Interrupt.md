@@ -192,12 +192,20 @@ static void interrupt_handler(){
 - UART 입력이 발생하게 되면, `interrupt_handler()` 함수를 코어가 자동으로 실행한다.
 - 위와 같이 코딩해 놓았기 때문에, 현재는 그저 입력받은 함수를 다시 출력하는 역할을 수행한다.
 - 이제 Main.c 파일에서 하드웨어 초기화 코드를 수정한다.
+~~~C
+static void Hw_init(void){
+    Hal_interrupt_init();
+    Hal_uart_init();
+}
+~~~
+- 보는 바와 같이 interrupt를 먼저 초기화 해 주어야 한다.
+- 인터럽트가 먼저 초기화가 되어야 uart에서 사용할 수 이
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAwNzY4ODQ2Myw3Njc3NTE4NjMsODkwNT
-AxNTk2LC05OTAxNjcwMjAsLTE3NTU4Mzg4NjcsMTI0OTY0MTg0
-OSwyMTE2NzkyNjIxLDIwODcyNjgxODAsLTU2NTEzNzUzOSw3ND
-ExNTc1MzksMTEzMjEwMzM4OSw0MjM4NTc4NjUsLTIxNDEwNTY3
-MzEsMjA4NTczNzA5MywxNzkzNzk2NTE5LDEyNjg0MTA2NTgsMT
-c1MjM5NjQ4NywtMTc0Mjg2NDE0LDE1OTI5NzE4NzMsMTI2NzIx
-Mzc3N119
+eyJoaXN0b3J5IjpbMTI4MTAyNzc2NCwyMDA3Njg4NDYzLDc2Nz
+c1MTg2Myw4OTA1MDE1OTYsLTk5MDE2NzAyMCwtMTc1NTgzODg2
+NywxMjQ5NjQxODQ5LDIxMTY3OTI2MjEsMjA4NzI2ODE4MCwtNT
+Y1MTM3NTM5LDc0MTE1NzUzOSwxMTMyMTAzMzg5LDQyMzg1Nzg2
+NSwtMjE0MTA1NjczMSwyMDg1NzM3MDkzLDE3OTM3OTY1MTksMT
+I2ODQxMDY1OCwxNzUyMzk2NDg3LC0xNzQyODY0MTQsMTU5Mjk3
+MTg3M119
 -->
