@@ -159,13 +159,43 @@ void Hal_interrupt_run_handler(void){
 ### 6.2 UART 입력과 인터럽트 연결
  - 작성한 인터럽트와 하드웨어를 연결해보자.
  - UART에 연결해 보도록 하자.
- - dk
+ - 아래와 같이 Uart.c 파일을 수정하고 추가해 준다
+ ~~~C
+ #include "stdint.h"
+#include "Uart.h"
+#include "HalUart.h"
+#include "HalInterrupt.h"
+
+extern volatile PL011_t* Uart;
+
+void Hal_uart_init(void){
+    // Enable Uart
+
+    Uart->uartcr.bits.UARTEN=0;
+    Uart->uartcr.bits.TXE=1;
+    Uart->uartcr.bits.RXE=1;
+    Uart->uartcr.bits.UARTEN=1;
+
+    // Enable input interrupt
+    Uart->uartimsc.bits.RXIM = 1;
+
+    // Register Uart interrupt handler.
+    Hal_interrupt_enable(UART_INTERRUPT0);
+    Hal_interrupt_register_handler(interrupt_handler, UART_INTERRUPT0);
+}
+
+static void interrupt_handler(){
+    uint8_t ch = Hal_uart_get_char();
+    Hal_uart_put_char();
+}
+~~~
+- UART 입력이 발생하게 되면, `interrupt_handler()`르
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE2NjY3Miw3Njc3NTE4NjMsODkwNTAxNT
-k2LC05OTAxNjcwMjAsLTE3NTU4Mzg4NjcsMTI0OTY0MTg0OSwy
-MTE2NzkyNjIxLDIwODcyNjgxODAsLTU2NTEzNzUzOSw3NDExNT
-c1MzksMTEzMjEwMzM4OSw0MjM4NTc4NjUsLTIxNDEwNTY3MzEs
-MjA4NTczNzA5MywxNzkzNzk2NTE5LDEyNjg0MTA2NTgsMTc1Mj
-M5NjQ4NywtMTc0Mjg2NDE0LDE1OTI5NzE4NzMsMTI2NzIxMzc3
-N119
+eyJoaXN0b3J5IjpbMjM1NTAzMzU3LDc2Nzc1MTg2Myw4OTA1MD
+E1OTYsLTk5MDE2NzAyMCwtMTc1NTgzODg2NywxMjQ5NjQxODQ5
+LDIxMTY3OTI2MjEsMjA4NzI2ODE4MCwtNTY1MTM3NTM5LDc0MT
+E1NzUzOSwxMTMyMTAzMzg5LDQyMzg1Nzg2NSwtMjE0MTA1Njcz
+MSwyMDg1NzM3MDkzLDE3OTM3OTY1MTksMTI2ODQxMDY1OCwxNz
+UyMzk2NDg3LC0xNzQyODY0MTQsMTU5Mjk3MTg3MywxMjY3MjEz
+Nzc3XX0=
 -->
