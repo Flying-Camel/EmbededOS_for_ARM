@@ -208,9 +208,9 @@ static void Hw_init(void){
 	- cspr의 IRQ 마스크를 해제
 	- uart 인터럽트 핸들러를 인터럽트 컨트롤러에 등록
 	- 인터럽트 컨트롤러와 uart 하드웨어 초기화 순서 조정.
-- 이제 마지막으로
+- 이제 마지막으로 IRQ 익셉션 벡터와 인터럽트 컨트롤러의 인터럽트 핸들러를 연결하는 작업이다.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MzYwMzY1MTUsMjAwNzY4ODQ2Myw3Nj
+eyJoaXN0b3J5IjpbLTE5NDA0MzUwODIsMjAwNzY4ODQ2Myw3Nj
 c3NTE4NjMsODkwNTAxNTk2LC05OTAxNjcwMjAsLTE3NTU4Mzg4
 NjcsMTI0OTY0MTg0OSwyMTE2NzkyNjIxLDIwODcyNjgxODAsLT
 U2NTEzNzUzOSw3NDExNTc1MzksMTEzMjEwMzM4OSw0MjM4NTc4
