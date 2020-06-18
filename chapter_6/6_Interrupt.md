@@ -227,14 +227,15 @@ __attribute__ ((interrupt ("FIQ"))) void Fiq_Handler(void){
 - `("IRQ")` 와 `("FIQ")`는 ARM 전용 지시어이다.
 - 해당 구문을 통해 핸들러에 진입하는 코드와 나가는 코드를 자동으로 만둘어 준다.
 - 이제 Entry.S 파일에 있는 핸들러를 수정해 준다.
--` irq_handler_addr: .word  dummy_handler` 의 dummy_handler 부분을 `Irq_Handler` 로 변경한다.
+- `irq_handler_addr: .word  dummy_handler` 의 dummy_handler 부분을 `Irq_Handler` 로 변경한다.
 - `fiq_handler_addr: .word  dummy_handler` 의 dummy_handler 부분을 `Fiq_Handler` 로 변경한다.
+- 이제 잘 작동 하는지 실행 시켜 보자
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEzMzUyNDMzOCwtMTk0MDQzNTA4MiwyMD
-A3Njg4NDYzLDc2Nzc1MTg2Myw4OTA1MDE1OTYsLTk5MDE2NzAy
-MCwtMTc1NTgzODg2NywxMjQ5NjQxODQ5LDIxMTY3OTI2MjEsMj
-A4NzI2ODE4MCwtNTY1MTM3NTM5LDc0MTE1NzUzOSwxMTMyMTAz
-Mzg5LDQyMzg1Nzg2NSwtMjE0MTA1NjczMSwyMDg1NzM3MDkzLD
-E3OTM3OTY1MTksMTI2ODQxMDY1OCwxNzUyMzk2NDg3LC0xNzQy
-ODY0MTRdfQ==
+eyJoaXN0b3J5IjpbLTEyNjQzMTA2NjQsLTE5NDA0MzUwODIsMj
+AwNzY4ODQ2Myw3Njc3NTE4NjMsODkwNTAxNTk2LC05OTAxNjcw
+MjAsLTE3NTU4Mzg4NjcsMTI0OTY0MTg0OSwyMTE2NzkyNjIxLD
+IwODcyNjgxODAsLTU2NTEzNzUzOSw3NDExNTc1MzksMTEzMjEw
+MzM4OSw0MjM4NTc4NjUsLTIxNDEwNTY3MzEsMjA4NTczNzA5My
+wxNzkzNzk2NTE5LDEyNjg0MTA2NTgsMTc1MjM5NjQ4NywtMTc0
+Mjg2NDE0XX0=
 -->
