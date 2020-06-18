@@ -143,11 +143,23 @@ void Hal_interrupt_run_handler(void){
 	- GIC는 0번부터 15번까지를 Software Interrupt를 위해 사용하고, 16~31를 GIC software interrupt를 위해 reserve해 놓았다.
 	- 나머지가 IRQ Interrupt이다. 각 레지스터의 개별 비트를 IRQ ID32 부터 IRQ ID 95까지 연결했다.
 - 시작번호가 32번부터 이기 때문에 오프셋을 구하기 위해선, ID에서 32를 빼고, 그래도 32보다 크다면 다시 32를 빼면 된다.
-- 
+~~~C
+    uint32_t bit_num = interrupt_num - GIC_IRQ_START;
+
+    if (bit_num < GIC_IRQ_START){
+        SET_BIT(GicDist->setenable1, bit_num);
+    }
+    else{
+        bit_num -= GIC_IRQ_START;
+        SET_BIT(GicDist->setenable2, bit_num);
+    }
+   ~~~
+   - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI0OTY0MTg0OSwyMTE2NzkyNjIxLDIwOD
-cyNjgxODAsLTU2NTEzNzUzOSw3NDExNTc1MzksMTEzMjEwMzM4
-OSw0MjM4NTc4NjUsLTIxNDEwNTY3MzEsMjA4NTczNzA5MywxNz
-kzNzk2NTE5LDEyNjg0MTA2NTgsMTc1MjM5NjQ4NywtMTc0Mjg2
-NDE0LDE1OTI5NzE4NzMsMTI2NzIxMzc3N119
+eyJoaXN0b3J5IjpbLTE3NTU4Mzg4NjcsMTI0OTY0MTg0OSwyMT
+E2NzkyNjIxLDIwODcyNjgxODAsLTU2NTEzNzUzOSw3NDExNTc1
+MzksMTEzMjEwMzM4OSw0MjM4NTc4NjUsLTIxNDEwNTY3MzEsMj
+A4NTczNzA5MywxNzkzNzk2NTE5LDEyNjg0MTA2NTgsMTc1MjM5
+NjQ4NywtMTc0Mjg2NDE0LDE1OTI5NzE4NzMsMTI2NzIxMzc3N1
+19
 -->
