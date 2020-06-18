@@ -210,13 +210,26 @@ static void Hw_init(void){
 	- 인터럽트 컨트롤러와 uart 하드웨어 초기화 순서 조정.
 - 이제 마지막으로 IRQ 익셉션 벡터와 인터럽트 컨트롤러의 인터럽트 핸들러를 연결하는 작업이다.
 - 그러므로 익셉션 핸들러를 만들도록 한다. @boot/Handler.c
-- 
+~~~C
+#include "stdbool.h"
+#include "stdint.h"
+#include "HalInterrupt.h"
+
+__attribute__ ((interrupt ("IRQ"))) void Irq_Handler(void){
+    Hal_interrupt_run_handler();
+}
+
+__attribute__ ((interrupt ("FIQ"))) void Fiq_Handler(void){
+    while(true);
+}
+~~~
+- `__attribute__ ` 는 GCC의 컴파일러 확장 기능을 사용하겠다는 지시어이다.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMzMwOTk1NTcsLTE5NDA0MzUwODIsMj
-AwNzY4ODQ2Myw3Njc3NTE4NjMsODkwNTAxNTk2LC05OTAxNjcw
-MjAsLTE3NTU4Mzg4NjcsMTI0OTY0MTg0OSwyMTE2NzkyNjIxLD
-IwODcyNjgxODAsLTU2NTEzNzUzOSw3NDExNTc1MzksMTEzMjEw
-MzM4OSw0MjM4NTc4NjUsLTIxNDEwNTY3MzEsMjA4NTczNzA5My
-wxNzkzNzk2NTE5LDEyNjg0MTA2NTgsMTc1MjM5NjQ4NywtMTc0
-Mjg2NDE0XX0=
+eyJoaXN0b3J5IjpbLTI2NzA0NzcwMiwtMTk0MDQzNTA4MiwyMD
+A3Njg4NDYzLDc2Nzc1MTg2Myw4OTA1MDE1OTYsLTk5MDE2NzAy
+MCwtMTc1NTgzODg2NywxMjQ5NjQxODQ5LDIxMTY3OTI2MjEsMj
+A4NzI2ODE4MCwtNTY1MTM3NTM5LDc0MTE1NzUzOSwxMTMyMTAz
+Mzg5LDQyMzg1Nzg2NSwtMjE0MTA1NjczMSwyMDg1NzM3MDkzLD
+E3OTM3OTY1MTksMTI2ODQxMDY1OCwxNzUyMzk2NDg3LC0xNzQy
+ODY0MTRdfQ==
 -->
