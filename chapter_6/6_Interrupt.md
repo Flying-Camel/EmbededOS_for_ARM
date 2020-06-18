@@ -199,13 +199,22 @@ static void Hw_init(void){
 }
 ~~~
 - 보는 바와 같이 interrupt를 먼저 초기화 해 주어야 한다.
-- 인터럽트가 먼저 초기화가 되어야 uart에서 사용할 수 이
+- 인터럽트가 먼저 초기화가 되어야 uart에서 사용할 수 있기 때문이다.
+##
+### 6.3 IRQ 인셉션 벡터 연결.
+- 6장에서 다룬 내용은 다음과 같다.
+	- main()함수를 무한루프를 주어 종료하지 않도록 설정.
+	- 인터럽트 컨트롤러 초기화
+	- cspr의 IRQ 마스크를 해제
+	- uart 인터럽트 핸들러를 인터럽트 컨트롤러에 등록
+	- 인터럽트 컨트롤러와 uart 하드웨어 초기화 순서 조정.
+- 이제 마지막으로
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI4MTAyNzc2NCwyMDA3Njg4NDYzLDc2Nz
-c1MTg2Myw4OTA1MDE1OTYsLTk5MDE2NzAyMCwtMTc1NTgzODg2
-NywxMjQ5NjQxODQ5LDIxMTY3OTI2MjEsMjA4NzI2ODE4MCwtNT
-Y1MTM3NTM5LDc0MTE1NzUzOSwxMTMyMTAzMzg5LDQyMzg1Nzg2
-NSwtMjE0MTA1NjczMSwyMDg1NzM3MDkzLDE3OTM3OTY1MTksMT
-I2ODQxMDY1OCwxNzUyMzk2NDg3LC0xNzQyODY0MTQsMTU5Mjk3
-MTg3M119
+eyJoaXN0b3J5IjpbLTE4MzYwMzY1MTUsMjAwNzY4ODQ2Myw3Nj
+c3NTE4NjMsODkwNTAxNTk2LC05OTAxNjcwMjAsLTE3NTU4Mzg4
+NjcsMTI0OTY0MTg0OSwyMTE2NzkyNjIxLDIwODcyNjgxODAsLT
+U2NTEzNzUzOSw3NDExNTc1MzksMTEzMjEwMzM4OSw0MjM4NTc4
+NjUsLTIxNDEwNTY3MzEsMjA4NTczNzA5MywxNzkzNzk2NTE5LD
+EyNjg0MTA2NTgsMTc1MjM5NjQ4NywtMTc0Mjg2NDE0LDE1OTI5
+NzE4NzNdfQ==
 -->
