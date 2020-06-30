@@ -230,12 +230,51 @@ __attribute__ ((interrupt ("FIQ"))) void Fiq_Handler(void){
 - `irq_handler_addr: .word  dummy_handler` 의 dummy_handler 부분을 `Irq_Handler` 로 변경한다.
 - `fiq_handler_addr: .word  dummy_handler` 의 dummy_handler 부분을 `Fiq_Handler` 로 변경한다.
 - 이제 잘 작동 하는지 실행 시켜 보자
+~~~
+tanagy@DESKTOP-3IQ83O6:/mnt/c/Folder/study/EmbededOS/chapter_6$ ./qemu_start.sh 
+shared memfd open() failed: Function not implemented
+pulseaudio: pa_context_connect() failed
+pulseaudio: Reason: Connection refused
+pulseaudio: Failed to initialize PA contextaudio: Could not init `pa' audio driver
+ALSA lib confmisc.c:767:(parse_card) cannot find card '0'
+ALSA lib conf.c:4528:(_snd_config_evaluate) function snd_func_card_driver returned error: No such file or directory
+ALSA lib confmisc.c:392:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:4528:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1246:(snd_func_refer) error evaluating name
+ALSA lib conf.c:4528:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5007:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2495:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+ALSA lib confmisc.c:767:(parse_card) cannot find card '0'
+ALSA lib conf.c:4528:(_snd_config_evaluate) function snd_func_card_driver returned error: No such file or directory
+ALSA lib confmisc.c:392:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:4528:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1246:(snd_func_refer) error evaluating name
+ALSA lib conf.c:4528:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5007:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2495:(snd_pcm_open_noupdate) Unknown PCM default
+alsa: Could not initialize DAC
+alsa: Failed to open `default':
+alsa: Reason: No such file or directory
+audio: Failed to create voice `lm4549.out'
+NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+Hello World!!
+This is a Test!!
+This is a Decimal : 1234
+This is a Hex : 85
+~~~
+ - 와 같이 나오며, uart로 입력이 가능하게 된다!
+ ##
+ ### 6.6 요약
+ - 이번 장에서는 인터럽트 컨트롤러를 사용해 키보드 입력을 받았다. 인터럽트는 펌웨어의 기능을 구현하는데 매우 핵심적이고 중요한 요소이다. 이제 다음장에선 타이머를 다뤄, 시간을 제어해 보도록 하자.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNjQzMTA2NjQsLTE5NDA0MzUwODIsMj
-AwNzY4ODQ2Myw3Njc3NTE4NjMsODkwNTAxNTk2LC05OTAxNjcw
-MjAsLTE3NTU4Mzg4NjcsMTI0OTY0MTg0OSwyMTE2NzkyNjIxLD
-IwODcyNjgxODAsLTU2NTEzNzUzOSw3NDExNTc1MzksMTEzMjEw
-MzM4OSw0MjM4NTc4NjUsLTIxNDEwNTY3MzEsMjA4NTczNzA5My
-wxNzkzNzk2NTE5LDEyNjg0MTA2NTgsMTc1MjM5NjQ4NywtMTc0
-Mjg2NDE0XX0=
+eyJoaXN0b3J5IjpbLTYwNDA3MTk5OCwtMTI2NDMxMDY2NCwtMT
+k0MDQzNTA4MiwyMDA3Njg4NDYzLDc2Nzc1MTg2Myw4OTA1MDE1
+OTYsLTk5MDE2NzAyMCwtMTc1NTgzODg2NywxMjQ5NjQxODQ5LD
+IxMTY3OTI2MjEsMjA4NzI2ODE4MCwtNTY1MTM3NTM5LDc0MTE1
+NzUzOSwxMTMyMTAzMzg5LDQyMzg1Nzg2NSwtMjE0MTA1NjczMS
+wyMDg1NzM3MDkzLDE3OTM3OTY1MTksMTI2ODQxMDY1OCwxNzUy
+Mzk2NDg3XX0=
 -->
