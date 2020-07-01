@@ -14,7 +14,9 @@
 - 감소하다가 0이되면 인터럽트가 발생한다.
 - `timerxcontrol`은 타이머 하드웨어의 속성을 설정하는 레지스터이다.
 - `timerxintclr`은 인터럽트 처리가 완료 되었음을 타이머 핟웨어에 알려주는 레지스터이다.
+- `TimerxControl_t`는 하드웨어의 속성을 설정한다.
+	- `OneShot`이 1이면 타이머 인터럽트가 한 번 발생하고 타이머가 바로 꺼진다.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQzMTQ2NjUzNCwtMTUyNTkyODM2MiwtMT
-E3OTgyMDk4MF19
+eyJoaXN0b3J5IjpbLTk4OTc2MTQzLC00MzE0NjY1MzQsLTE1Mj
+U5MjgzNjIsLTExNzk4MjA5ODBdfQ==
 -->
