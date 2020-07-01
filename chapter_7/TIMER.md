@@ -7,7 +7,9 @@
 ### 7.1 타이머 하드웨어 초기화
 - 하드웨어 레지스터를 구조체로 추상화하여 hal에 추가한다.
 - SP805의 스펙은 아래의 링크에 나와있다.
-	- 
+	- [https://developer.arm.com/documentation/ddi0271/d/programmer-s-model/summary-of-registers?lang=en](https://developer.arm.com/documentation/ddi0271/d/programmer-s-model/summary-of-registers?lang=en)
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDcyNTQ2ODM2LC0xMTc5ODIwOTgwXX0=
+eyJoaXN0b3J5IjpbLTE1MjU5MjgzNjIsLTExNzk4MjA5ODBdfQ
+==
 -->
