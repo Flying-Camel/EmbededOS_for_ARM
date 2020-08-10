@@ -29,8 +29,19 @@
 	-  RealViewPB에 보면 0x10011000에 할당되어 있는 것을 알 수 있다.
 		- 0이면 하나의 타이머만 사용하면 1이면 멀티 타이머를 사용한다.
 - `TIMER_INTERRUPT`는 타이머 하드웨어가 인터럽트를 발생시킬 때 GIC에 전달하는 인터럽트 번호이다.
-- 
+- 여기까지 설명이고 이제 코드를 작성해 보자.
+- hal/HalTimer.h 파일을 만들어 공용 인터페이스를 작성한다.
+~~~C
+#ifndef HAL_HALUART_H_
+#define HAL_HALUART_H_
+
+void    Hal_uart_init(void);
+void    Hal_uart_put_char(uint8_t ch);
+
+#endif 
+~~~
+- 이어서 공용 AP
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMyMjE4NjkxNiwtOTg5NzYxNDMsLTQzMT
-Q2NjUzNCwtMTUyNTkyODM2MiwtMTE3OTgyMDk4MF19
+eyJoaXN0b3J5IjpbMTY1NjY3OTU1LC05ODk3NjE0MywtNDMxND
+Y2NTM0LC0xNTI1OTI4MzYyLC0xMTc5ODIwOTgwXX0=
 -->
