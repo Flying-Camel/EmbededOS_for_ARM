@@ -18,8 +18,10 @@
 	- `OneShot`이 1이면 타이머 인터럽트가 한 번 발생하고 타이머가 바로 꺼진다.
 	- 다시 켜려면 수동으로 레지스터를 설정해야 한다.
 - `TimerSize` 는 `timerxload`와 `timerxvalue`의 크기를 설정한다. 0이면 16비트만 사용하고 1이면 32비트를 사용한다.
+- `TimerPre`는 클럭마다 카운터를줄일지, 16번마다 줄일지, 256번마다 줄일지를 설정한다.
+- `IntEnable`은 타이머 하드웨어의 인터럽트를 켠다.
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMjM0MTI3MDMsLTk4OTc2MTQzLC00Mz
+eyJoaXN0b3J5IjpbLTIwODY4OTE0MDIsLTk4OTc2MTQzLC00Mz
 E0NjY1MzQsLTE1MjU5MjgzNjIsLTExNzk4MjA5ODBdfQ==
 -->
