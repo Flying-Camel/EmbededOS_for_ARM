@@ -20,8 +20,9 @@
 - `TimerSize` 는 `timerxload`와 `timerxvalue`의 크기를 설정한다. 0이면 16비트만 사용하고 1이면 32비트를 사용한다.
 - `TimerPre`는 클럭마다 카운터를줄일지, 16번마다 줄일지, 256번마다 줄일지를 설정한다.
 - `IntEnable`은 타이머 하드웨어의 인터럽트를 켠다.
-- 
+- `TimerMode`는 `timerxload`를 사용할지 않을지를 결정한다. 0이면 사용하지 않는다.
+- `timerxvalue`는 최대값 (0xFFFF or 0xFFFFFFFF) 부터 0까지 카운트가 내려가야 인터럽트가 발생한다.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwODY4OTE0MDIsLTk4OTc2MTQzLC00Mz
-E0NjY1MzQsLTE1MjU5MjgzNjIsLTExNzk4MjA5ODBdfQ==
+eyJoaXN0b3J5IjpbMTM5MTYyMjk5MywtOTg5NzYxNDMsLTQzMT
+Q2NjUzNCwtMTUyNTkyODM2MiwtMTE3OTgyMDk4MF19
 -->
