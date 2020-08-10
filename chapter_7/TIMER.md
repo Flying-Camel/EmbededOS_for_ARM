@@ -16,7 +16,10 @@
 - `timerxintclr`은 인터럽트 처리가 완료 되었음을 타이머 핟웨어에 알려주는 레지스터이다.
 - `TimerxControl_t`는 하드웨어의 속성을 설정한다.
 	- `OneShot`이 1이면 타이머 인터럽트가 한 번 발생하고 타이머가 바로 꺼진다.
+	- 다시 켜려면 수동으로 레지스터를 설정해야 한다.
+- `TimerSize` 는 `timerxload`와 `timerxvalue`의 크기를 설정한다. 0이면 16비트만 사용하고 1이면 32비트를 사용한다.
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk4OTc2MTQzLC00MzE0NjY1MzQsLTE1Mj
-U5MjgzNjIsLTExNzk4MjA5ODBdfQ==
+eyJoaXN0b3J5IjpbLTEwMjM0MTI3MDMsLTk4OTc2MTQzLC00Mz
+E0NjY1MzQsLTE1MjU5MjgzNjIsLTExNzk4MjA5ODBdfQ==
 -->
