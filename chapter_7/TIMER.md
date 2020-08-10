@@ -25,8 +25,12 @@
 	- 하드웨어 제조사는 이를 프리러닝 모드라고 부른다.
 	- 1일때는 `timerxload`를 사용한다. 해당 값부터 0까지 카운트가 내려가면 인터럽트가 발생한다.
 	- 이 모드를 피리오딕(periodic)모드라고 부른다.
-- `TIMER_CPU_BASE`는 타
+- `TIMER_CPU_BASE`는 타이머 하드웨어 레지스터가 할당되어 있는 메모리 주소이다.
+	-  RealViewPB에 보면 0x10011000에 할당되어 있는 것을 알 수 있다.
+		- 0이면 하나의 타이머만 사용하면 1이면 멀티 타이머를 사용한다.
+- `TIMER_INTERRUPT`는 타이머 하드웨어가 인터럽트를 발생시킬 때 GIC에 전달하는 인터럽트 번호이다.
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MjA2MTM0NzEsLTk4OTc2MTQzLC00Mz
-E0NjY1MzQsLTE1MjU5MjgzNjIsLTExNzk4MjA5ODBdfQ==
+eyJoaXN0b3J5IjpbLTMyMjE4NjkxNiwtOTg5NzYxNDMsLTQzMT
+Q2NjUzNCwtMTUyNTkyODM2MiwtMTE3OTgyMDk4MF19
 -->
