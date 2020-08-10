@@ -22,7 +22,11 @@
 - `IntEnable`은 타이머 하드웨어의 인터럽트를 켠다.
 - `TimerMode`는 `timerxload`를 사용할지 않을지를 결정한다. 0이면 사용하지 않는다.
 - `timerxvalue`는 최대값 (0xFFFF or 0xFFFFFFFF) 부터 0까지 카운트가 내려가야 인터럽트가 발생한다.
+	- 하드웨어 제조사는 이를 프리러닝 모드라고 부른다.
+	- 1일때는 `timerxload`를 사용한다. 해당 값부터 0까지 카운트가 내려가면 인터럽트가 발생한다.
+	- 이 모드를 피리오딕(periodic)모드라고 부른다.
+- `TIMER_CPU_BASE`는 타
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM5MTYyMjk5MywtOTg5NzYxNDMsLTQzMT
-Q2NjUzNCwtMTUyNTkyODM2MiwtMTE3OTgyMDk4MF19
+eyJoaXN0b3J5IjpbLTE0MjA2MTM0NzEsLTk4OTc2MTQzLC00Mz
+E0NjY1MzQsLTE1MjU5MjgzNjIsLTExNzk4MjA5ODBdfQ==
 -->
