@@ -93,8 +93,9 @@ static void interrupt_handler(void){
 }
 
 ~~~
-- 
+- `Hal_timer_init()`은 초기화 하는 함수이다.
+	- 초기화 시퀸스는 SP804의 스펙에 나와있다.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNDU0MDUyODksLTk4OTc2MTQzLC00Mz
+eyJoaXN0b3J5IjpbLTE0OTUwODI2NTMsLTk4OTc2MTQzLC00Mz
 E0NjY1MzQsLTE1MjU5MjgzNjIsLTExNzk4MjA5ODBdfQ==
 -->
