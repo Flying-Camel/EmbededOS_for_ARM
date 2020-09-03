@@ -113,8 +113,10 @@ static void interrupt_handler(void){
 - 앞서 구현한 UART로 확인해보면 모든 값이 0임을 알 수 있다. 따라서 RealViewlPB에서는 1MHz를 사용한다.
 - 타이머 로드 레지스터에 값을 설정하는 방법은 스펙에 나와있고, 아래와 같다.
 - ![IMG](./img/TimerXLoad.jpg)
+
+#
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc1NjEyNTM5NCwzNjI3MTYzMTYsLTE0OT
-UwODI2NTMsLTk4OTc2MTQzLC00MzE0NjY1MzQsLTE1MjU5Mjgz
-NjIsLTExNzk4MjA5ODBdfQ==
+eyJoaXN0b3J5IjpbMTA2MjEzMTc4MywtNzU2MTI1Mzk0LDM2Mj
+cxNjMxNiwtMTQ5NTA4MjY1MywtOTg5NzYxNDMsLTQzMTQ2NjUz
+NCwtMTUyNTkyODM2MiwtMTE3OTgyMDk4MF19
 -->
