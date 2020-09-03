@@ -106,9 +106,12 @@ static void interrupt_handler(void){
 
 - QEMU에서는 1~7의 과정을 거치지 않아도 타이머가 잘 동작한다.
 - 하지만 실제 하드웨어를 사용할 때는 앞의 과정이 필요하다.
-- 코드에 있는 `interver` 변수가 로드 레지스터로 들어가게 되는데,.
+- 코드에 있는 `interver` 변수가 로드 레지스터로 들어가게 되는데, 해당 값을 이용해 인터럽트의 발생 간격을 지정한다.
+- QEMU에서는 이부분을 단순하게 구현해도 동작한다.
+- RealViewPB는 타이머 클럭으로 1MHz클럭을 받거나 32.768 오실레이터를 클럭으로 쓸 수 있다.
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc0NTc3ODM3MiwtMTQ5NTA4MjY1MywtOT
+eyJoaXN0b3J5IjpbMTQ0MzE2NzgwNiwtMTQ5NTA4MjY1MywtOT
 g5NzYxNDMsLTQzMTQ2NjUzNCwtMTUyNTkyODM2MiwtMTE3OTgy
 MDk4MF19
 -->
