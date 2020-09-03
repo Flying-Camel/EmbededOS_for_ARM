@@ -95,7 +95,13 @@ static void interrupt_handler(void){
 ~~~
 - `Hal_timer_init()`은 초기화 하는 함수이다.
 	- 초기화 시퀸스는 SP804의 스펙에 나와있다.
+- 초기화는 다음과 같은 순서에 의해 진행된다.
+1. 타이머를 끈다. `TimerEn=0`
+2. 프리-러닝 모드로 설정해 놓는다 `TimerMode=0, OneShot=0`
+3. 16비트 카운터 모드로 설정한다 `TimerSize=0`
+4. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0OTUwODI2NTMsLTk4OTc2MTQzLC00Mz
-E0NjY1MzQsLTE1MjU5MjgzNjIsLTExNzk4MjA5ODBdfQ==
+eyJoaXN0b3J5IjpbLTE1NTE5MTkwNTYsLTE0OTUwODI2NTMsLT
+k4OTc2MTQzLC00MzE0NjY1MzQsLTE1MjU5MjgzNjIsLTExNzk4
+MjA5ODBdfQ==
 -->
