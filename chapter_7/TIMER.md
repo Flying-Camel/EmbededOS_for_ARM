@@ -114,9 +114,12 @@ static void interrupt_handler(void){
 - 타이머 로드 레지스터에 값을 설정하는 방법은 스펙에 나와있고, 아래와 같다.
 - ![IMG](./img/TimerXLoad.jpg)
 
-#
+## 7.2 타이머 카운터 오버플로
+- 카운터 변수의 크기는 32비트이다. 따라서 오버플로 를 염두해 두어야 한다.
+- 32비트를 나타내는 최대값은 0xFFFFFFFF 이고, 이를 10진수로 나타내면 4294967295이다.
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA2MjEzMTc4MywtNzU2MTI1Mzk0LDM2Mj
+eyJoaXN0b3J5IjpbMjExMzk2NDUyNiwtNzU2MTI1Mzk0LDM2Mj
 cxNjMxNiwtMTQ5NTA4MjY1MywtOTg5NzYxNDMsLTQzMTQ2NjUz
 NCwtMTUyNTkyODM2MiwtMTE3OTgyMDk4MF19
 -->
