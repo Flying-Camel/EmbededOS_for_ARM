@@ -99,9 +99,16 @@ static void interrupt_handler(void){
 1. 타이머를 끈다. `TimerEn=0`
 2. 프리-러닝 모드로 설정해 놓는다 `TimerMode=0, OneShot=0`
 3. 16비트 카운터 모드로 설정한다 `TimerSize=0`
-4. 
+4. 프리스케일러 분주는 1로 설정한다 `timerPre=0`
+5. 인터럽트를 켠다 `IntEnable=1`
+6. 로드 레지스터를 켠다.
+7. 카운터 레지스터는 0xFFFFFFFF로 설정한다.
+
+- QEMU에서는 1~7의 과정을 거치지 않아도 타이머가 잘 동작한다.
+- 하지만 실제 하드웨어를 사용할 때는 앞의 과정이 필요하다.
+- 코드에 있는 `interver` 변수가 로드 레지스터로 들어가게 되는데,.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NTE5MTkwNTYsLTE0OTUwODI2NTMsLT
-k4OTc2MTQzLC00MzE0NjY1MzQsLTE1MjU5MjgzNjIsLTExNzk4
-MjA5ODBdfQ==
+eyJoaXN0b3J5IjpbMTc0NTc3ODM3MiwtMTQ5NTA4MjY1MywtOT
+g5NzYxNDMsLTQzMTQ2NjUzNCwtMTUyNTkyODM2MiwtMTE3OTgy
+MDk4MF19
 -->
