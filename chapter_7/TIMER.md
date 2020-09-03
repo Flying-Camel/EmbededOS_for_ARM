@@ -109,9 +109,11 @@ static void interrupt_handler(void){
 - 코드에 있는 `interver` 변수가 로드 레지스터로 들어가게 되는데, 해당 값을 이용해 인터럽트의 발생 간격을 지정한다.
 - QEMU에서는 이부분을 단순하게 구현해도 동작한다.
 - RealViewPB는 타이머 클럭으로 1MHz클럭을 받거나 32.768 오실레이터를 클럭으로 쓸 수 있다.
+- QEMU에서는 어떤 값을 사용하는지 알아보기 위해 `SYSCTRL0`의 값을 봐야 한다.
+- 앞서 구현한 UART로 확인해보면 모든 값이 0임을 알 수 있다. 따라서 RealViewlPB에서는 1MHz를 사용한다.
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ0MzE2NzgwNiwtMTQ5NTA4MjY1MywtOT
-g5NzYxNDMsLTQzMTQ2NjUzNCwtMTUyNTkyODM2MiwtMTE3OTgy
-MDk4MF19
+eyJoaXN0b3J5IjpbMzYyNzE2MzE2LC0xNDk1MDgyNjUzLC05OD
+k3NjE0MywtNDMxNDY2NTM0LC0xNTI1OTI4MzYyLC0xMTc5ODIw
+OTgwXX0=
 -->
