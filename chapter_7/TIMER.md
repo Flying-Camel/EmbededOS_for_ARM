@@ -117,9 +117,13 @@ static void interrupt_handler(void){
 ## 7.2 타이머 카운터 오버플로
 - 카운터 변수의 크기는 32비트이다. 따라서 오버플로 를 염두해 두어야 한다.
 - 32비트를 나타내는 최대값은 0xFFFFFFFF 이고, 이를 10진수로 나타내면 4294967295이다.
+- 1미리마다 1씩 증가하므로 약 4294967초가 타이머가 나타낼 수 있는 최대수치이다.
+- 따라서 약 50일정도 사용 가능한데, `delay()` 타이머를 사용하므로 오버플로에 주의해서 사용해야 한다.
+
+## 7.3 delay() 함수
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjExMzk2NDUyNiwtNzU2MTI1Mzk0LDM2Mj
+eyJoaXN0b3J5IjpbMjAyOTIyNTIxOSwtNzU2MTI1Mzk0LDM2Mj
 cxNjMxNiwtMTQ5NTA4MjY1MywtOTg5NzYxNDMsLTQzMTQ2NjUz
 NCwtMTUyNTkyODM2MiwtMTE3OTgyMDk4MF19
 -->
