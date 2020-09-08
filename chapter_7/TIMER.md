@@ -170,10 +170,10 @@ while(goal != Hal_timer_get_1ms_counter());
 - 하지만 타이머가 오버플로우가 발생할 경우를 고려해 아래의 방법을 사용한다.
 - 이제 boot/Main.c 파일에 delay()를 테스트 하는 코드를 삽입해 보겠다.
 
-
+~~~
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY1Njg3ODc1OCwyMDI5MjI1MjE5LC03NT
-YxMjUzOTQsMzYyNzE2MzE2LC0xNDk1MDgyNjUzLC05ODk3NjE0
-MywtNDMxNDY2NTM0LC0xNTI1OTI4MzYyLC0xMTc5ODIwOTgwXX
-0=
+eyJoaXN0b3J5IjpbMTIxNTkwNzE4NCwxNjU2ODc4NzU4LDIwMj
+kyMjUyMTksLTc1NjEyNTM5NCwzNjI3MTYzMTYsLTE0OTUwODI2
+NTMsLTk4OTc2MTQzLC00MzE0NjY1MzQsLTE1MjU5MjgzNjIsLT
+ExNzk4MjA5ODBdfQ==
 -->
