@@ -263,10 +263,15 @@ volatile  GicDist_t* GicDist = (GicDist_t*)GIC_DIST_BASE;
 volatile  Timer_t* Timer = (Timer_t*)TIMER_CPU_BASE;
 ~~~
 
-
+- 이후 make를 실행하고 qemu를 실행하게 되면, 3초마다 한번씩 찍히는 것을 볼 수 있다.
+## 7.4 요약
+ - 이번 장에서는 타이머 하드웨어를 제어하는 방법을 공부했다.
+ - 이제 다음 장 부터 RTOS 다운 기능을 구현하게 된다.
+ - 바로 태스크 구현이다.
+ 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2ODM1NzgyNzEsMTY1Njg3ODc1OCwyMD
-I5MjI1MjE5LC03NTYxMjUzOTQsMzYyNzE2MzE2LC0xNDk1MDgy
-NjUzLC05ODk3NjE0MywtNDMxNDY2NTM0LC0xNTI1OTI4MzYyLC
-0xMTc5ODIwOTgwXX0=
+eyJoaXN0b3J5IjpbMjA2NTQ3MTE4NSwxNjU2ODc4NzU4LDIwMj
+kyMjUyMTksLTc1NjEyNTM5NCwzNjI3MTYzMTYsLTE0OTUwODI2
+NTMsLTk4OTc2MTQzLC00MzE0NjY1MzQsLTE1MjU5MjgzNjIsLT
+ExNzk4MjA5ODBdfQ==
 -->
