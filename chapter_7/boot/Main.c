@@ -1,9 +1,15 @@
 #include "stdint.h"
 #include "HalUart.h"
 #include "stdio.h"
+#include "stdlib.h"
+#include "stdbool.h"
+#include "HalInterrupt.h"
+
+#include "HalTimer.h"
 
 static void Hw_init(void);
 static void Printf_test(void);
+static void Timer_test(void);
 
 int main(void){
 
@@ -21,7 +27,7 @@ int main(void){
 
     Printf_test();
 
-    
+    Timer_test();
 
     // Infinity Loop
     for(;;)
@@ -46,6 +52,7 @@ int main(void){
 static void Hw_init(void){
     Hal_interrupt_init();
     Hal_uart_init();
+    Hal_timer_init();
 }
 
 static void Printf_test(){
@@ -58,4 +65,12 @@ static void Printf_test(){
     debug_printf("This is a Decimal : %u\n",dec);
     debug_printf("This is a Hex : %x",hex);
  
+}
+
+static void Timer_test(void){
+    uint32_t i=5;
+    while(i--){
+        debug_printf("This is Test Satement for delay() ... current Counter is %u\n",Hal_timer_get_1ms_counter());
+        delay(3000);
+    }
 }

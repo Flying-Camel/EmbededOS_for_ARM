@@ -39,12 +39,12 @@ void Hal_timer_init(void){
     Hal_interrupt_register_handler(interrupt_handler, TIMER_INTERRUPT);
 }
 
-uint32_t Hal_timer_get_1ms_counter(void){
-    return internal_1ms_counter;
-}
-
 static void interrupt_handler(void){
     internal_1ms_counter++;
 
     Timer->timerxintclr = 1;
+}
+
+uint32_t Hal_timer_get_1ms_counter(void){
+    return internal_1ms_counter;
 }
