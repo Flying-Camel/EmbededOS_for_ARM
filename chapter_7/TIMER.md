@@ -151,11 +151,22 @@ return  internal_1ms_counter;
 - 함수는 lib/stdlib.c 에 작성 하도록 하자.
 
 ~~~ C
+#include  "stdint.h"
+#include  "stdbool.h"
+#include  "HalTimer.h"
 
+void  delay(uint32_t  ms){
+uint32_t  goal = Hal_timer_get_1ms_counter() + ms;
+while(goal != Hal_timer_get_1ms_counter());
+}
 
 ~~~
+
+- 카운터가 목표한 값까지 도달하길 기다리는 간단한 코드이다.
+- 목표한 값에 도달하는 지 확인하는 방법은 아래의 두가지가 있다.
+	- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjExMjU5MzM0NiwyMDI5MjI1MjE5LC03NT
+eyJoaXN0b3J5IjpbMTUyMzMyMzYyNCwyMDI5MjI1MjE5LC03NT
 YxMjUzOTQsMzYyNzE2MzE2LC0xNDk1MDgyNjUzLC05ODk3NjE0
 MywtNDMxNDY2NTM0LC0xNTI1OTI4MzYyLC0xMTc5ODIwOTgwXX
 0=
