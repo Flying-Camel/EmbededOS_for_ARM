@@ -170,10 +170,103 @@ while(goal != Hal_timer_get_1ms_counter());
 - 하지만 타이머가 오버플로우가 발생할 경우를 고려해 아래의 방법을 사용한다.
 - 이제 boot/Main.c 파일에 delay()를 테스트 하는 코드를 삽입해 보겠다.
 
+~~~C
+#include "stdint.h"
+#include "HalUart.h"
+#include "stdio.h"
+#include "stdlib.h"
+#include "stdbool.h"
+#include "HalInterrupt.h"
+
+#include "HalTimer.h"
+
+static void Hw_init(void);
+static void Printf_test(void);
+static void Timer_test(void);
+
+int main(void){
+
+    Hw_init();
+
+    uint32_t i = 100;
+
+    while(i--){
+        Hal_uart_put_char('N');
+    }
+
+    Hal_uart_put_char('\n');
+
+    putstr("Hello World!!\n");
+
+    Printf_test();
+
+    Timer_test();
+
+    // Infinity Loop
+    for(;;)
+
+    /*
+    i=100;
+    while(i--){        
+        uint8_t ch = Hal_uart_get_char();
+        Hal_uart_put_char(ch);
+    }
+    */
+
+    /*
+    uint32_t* dummyAddr = (uint32_t*)(1024*1024*100);
+    *dummyAddr = sizeof(long);
+    */
+
+    return 0;
+    
+}
+
+static void Hw_init(void){
+    Hal_interrupt_init();
+    Hal_uart_init();
+    Hal_timer_init();
+}
+
+static void Printf_test(){
+
+    char* str = "This is a Test!!";
+    uint32_t dec = 1234;
+    uint32_t hex = 133;
+
+    debug_printf("%s\n",str);
+    debug_printf("This is a Decimal : %u\n",dec);
+    debug_printf("This is a Hex : %x",hex);
+ 
+}
+
+static void Timer_test(void){
+    uint32_t i=5;
+    while(i--){
+        debug_printf("This is Test Satement for delay() ... current Counter is %u\n",Hal_timer_get_1ms_counter());
+        delay(3000);
+    }
+}
 ~~~
+
+- 이대로 하고 실행하면 오류가 나는데, hal/rvpb/Regs.c에도 등록해 주어야 한다.
+~~~C
+ 
+#include  "stdint.h"
+#include  "Uart.h"
+#include  "Interrupt.h"
+#include  "Timer.h" 
+
+volatile  PL011_t* Uart = (PL011_t*)UART_BASE_ADDRESS0;
+volatile  GicCput_t* GicCpu = (GicCput_t*)GIC_CPU_BASE;
+volatile  GicDist_t* GicDist = (GicDist_t*)GIC_DIST_BASE;
+volatile  Timer_t* Timer = (Timer_t*)TIMER_CPU_BASE;
+~~~
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIxNTkwNzE4NCwxNjU2ODc4NzU4LDIwMj
-kyMjUyMTksLTc1NjEyNTM5NCwzNjI3MTYzMTYsLTE0OTUwODI2
-NTMsLTk4OTc2MTQzLC00MzE0NjY1MzQsLTE1MjU5MjgzNjIsLT
-ExNzk4MjA5ODBdfQ==
+eyJoaXN0b3J5IjpbLTE2ODM1NzgyNzEsMTY1Njg3ODc1OCwyMD
+I5MjI1MjE5LC03NTYxMjUzOTQsMzYyNzE2MzE2LC0xNDk1MDgy
+NjUzLC05ODk3NjE0MywtNDMxNDY2NTM0LC0xNTI1OTI4MzYyLC
+0xMTc5ODIwOTgwXX0=
 -->
