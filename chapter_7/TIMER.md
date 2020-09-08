@@ -127,9 +127,20 @@ static void interrupt_handler(void){
 	- delay() 같은 유틸리티 함수를 앞으로 정의 하도록 한다.
 
 ~~~C
+#ifdef HAL_HALTIMER_H_
+#define HAL_HALTIMER_H_
 
+  
+
+void  Hal_timer_init(void);
+uint32_t  Hal_timer_get_1ms_counter(void);
+
+#endif /*HAL_HALTIMER_H_
+~~~
+
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU4Nzg4MjY2MywyMDI5MjI1MjE5LC03NT
+eyJoaXN0b3J5IjpbMTc3NjQ2ODM1MCwyMDI5MjI1MjE5LC03NT
 YxMjUzOTQsMzYyNzE2MzE2LC0xNDk1MDgyNjUzLC05ODk3NjE0
 MywtNDMxNDY2NTM0LC0xNTI1OTI4MzYyLC0xMTc5ODIwOTgwXX
 0=
