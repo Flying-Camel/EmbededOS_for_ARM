@@ -164,9 +164,13 @@ while(goal != Hal_timer_get_1ms_counter());
 
 - 카운터가 목표한 값까지 도달하길 기다리는 간단한 코드이다.
 - 목표한 값에 도달하는 지 확인하는 방법은 아래의 두가지가 있다.
-	- 
+	- 목표한 값보다 큰 동안 대기
+	- 목표한 값과 같은지 비교
+- 일반적으론 첫번째 방법이 더 안전하다.
+- 하지만 타이머가 오버플로우가 발생할 경우를 고려해 아래의 방법을 사용한다.
+- 이제 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUyMzMyMzYyNCwyMDI5MjI1MjE5LC03NT
+eyJoaXN0b3J5IjpbLTM3NTMxNDM1MSwyMDI5MjI1MjE5LC03NT
 YxMjUzOTQsMzYyNzE2MzE2LC0xNDk1MDgyNjUzLC05ODk3NjE0
 MywtNDMxNDY2NTM0LC0xNTI1OTI4MzYyLC0xMTc5ODIwOTgwXX
 0=
