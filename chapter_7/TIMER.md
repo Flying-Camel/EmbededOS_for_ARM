@@ -140,9 +140,23 @@ uint32_t  Hal_timer_get_1ms_counter(void);
 
 - 이제 본체를 `hal/rvpb/Timer.c` 에 작성한다.
 
+~~~C
+uint32_t  Hal_timer_get_1ms_counter(){
+return  internal_1ms_counter;
+}
+~~~
+
+- 해당 함수는 카운터 변수인 internal_1ms_counter 를 리턴하고 종료된다.
+- 이제 본체인 delay()를 만들어 보도록 하자.
+- 함수는 lib/stdlib.c 에 작성 하도록 하자.
+
+~~~ C
+
+
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDM1Njc5MDUsMjAyOTIyNTIxOSwtNzU2MT
-I1Mzk0LDM2MjcxNjMxNiwtMTQ5NTA4MjY1MywtOTg5NzYxNDMs
-LTQzMTQ2NjUzNCwtMTUyNTkyODM2MiwtMTE3OTgyMDk4MF19
+eyJoaXN0b3J5IjpbMTg3MzU5NjMwOCwyMDI5MjI1MjE5LC03NT
+YxMjUzOTQsMzYyNzE2MzE2LC0xNDk1MDgyNjUzLC05ODk3NjE0
+MywtNDMxNDY2NTM0LC0xNTI1OTI4MzYyLC0xMTc5ODIwOTgwXX
+0=
 -->
