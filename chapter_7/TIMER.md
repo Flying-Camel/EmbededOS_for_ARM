@@ -138,10 +138,11 @@ uint32_t  Hal_timer_get_1ms_counter(void);
 #endif /*HAL_HALTIMER_H_
 ~~~
 
-- 
+- 이제 본체를 `hal/rvpb/Timer.c` 에 작성한다.
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc3NjQ2ODM1MCwyMDI5MjI1MjE5LC03NT
-YxMjUzOTQsMzYyNzE2MzE2LC0xNDk1MDgyNjUzLC05ODk3NjE0
-MywtNDMxNDY2NTM0LC0xNTI1OTI4MzYyLC0xMTc5ODIwOTgwXX
-0=
+eyJoaXN0b3J5IjpbNDM1Njc5MDUsMjAyOTIyNTIxOSwtNzU2MT
+I1Mzk0LDM2MjcxNjMxNiwtMTQ5NTA4MjY1MywtOTg5NzYxNDMs
+LTQzMTQ2NjUzNCwtMTUyNTkyODM2MiwtMTE3OTgyMDk4MF19
 -->
