@@ -121,9 +121,16 @@ static void interrupt_handler(void){
 - 따라서 약 50일정도 사용 가능한데, `delay()` 타이머를 사용하므로 오버플로에 주의해서 사용해야 한다.
 
 ## 7.3 delay() 함수
-- 
+- 타이머 카운터를 만들어 시간을 측정하는 주된 이유는 다양한 형태의 시간 지연 함수를 만들어 사용하기 위함이다.
+- delay()함수를 만들어 보도록 하자.
+- stdlib.h  파일을 lib 디렉토리 밑에 만든다.
+	- delay() 같은 유틸리티 함수를 앞으로 정의 하도록 한다.
+
+~~~C
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAyOTIyNTIxOSwtNzU2MTI1Mzk0LDM2Mj
-cxNjMxNiwtMTQ5NTA4MjY1MywtOTg5NzYxNDMsLTQzMTQ2NjUz
-NCwtMTUyNTkyODM2MiwtMTE3OTgyMDk4MF19
+eyJoaXN0b3J5IjpbMTU4Nzg4MjY2MywyMDI5MjI1MjE5LC03NT
+YxMjUzOTQsMzYyNzE2MzE2LC0xNDk1MDgyNjUzLC05ODk3NjE0
+MywtNDMxNDY2NTM0LC0xNTI1OTI4MzYyLC0xMTc5ODIwOTgwXX
+0=
 -->
