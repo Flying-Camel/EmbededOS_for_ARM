@@ -45,7 +45,10 @@ uint32_t Kernel_task_create(KernelTaskFunc_t startFunc);
 	- 실제 프로젝트에서 사용하기엔 너무 큰 값이다.
 	- 실무 프로젝트에선 몇 KB정도의 값이 사용된다.
 - 태스크 스택용으로 64MB를 할당해 놓았고, 태스크마다 1MB씩 할당해 놓았으므로, 태스크를 최대 64개까지 사용할 수 있다.
-- `Kernel_task_init()` 과 `Kernel_task_create()` 함수는 각각
+- `Kernel_task_init()` 과 `Kernel_task_create()` 함수는 각각 태스크 관련 기능을 초기화 하고, 등록하는 함수이다.
+- `KernelTaskContext_t` 와 `KernelTcb_t` 구조체가 태스크 컨트롤러 블록이다.
+- 프로그램 상태 레지스터와 범용 레지스터를 백업할 수 있는 영역을 구조체로 확보해 놓은 것이다.
+- 태스크 컨택스트는 결국 레지스텅
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcxMTc2NjAyNywxNzg3MzAyNTI1XX0=
+eyJoaXN0b3J5IjpbMTcxMzU3NzgxLDE3ODczMDI1MjVdfQ==
 -->
