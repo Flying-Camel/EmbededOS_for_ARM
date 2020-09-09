@@ -7,8 +7,39 @@
 - kernel 이라는 디렉토리를 만들고, task.c 와 task.h 파일을 만든다.
 - kernel/task.h 에 태스크 컨트롤 블록을 정의한다.
 ~~~C
+#ifndef KERNEL_TASK_H_
+#define KERNEL_TASK_H_
 
+#include "MemoryMap.h"
+
+#define NOT_ENOUGH_TASK_NUM 0xFFFFFFFF
+
+#define USR_TASK_STACK_SIZE 0x100000
+#define MAX_TASK_NUM        (TASK_STACK_SIZE / USR_TASK_STACK_SIZE)
+
+typedef struct KernelTaskContext_t
+{
+    uint32_t spsr;
+    uint32_t r0_r12[13];
+    uint32_t pc;
+} KernelTaskContext_t
+
+typedef struct KernelTcb_t
+{
+    uint32_t sp;
+    uint8_t* stack_base;
+} KernelTcb_t
+
+typedef void (*KernelTaskContext_t)(void);
+
+void Kernel_task_init(void);
+uint32_t Kernel_task_create(KernelTaskFunc_t startFunc);
+
+#endif /*KERNEL_TASK_H_*/
 ~~~
+
+- MemoryMap.h를 포함시킨 이유는 밑에서 TASK_STACK_SIZE 변수를 사용하기 때문이다.
+- 이 값은 4.3.1에서  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc4NzMwMjUyNV19
+eyJoaXN0b3J5IjpbMjA2ODI0NDYyNywxNzg3MzAyNTI1XX0=
 -->
