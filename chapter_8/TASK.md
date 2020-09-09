@@ -38,8 +38,12 @@ uint32_t Kernel_task_create(KernelTaskFunc_t startFunc);
 #endif /*KERNEL_TASK_H_*/
 ~~~
 
-- MemoryMap.h를 포함시킨 이유는 밑에서 TASK_STACK_SIZE 변수를 사용하기 때문이다.
-- 이 값은 4.3.1에서  
+- `MemoryMap.h`를 포함시킨 이유는 밑에서 `TASK_STACK_SIZE` 변수를 사용하기 때문이다.
+	- 이 값은 4.3.1에서 모드별 스택을 리셋 핸들러에서 설정할 때 만든 값이다.
+-  `USR_TASK_STACK_SIZE`는 개별 태스크의 스택 사이즈이다.
+- 0x100000 는 1MB이다. 즉 각 태스크별로 1MB의 스택을 할당한다.
+	- 실제 프로젝트에서 사용하기엔 너무 큰 값이다.
+	- 실무 프로젝
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA2ODI0NDYyNywxNzg3MzAyNTI1XX0=
+eyJoaXN0b3J5IjpbLTEyMDE3MzMyNjgsMTc4NzMwMjUyNV19
 -->
