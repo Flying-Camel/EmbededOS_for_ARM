@@ -43,7 +43,9 @@ uint32_t Kernel_task_create(KernelTaskFunc_t startFunc);
 -  `USR_TASK_STACK_SIZE`는 개별 태스크의 스택 사이즈이다.
 - 0x100000 는 1MB이다. 즉 각 태스크별로 1MB의 스택을 할당한다.
 	- 실제 프로젝트에서 사용하기엔 너무 큰 값이다.
-	- 실무 프로젝
+	- 실무 프로젝트에선 몇 KB정도의 값이 사용된다.
+- 태스크 스택용으로 64MB를 할당해 놓았고, 태스크마다 1MB씩 할당해 놓았으므로, 태스크를 최대 64개까지 사용할 수 있다.
+- `Kernel_task_init()` 과 `Kernel_task_create()` 함수는 각각
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMDE3MzMyNjgsMTc4NzMwMjUyNV19
+eyJoaXN0b3J5IjpbLTcxMTc2NjAyNywxNzg3MzAyNTI1XX0=
 -->
