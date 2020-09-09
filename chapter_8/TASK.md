@@ -53,7 +53,12 @@ uint32_t Kernel_task_create(KernelTaskFunc_t startFunc);
 
 ## 8.2 태스크 컨트롤 블록 초기화
 
+- 이제 실제 메모리에 태스크 컨트롤 블록 인스턴스를 만들고 기본값을 할당하는 코드를 작성해 보자.
+- kernel/task.c에 작성한다.
+~~~C
 
+~~~
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NjIyNjI3NzksMTc4NzMwMjUyNV19
+eyJoaXN0b3J5IjpbLTU3MTgwNDI1MiwtMTk2MjI2Mjc3OSwxNz
+g3MzAyNTI1XX0=
 -->
