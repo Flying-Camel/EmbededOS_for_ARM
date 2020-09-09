@@ -86,9 +86,9 @@ uint32_t Kernel_task_create(KernelTaskFunc_t startFunc)
     return NOT_ENOUGH_TASK_NUM;
 }
 ~~~
-- 7번째 줄에서 태스크 컨트롤 블록을 64개 배열로 선언한다.
+- 태스크 컨트롤 블록을 64개 배열로 선언한다.
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA2OTMyNzU1MiwtNTcxODA0MjUyLC0xOT
+eyJoaXN0b3J5IjpbLTcwNzIyNDY4MSwtNTcxODA0MjUyLC0xOT
 YyMjYyNzc5LDE3ODczMDI1MjVdfQ==
 -->
