@@ -56,9 +56,37 @@ uint32_t Kernel_task_create(KernelTaskFunc_t startFunc);
 - 이제 실제 메모리에 태스크 컨트롤 블록 인스턴스를 만들고 기본값을 할당하는 코드를 작성해 보자.
 - kernel/task.c에 작성한다.
 ~~~C
+#include "stdint.h"
+#include "stdbool.h"
 
+#include "ARMv7AR.h"
+#include "task.h"
+
+static KernelTcb_t sTask_list(MAX_TASK_NUM);
+static uint32_t sAllocated_tcb_index;
+
+void kernel_task_init(void)
+{
+    sAllocated_tcb_index = 0;
+
+    for(uint32_t i = 0 ; i < MAX_TASK_NUM ; i++)
+    {
+        sTask_list[i].stack_base=(uint8_t*)(TASK_STACK_START + (i*USR_TASK_STACK_SIZE));
+        sTask_list[i].sp = (uint32_t)sTask_list[i].stack_base + USR_TASK_STACK_SIZE -4;
+
+        sTask_list[i].sp -= sizeof(KernelTaskContext_t);
+        KernelTaskContext_t* ctx = (KernelTaskContext_t*)sTask_list[i].sp;
+        ctx->pc=0;
+        ctx->spsr=ARM_MODE_BIT_SYS;
+    }
+}
+
+uint32_t Kernel_task_create(KernelTaskFunc_t startFunc)
+{
+    return NOT_ENOUGH_TASK_NUM;
+}
 ~~~
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU3MTgwNDI1MiwtMTk2MjI2Mjc3OSwxNz
-g3MzAyNTI1XX0=
+eyJoaXN0b3J5IjpbOTQ3NjU3ODYyLC01NzE4MDQyNTIsLTE5Nj
+IyNjI3NzksMTc4NzMwMjUyNV19
 -->
