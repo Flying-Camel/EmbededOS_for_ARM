@@ -48,7 +48,12 @@ uint32_t Kernel_task_create(KernelTaskFunc_t startFunc);
 - `Kernel_task_init()` 과 `Kernel_task_create()` 함수는 각각 태스크 관련 기능을 초기화 하고, 등록하는 함수이다.
 - `KernelTaskContext_t` 와 `KernelTcb_t` 구조체가 태스크 컨트롤러 블록이다.
 - 프로그램 상태 레지스터와 범용 레지스터를 백업할 수 있는 영역을 구조체로 확보해 놓은 것이다.
-- 태스크 컨택스트는 결국 레지스텅
+- 태스크 컨택스트는 결국 레지스터와 스택 포인터의 값이다.
+- 즉, 컨택스트를 스위칭 한다는 것은 레지스터 값을 다른 태스크의 것으로 바꾼다는 말과 동일하다.
+
+## 8.2 태스크 컨트롤 블록 초기화
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcxMzU3NzgxLDE3ODczMDI1MjVdfQ==
+eyJoaXN0b3J5IjpbLTE5NjIyNjI3NzksMTc4NzMwMjUyNV19
 -->
