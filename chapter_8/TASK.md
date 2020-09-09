@@ -5,8 +5,10 @@
 - 태스크를 관리하는 데 필요한 정보들을 컨트롤 블록에 넣어서 관리한다.
 - 이제 이 컨트롤 블록을 구현해 RTOS 커널을 만드는 첫번째 작업에 들어가 보자.
 - kernel 이라는 디렉토리를 만들고, task.c 와 task.h 파일을 만든다.
+- kernel/task.h 에 태스크 컨트롤 블록을 정의한다.
+~~~C
 
-
+~~~
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg5ODgwNDMzMF19
+eyJoaXN0b3J5IjpbMTc4NzMwMjUyNV19
 -->
