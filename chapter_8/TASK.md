@@ -93,8 +93,13 @@ uint32_t Kernel_task_create(KernelTaskFunc_t startFunc)
 - 즉 `sTask_list` 배열은 전체 태스크 컨트롤 리스트 이고, `sAllocated_tcb_index`는 사용중인 컨트롤 블락을 나타낸다.
 - for()문 안의 코드들은 컨트롤 블록 배열을 초기화 하는 코드이다.
 - 태스크의 프로그램 상태 레지스터를 `SYS`모드로 초기화한다.
-- 
+- 여기에선 태스크 컨텍스트를 태스크 컨트롤 블록이 아닌, 스택에 저장한다.
+	- 이는 개발자의 설계에 따른 것이고, 정답은 없다.
+## 8.3 태스크 생성
+- `Kernel_task_create()` 함수를 만든다.
+- `task.c`에 작성한다.
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzgyNjExNTg5LC03MDcyMjQ2ODEsLTU3MT
-gwNDI1MiwtMTk2MjI2Mjc3OSwxNzg3MzAyNTI1XX0=
+eyJoaXN0b3J5IjpbLTE4ODE1NzA4OTcsLTcwNzIyNDY4MSwtNT
+cxODA0MjUyLC0xOTYyMjYyNzc5LDE3ODczMDI1MjVdfQ==
 -->
