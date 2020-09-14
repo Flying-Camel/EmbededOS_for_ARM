@@ -89,8 +89,10 @@ uint32_t Kernel_task_create(KernelTaskFunc_t startFunc)
 - 태스크 컨트롤 블록을 64개 배열로 선언한다.
 - `sAllocated_tcb_index` 는 생성한 태스크 컨트롤 블록 인덱스이다.
 	- 태스크를 몇개까지 생성했는지 알 수 있고, 이후 컨트롤 할 수 있다.
-- `Kernel_task_create()`가 호출될 때 마다 `sTask_list` 배열에서 
+- `Kernel_task_create()`가 호출될 때 마다 `sTask_list` 배열에서 태스크 컨트롤 블록을 한 개씩 사용한다.
+- 즉 `sTask_list` 배열은 전체 태스크 컨트롤 리스트 이고, `sAllocated_tcb_index`는 사용중인 컨트롤 블락을 나타낸다.
+- 14
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU5NzgyOTQwMywtNzA3MjI0NjgxLC01Nz
-E4MDQyNTIsLTE5NjIyNjI3NzksMTc4NzMwMjUyNV19
+eyJoaXN0b3J5IjpbLTE5OTMyNTE4NjksLTcwNzIyNDY4MSwtNT
+cxODA0MjUyLC0xOTYyMjYyNzc5LDE3ODczMDI1MjVdfQ==
 -->
