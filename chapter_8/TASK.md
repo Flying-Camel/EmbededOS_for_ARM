@@ -115,8 +115,8 @@ uint32_t Kernel_task_create(KernelTaskFunc_t startFunc)
     return (sAllocated_tcb_inde-1);
 }
 ~~~
-- 
+- if()문을 통해 전체 태스크 수보다 현재 인덱
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA5MTA5OTY0NSwtNzA3MjI0NjgxLC01Nz
+eyJoaXN0b3J5IjpbLTQ1NDYwNzM4NywtNzA3MjI0NjgxLC01Nz
 E4MDQyNTIsLTE5NjIyNjI3NzksMTc4NzMwMjUyNV19
 -->
