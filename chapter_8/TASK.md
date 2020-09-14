@@ -123,6 +123,30 @@ uint32_t Kernel_task_create(KernelTaskFunc_t startFunc)
 - 리턴 값으로 인덱스를 반환한다.
 - 여기까지의 내용을 `Main.c`에 등록한다.
 ~~~C
+
+#include "stdint.h"
+#include "HalUart.h"
+#include "stdio.h"
+#include "stdlib.h"
+#include "stdbool.h"
+#include "HalInterrupt.h"
+#include "task.h"
+
+#include "HalTimer.h"
+
+static void Hw_init(void);
+static void Printf_test(void);
+static void Timer_test(void);
+static void Kernel_init(void);
+
+void User_task0(void);
+void User_task1(void);
+void User_task2(void);
+
+...
+... 이전과 동일함.
+...
+
 static void Kernel_init(void)
 {
     uint32_t taskId;
@@ -167,8 +191,10 @@ void User_task2(void)
     while(true);
 }
 ~~~
+- 위는 더미 태스크를 3개 등록하는 코드이다.
+- 함수 포인터를 Kernel_task_create()에 전달 해 등록한다.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MTE0MTY5MzAsLTE3NDE0NDc0ODcsLT
-cwNzIyNDY4MSwtNTcxODA0MjUyLC0xOTYyMjYyNzc5LDE3ODcz
-MDI1MjVdfQ==
+eyJoaXN0b3J5IjpbMjU3NzM3MjgxLC0xNzQxNDQ3NDg3LC03MD
+cyMjQ2ODEsLTU3MTgwNDI1MiwtMTk2MjI2Mjc3OSwxNzg3MzAy
+NTI1XX0=
 -->
