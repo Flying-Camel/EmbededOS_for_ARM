@@ -120,8 +120,12 @@ uint32_t Kernel_task_create(KernelTaskFunc_t startFunc)
 	- 현재 스택에 저장되어 있는 컨텍스트 메모리 주소 포인터를 가져온다.
 - `ctx->pc = (uint32_t)startFunc;`
 	- 넘어온 함수의 시작 주소를 PC로 설정한다.
-- 
+- 리턴 값으로 인덱스를 반환한다.
+- 여기까지의 내용을 `Main.c`에 등록한다.
+~~~C
+
+~~~
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU4NTUzNzAwMywtNzA3MjI0NjgxLC01Nz
-E4MDQyNTIsLTE5NjIyNjI3NzksMTc4NzMwMjUyNV19
+eyJoaXN0b3J5IjpbLTE3NDE0NDc0ODcsLTcwNzIyNDY4MSwtNT
+cxODA0MjUyLC0xOTYyMjYyNzc5LDE3ODczMDI1MjVdfQ==
 -->
