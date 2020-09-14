@@ -193,8 +193,20 @@ void User_task2(void)
 ~~~
 - 위는 더미 태스크를 3개 등록하는 코드이다.
 - 함수 포인터를 Kernel_task_create()에 전달 해 등록한다.
+- 이후 while()문으로 무한루프에 가둔다.
+	- 제작하는 운영체제에는 태스크 종료를 보장하지 않는다.
+	- 즉 태스크는 종료되면 안된다.
+	- 한번 시작한 태스크는 게속 실행되어야 한다.
+
+## 8.4 요약
+- 각 태스크 함수는 스택 주소와 레지스터를 독립적으로 가지고 있다.
+- 즉 기능적으로 완전히 독립된 프로세스라고 볼 수 있다.
+- 다음 장에서는 스케줄러를 만들어 보도록 하자.
+- 스케줄러를 통해 제작한 태스크의 순서를 정한다.
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjU3NzM3MjgxLC0xNzQxNDQ3NDg3LC03MD
-cyMjQ2ODEsLTU3MTgwNDI1MiwtMTk2MjI2Mjc3OSwxNzg3MzAy
-NTI1XX0=
+eyJoaXN0b3J5IjpbLTEzMTE5NzY0ODAsLTE3NDE0NDc0ODcsLT
+cwNzIyNDY4MSwtNTcxODA0MjUyLC0xOTYyMjYyNzc5LDE3ODcz
+MDI1MjVdfQ==
 -->
