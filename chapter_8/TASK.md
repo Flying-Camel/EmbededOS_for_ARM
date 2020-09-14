@@ -98,8 +98,10 @@ uint32_t Kernel_task_create(KernelTaskFunc_t startFunc)
 ## 8.3 태스크 생성
 - `Kernel_task_create()` 함수를 만든다.
 - `task.c`에 작성한다.
+~~~C
 
+~~~
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4ODE1NzA4OTcsLTcwNzIyNDY4MSwtNT
-cxODA0MjUyLC0xOTYyMjYyNzc5LDE3ODczMDI1MjVdfQ==
+eyJoaXN0b3J5IjpbNDMxODcyODE2LC03MDcyMjQ2ODEsLTU3MT
+gwNDI1MiwtMTk2MjI2Mjc3OSwxNzg3MzAyNTI1XX0=
 -->
