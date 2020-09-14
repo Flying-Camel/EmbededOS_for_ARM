@@ -123,9 +123,52 @@ uint32_t Kernel_task_create(KernelTaskFunc_t startFunc)
 - 리턴 값으로 인덱스를 반환한다.
 - 여기까지의 내용을 `Main.c`에 등록한다.
 ~~~C
+static void Kernel_init(void)
+{
+    uint32_t taskId;
 
+    Kernel_task_init();
+
+    taskId = Kernel_task_create(User_task0);
+    if(NOT_ENOUGH_TASK_NUM == taskId)
+    {
+        putstr("Task0 Creation Fail\n");
+    }
+
+    taskId = Kernel_task_create(User_task1);
+    if(NOT_ENOUGH_TASK_NUM == taskId)
+    {
+        putstr("Task1 Creation Fail\n");
+    }
+
+    taskId = Kernel_task_create(User_task2);
+    if(NOT_ENOUGH_TASK_NUM == taskId)
+    {
+        putstr("Task2 Creation Fail\n");
+    }
+
+}
+
+void User_task0(void)
+{
+    debug_printf("User Task #0");
+    while(true);
+}
+
+void User_task1(void)
+{
+    debug_printf("User Task #0");
+    while(true);
+}
+
+void User_task2(void)
+{
+    debug_printf("User Task #0");
+    while(true);
+}
 ~~~
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NDE0NDc0ODcsLTcwNzIyNDY4MSwtNT
-cxODA0MjUyLC0xOTYyMjYyNzc5LDE3ODczMDI1MjVdfQ==
+eyJoaXN0b3J5IjpbLTE0MTE0MTY5MzAsLTE3NDE0NDc0ODcsLT
+cwNzIyNDY4MSwtNTcxODA0MjUyLC0xOTYyMjYyNzc5LDE3ODcz
+MDI1MjVdfQ==
 -->
