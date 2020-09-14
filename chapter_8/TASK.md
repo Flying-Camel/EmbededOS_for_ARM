@@ -115,8 +115,13 @@ uint32_t Kernel_task_create(KernelTaskFunc_t startFunc)
     return (sAllocated_tcb_inde-1);
 }
 ~~~
-- if()문을 통해 전체 태스크 수보다 현재 인덱
+- if()문을 통해 전체 태스크 수보다 현재 인덱스가 클 경우 에러 처리를 한다.
+- `KernelTaskContext_t* ctx = (KernelTaskContext_t*)new_tcb->sp;`
+	- 현재 스택에 저장되어 있는 컨텍스트 메모리 주소 포인터를 가져온다.
+- `ctx->pc = (uint32_t)startFunc;`
+	- 넘어온 함수의 시작 주소를 PC로 설정한다.
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ1NDYwNzM4NywtNzA3MjI0NjgxLC01Nz
+eyJoaXN0b3J5IjpbLTU4NTUzNzAwMywtNzA3MjI0NjgxLC01Nz
 E4MDQyNTIsLTE5NjIyNjI3NzksMTc4NzMwMjUyNV19
 -->
