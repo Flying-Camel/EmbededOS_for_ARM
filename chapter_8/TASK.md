@@ -91,8 +91,10 @@ uint32_t Kernel_task_create(KernelTaskFunc_t startFunc)
 	- 태스크를 몇개까지 생성했는지 알 수 있고, 이후 컨트롤 할 수 있다.
 - `Kernel_task_create()`가 호출될 때 마다 `sTask_list` 배열에서 태스크 컨트롤 블록을 한 개씩 사용한다.
 - 즉 `sTask_list` 배열은 전체 태스크 컨트롤 리스트 이고, `sAllocated_tcb_index`는 사용중인 컨트롤 블락을 나타낸다.
-- 14
+- for()문 안의 코드들은 컨트롤 블록 배열을 초기화 하는 코드이다.
+- 태스크의 프로그램 상태 레지스터를 `SYS`모드로 초기화한다.
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5OTMyNTE4NjksLTcwNzIyNDY4MSwtNT
-cxODA0MjUyLC0xOTYyMjYyNzc5LDE3ODczMDI1MjVdfQ==
+eyJoaXN0b3J5IjpbMzgyNjExNTg5LC03MDcyMjQ2ODEsLTU3MT
+gwNDI1MiwtMTk2MjI2Mjc3OSwxNzg3MzAyNTI1XX0=
 -->
