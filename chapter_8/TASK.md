@@ -99,9 +99,24 @@ uint32_t Kernel_task_create(KernelTaskFunc_t startFunc)
 - `Kernel_task_create()` 함수를 만든다.
 - `task.c`에 작성한다.
 ~~~C
+uint32_t Kernel_task_create(KernelTaskFunc_t startFunc)
+{
 
+    KernelTcb_t * new_tcb = &sTask_list[sAllocated_tcb_index++];
+
+    if(sAllocated_tcb_index > MAX_TASK_NUM)
+    {
+        return NOT_ENOUGH_TASK_NUM;
+    }
+
+    KernelTaskContext_t* ctx = (KernelTaskContext_t*)new_tcb->sp;
+    ctx->pc = (uint32_t)startFunc;
+
+    return (sAllocated_tcb_inde-1);
+}
 ~~~
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDMxODcyODE2LC03MDcyMjQ2ODEsLTU3MT
-gwNDI1MiwtMTk2MjI2Mjc3OSwxNzg3MzAyNTI1XX0=
+eyJoaXN0b3J5IjpbMTA5MTA5OTY0NSwtNzA3MjI0NjgxLC01Nz
+E4MDQyNTIsLTE5NjIyNjI3NzksMTc4NzMwMjUyNV19
 -->
