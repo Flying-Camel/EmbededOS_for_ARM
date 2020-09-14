@@ -4,12 +4,18 @@
 #include "stdlib.h"
 #include "stdbool.h"
 #include "HalInterrupt.h"
+#include "task.h"
 
 #include "HalTimer.h"
 
 static void Hw_init(void);
 static void Printf_test(void);
 static void Timer_test(void);
+static void Kernel_init(void);
+
+void User_task0(void);
+void User_task1(void);
+void User_task2(void);
 
 int main(void){
 
@@ -73,4 +79,48 @@ static void Timer_test(void){
         debug_printf("This is Test Satement for delay() ... current Counter is %u\n",Hal_timer_get_1ms_counter());
         delay(3000);
     }
+}
+
+static void Kernel_init(void)
+{
+    uint32_t taskId;
+
+    //Kernel_task_init();
+
+    taskId = Kernel_task_create(User_task0);
+    if(NOT_ENOUGH_TASK_NUM == taskId)
+    {
+        putstr("Task0 Creation Fail\n");
+    }
+
+    taskId = Kernel_task_create(User_task1);
+    if(NOT_ENOUGH_TASK_NUM == taskId)
+    {
+        putstr("Task1 Creation Fail\n");
+    }
+
+    taskId = Kernel_task_create(User_task2);
+    if(NOT_ENOUGH_TASK_NUM == taskId)
+    {
+        putstr("Task2 Creation Fail\n");
+    }
+
+}
+
+void User_task0(void)
+{
+    debug_printf("User Task #0");
+    while(true);
+}
+
+void User_task1(void)
+{
+    debug_printf("User Task #0");
+    while(true);
+}
+
+void User_task2(void)
+{
+    debug_printf("User Task #0");
+    while(true);
 }
