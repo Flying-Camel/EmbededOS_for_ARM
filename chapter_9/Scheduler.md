@@ -14,7 +14,9 @@ static KernelTcb_t* Scheduler_round_robin_algorithm(void)
 }
 ~~~
 - sCurrent_tcb_index 라는 변수를 만들어 현재 실행중인 태스크의 블록 인덱스를 저장한다.
-- 나머지 연산을 이용해 최대 인덱스를 넘지 
+- 나머지 연산을 이용해 최대 인덱스를 넘지 않도록 한다.
+- 이것이 라운드 로빈 스케줄러의 전부이다.
+## 9.2 우선순위 스케줄러
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc0OTExMDg1MSwzOTA2ODQxMzddfQ==
+eyJoaXN0b3J5IjpbMTE4OTEwMDcxOSwzOTA2ODQxMzddfQ==
 -->
