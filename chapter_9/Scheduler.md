@@ -3,6 +3,18 @@
 - 스케줄러는 현재 실행하는 태스크 다음에 실행할 테스크를 선택하는 방법을 결정한다.
 - 여기서는 라운드 로빈 방식을 택해 스케줄러를 작성하도록 한다.
 - kernel/task.c 에 파일ㅇ르 수정해 라운드 로빈을 작성하도록 한다.
+
+~~~C
+static KernelTcb_t* Scheduler_round_robin_algorithm(void)
+{
+    sCurrent_tcb_index++;
+    sCurrent_tcb_index %=sAllocated_tcb_index;
+
+    return &sTask_list[sCurrent_tcb_index];
+}
+~~~
+- sCurrent_tcb_index 라는 변수를 만들어 현재 실행중인 태스크의 블록 인덱스를 저장한다.
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI0NzIwMDE2N119
+eyJoaXN0b3J5IjpbMzkwNjg0MTM3XX0=
 -->
