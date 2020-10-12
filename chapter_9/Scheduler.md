@@ -18,8 +18,8 @@ static KernelTcb_t* Scheduler_round_robin_algorithm(void)
 - 이것이 라운드 로빈 스케줄러의 전부이다.
 
 ## 9.2 우선순위 스케줄러
-
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc4OTE2NTEwOSwxMTg5MTAwNzE5LDM5MD
+eyJoaXN0b3J5IjpbMTI0MDM3MjE4NCwxMTg5MTAwNzE5LDM5MD
 Y4NDEzN119
 -->
