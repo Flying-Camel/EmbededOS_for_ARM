@@ -22,7 +22,10 @@ static KernelTcb_t* Scheduler_round_robin_algorithm(void)
 - 우선순위 스케줄러란 태스크 우선순위가 있어서 스케줄러가 낮은 우선순위 태스크를 높은 우선순위 태스크가 동작하는 동안 다음에 동작할 태스크로 선택하지 않는 것을 말한다.
 - 이를 구현하기 위해선 태스크 컨트롤 블록에 우선순위를 부여해야 한다.
 - 우선순위는 태스크를 생성할 때 부여하도록 한다.
+- 우선순위 변수가 작거나 같으면 다음에 실행할 태스크로 선택한다.
+- 만약 현재 동작중인 태스크가 가장 높으면 현재 동작중인 태스크를 게속 실행한다.
+- 이제 다음장에선 컨텍스트 스위칭을 하도록 한다.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUzNTU5NjM4MCwxMTg5MTAwNzE5LDM5MD
-Y4NDEzN119
+eyJoaXN0b3J5IjpbLTEyMTM1NDI0MDcsMTE4OTEwMDcxOSwzOT
+A2ODQxMzddfQ==
 -->
