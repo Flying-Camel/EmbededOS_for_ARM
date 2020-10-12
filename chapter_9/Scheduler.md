@@ -18,8 +18,11 @@ static KernelTcb_t* Scheduler_round_robin_algorithm(void)
 - 이것이 라운드 로빈 스케줄러의 전부이다.
 
 ## 9.2 우선순위 스케줄러
-- 
+- QEMU의 제약으로 스케줄러를 직접 구현하는 데에는 한계가 있다. 따라서 어떻게 스케줄러를 만드는지 개념만 알고 넘어간다.
+- 우선순위 스케줄러란 태스크 우선순위가 있어서 스케줄러가 낮은 우선순위 태스크를 높은 우선순위 태스크가 동작하는 동안 다음에 동작할 태스크로 선택하지 않는 것을 말한다.
+- 이를 구현하기 위해선 태스크 컨트롤 블록에 우선순위를 부여해야 한다.
+- 우선순위는 태스크를 생성할 때 부여하도록 한다.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI0MDM3MjE4NCwxMTg5MTAwNzE5LDM5MD
+eyJoaXN0b3J5IjpbMTUzNTU5NjM4MCwxMTg5MTAwNzE5LDM5MD
 Y4NDEzN119
 -->
