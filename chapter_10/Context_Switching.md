@@ -29,6 +29,10 @@ void Kernel_task_scheduler(void)
 
 - `sCurrent_tcb`는 현재 동작중인 태스크 컨트롤 블록의 포인터이다.
 - `sNext_tcb`는 라운드 로빈 알고리즘이 선택한 다음에 동작할 태스크 컨트롤 블록의 포인터이다.
+- 아래는 컨텍스트 스위칭 함수의 코드이다.
+~~~C
+
+~~~
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzIzNDQ3NTUxLDE2MTAzNzgyOTBdfQ==
+eyJoaXN0b3J5IjpbLTMwOTkzMTk3MywxNjEwMzc4MjkwXX0=
 -->
