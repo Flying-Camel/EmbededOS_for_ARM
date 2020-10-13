@@ -31,8 +31,14 @@ void Kernel_task_scheduler(void)
 - `sNext_tcb`는 라운드 로빈 알고리즘이 선택한 다음에 동작할 태스크 컨트롤 블록의 포인터이다.
 - 아래는 컨텍스트 스위칭 함수의 코드이다.
 ~~~C
-
+__attribute__ ((naked)) void Kernel_task_context_switching(void)
+{
+    __asm__ ("B Save_context");
+    __asm__ ("B Restore_context");
+}
 ~~~
+
+- attribute를 `naked`로 설정하면 컴파일러가 함수를 컴파일 할 때 자동으로 만드는 스택백업, 복구, 리턴 관련 어셈블리를 생성하지 않고 내부에 코딩한대로 그대로 사용한다.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMwOTkzMTk3MywxNjEwMzc4MjkwXX0=
+eyJoaXN0b3J5IjpbLTE4MTExMDc0OCwxNjEwMzc4MjkwXX0=
 -->
