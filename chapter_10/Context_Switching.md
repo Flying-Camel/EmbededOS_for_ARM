@@ -42,7 +42,8 @@ __attribute__ ((naked)) void Kernel_task_context_switching(void)
 - 나빌로스는 컨텍스트를 스택에 백업하고 스택에서 복구할 것이므로, 스택을 그대로 유지한다.
 - `B` instruction을 사용한 이유는 LR를 변경하지 않기 위함이다.
 - 따라서 위의 코드는 스택을 쌓지도 않고, LR를 설정해 리턴 주소도 넣지 않는다.
-- 위의 컨택스트 스위칭
+- 위의 컨택스트 스위칭은 엄밀히 따지면 쓰레드간의 전환에 가깝다. 
+- 하지만 의미적으로 둘은 차이가 거의 없다.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc0MDEyODc3NiwxNjEwMzc4MjkwXX0=
+eyJoaXN0b3J5IjpbMTEyODM2Njg4OSwxNjEwMzc4MjkwXX0=
 -->
