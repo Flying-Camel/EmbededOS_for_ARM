@@ -39,6 +39,10 @@ __attribute__ ((naked)) void Kernel_task_context_switching(void)
 ~~~
 
 - attribute를 `naked`로 설정하면 컴파일러가 함수를 컴파일 할 때 자동으로 만드는 스택백업, 복구, 리턴 관련 어셈블리를 생성하지 않고 내부에 코딩한대로 그대로 사용한다.
+- 나빌로스는 컨텍스트를 스택에 백업하고 스택에서 복구할 것이므로, 스택을 그대로 유지한다.
+- `B` instruction을 사용한 이유는 LR를 변경하지 않기 위함이다.
+- 따라서 위의 코드는 스택을 쌓지도 않고, LR를 설정해 리턴 주소도 넣지 않는다.
+- 위의 컨택스트 스위칭
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MTExMDc0OCwxNjEwMzc4MjkwXX0=
+eyJoaXN0b3J5IjpbMTc0MDEyODc3NiwxNjEwMzc4MjkwXX0=
 -->
