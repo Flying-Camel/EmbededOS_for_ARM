@@ -6,7 +6,10 @@
 3. 2에서 받은 태스크 컨트롤 블록에서 스택 포인터를 읽는다.
 4. 3에서 읽은 태스크의 스택에서 컨텍스트를 읽어서 ARM코어에 복구한다.
 5. 다음에 동작할 태스크의 직전 프로그램 실행 위치로 이동한다. 그러면 이제 현재 동작하고 있는 태스크가 된다.
+- 아래는 위의 절차를 코드로 옮긴 것이다.
+- kernel/task.c 파일에 수정해 주도록 한다.
+
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYxMDM3ODI5MF19
+eyJoaXN0b3J5IjpbNzA4OTUzMjY1LDE2MTAzNzgyOTBdfQ==
 -->
