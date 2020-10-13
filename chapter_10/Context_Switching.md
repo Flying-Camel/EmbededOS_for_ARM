@@ -9,7 +9,26 @@
 - 아래는 위의 절차를 코드로 옮긴 것이다.
 - kernel/task.c 파일에 수정해 주도록 한다.
 
+~~~C
+static KernelTcb_t* Scheduler_round_robin_algorithm(void)
+{
+    sCurrent_tcb_index++;
+    sCurrent_tcb_index %=sAllocated_tcb_index;
 
+    return &sTask_list[sCurrent_tcb_index];
+}
+
+void Kernel_task_scheduler(void)
+{
+    sCurrent_tcb = &sTask_list[sCurrent_tcb_index];
+    sNext_tcb = Scheduler_round_robin_algorithm();
+
+    Kernel_task_context_switching();
+}
+~~~
+
+- `sCurrent_tcb`는 현재 동작중인 태스크 컨트롤 블록의 포인터이다.
+- `sNext_tcb`는 라운드 로빈 알고리즘이 선택한 다음에 동작할 태스크 컨트롤 블록의 포인터이다.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzA4OTUzMjY1LDE2MTAzNzgyOTBdfQ==
+eyJoaXN0b3J5IjpbMzIzNDQ3NTUxLDE2MTAzNzgyOTBdfQ==
 -->
