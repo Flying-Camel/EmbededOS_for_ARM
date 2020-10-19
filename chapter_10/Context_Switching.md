@@ -44,6 +44,10 @@ __attribute__ ((naked)) void Kernel_task_context_switching(void)
 - 따라서 위의 코드는 스택을 쌓지도 않고, LR를 설정해 리턴 주소도 넣지 않는다.
 - 위의 컨택스트 스위칭은 엄밀히 따지면 쓰레드간의 전환에 가깝다. 
 - 하지만 의미적으로 둘은 차이가 거의 없다.
+## 10.1 컨텍스트 백업하기
+- 컨텍스트는 현재 동작 중인 태스크의 스택에 직접 백업한다.
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEyODM2Njg4OSwxNjEwMzc4MjkwXX0=
+eyJoaXN0b3J5IjpbLTQ2MjMzNTczMywxMTI4MzY2ODg5LDE2MT
+AzNzgyOTBdfQ==
 -->
