@@ -44,6 +44,7 @@ __attribute__ ((naked)) void Kernel_task_context_switching(void)
 - 따라서 위의 코드는 스택을 쌓지도 않고, LR를 설정해 리턴 주소도 넣지 않는다.
 - 위의 컨택스트 스위칭은 엄밀히 따지면 쓰레드간의 전환에 가깝다. 
 - 하지만 의미적으로 둘은 차이가 거의 없다.
+- 
 ## 10.1 컨텍스트 백업하기
 - 컨텍스트는 현재 동작 중인 태스크의 스택에 직접 백업한다.
 - 아래는 컨택스트를 백업하는 코드이다.
@@ -64,8 +65,10 @@ static __attribute__((naked)) void Save_context(void)
 
 - `PUSH lr` 을 통해 `KernelTaskContext_t`의 pc에 저장한다.
 	- 다시 스케줄링되어 복귀할 때 사용된다
-- 
+- 다음줄은 범용 레지스터를 모두 스택에 푸쉬한다.
+- 이어서 `CPSR`을 `spsr`에 저장한다.
+- 프로그램 상태 레지스터는 직접 메모리에 저장할 수 없으므로 R0를 사용한다.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NDg3MDM2ODIsMTcxMDcxMTQ0OCwxMT
+eyJoaXN0b3J5IjpbLTE0ODA3MzMxMzcsMTcxMDcxMTQ0OCwxMT
 I4MzY2ODg5LDE2MTAzNzgyOTBdfQ==
 -->
