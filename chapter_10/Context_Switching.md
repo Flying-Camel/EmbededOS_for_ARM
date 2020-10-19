@@ -46,8 +46,8 @@ __attribute__ ((naked)) void Kernel_task_context_switching(void)
 - 하지만 의미적으로 둘은 차이가 거의 없다.
 ## 10.1 컨텍스트 백업하기
 - 컨텍스트는 현재 동작 중인 태스크의 스택에 직접 백업한다.
-- 
+- 아래는 컨택스트를 백업하는 코드이다.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ2MjMzNTczMywxMTI4MzY2ODg5LDE2MT
+eyJoaXN0b3J5IjpbMTcxMDcxMTQ0OCwxMTI4MzY2ODg5LDE2MT
 AzNzgyOTBdfQ==
 -->
