@@ -68,7 +68,17 @@ static __attribute__((naked)) void Save_context(void)
 - 다음줄은 범용 레지스터를 모두 스택에 푸쉬한다.
 - 이어서 `CPSR`을 `spsr`에 저장한다.
 - 프로그램 상태 레지스터는 직접 메모리에 저장할 수 없으므로 R0를 사용한다.
+- 마지막 부분을 C언어로 구현하면 다음과 같다.
+~~~C
+sCurrent_tcb->sp = SP Reg 값
+or
+(uint32_t)(*sCurrent_tdcb) = SP Reg 값.
+~~~
+## 10.2 컨텍스트 복구하기
+
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0ODA3MzMxMzcsMTcxMDcxMTQ0OCwxMT
-I4MzY2ODg5LDE2MTAzNzgyOTBdfQ==
+eyJoaXN0b3J5IjpbLTEwODI0OTA2OTAsLTE0ODA3MzMxMzcsMT
+cxMDcxMTQ0OCwxMTI4MzY2ODg5LDE2MTAzNzgyOTBdfQ==
 -->
