@@ -47,7 +47,25 @@ __attribute__ ((naked)) void Kernel_task_context_switching(void)
 ## 10.1 컨텍스트 백업하기
 - 컨텍스트는 현재 동작 중인 태스크의 스택에 직접 백업한다.
 - 아래는 컨택스트를 백업하는 코드이다.
+~~~C
+
+static __attribute__((naked)) void Save_context(void)
+{
+    __asm__ ("PUSH {lr}");
+    __asm__ ("PUSH {r0,r1,r2,r3,r4,r5,r6,r7,r8,r9,r10,r11,r12,}");
+    __asm__ ("MRS r0, cpsr");
+    __asm__ ("PUSH {r0}");
+
+    __asm__ ("LDR r0, =sCurrent_tcb");
+    __asm__ ("LDR r0, [r0]");
+    __asm__ ("STMIA r0!, {sp}");
+}
+~~~
+
+- `PUSH lr` 을 통해 `KernelTaskContext_t`의 pc에 저장한다.
+	- 다시 스케줄링되어 복귀할 때 사용된다
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcxMDcxMTQ0OCwxMTI4MzY2ODg5LDE2MT
-AzNzgyOTBdfQ==
+eyJoaXN0b3J5IjpbLTE1NDg3MDM2ODIsMTcxMDcxMTQ0OCwxMT
+I4MzY2ODg5LDE2MTAzNzgyOTBdfQ==
 -->
