@@ -75,9 +75,14 @@ or
 (uint32_t)(*sCurrent_tdcb) = SP Reg 값.
 ~~~
 ## 10.2 컨텍스트 복구하기
+- 복구하는 작업은 백업하는 작업의 역순.
+- 아래의 함수대로 구현한다.
 
+~~~C
+
+~~~
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzOTQzMTI5OTAsLTEwODI0OTA2OTAsLT
-E0ODA3MzMxMzcsMTcxMDcxMTQ0OCwxMTI4MzY2ODg5LDE2MTAz
-NzgyOTBdfQ==
+eyJoaXN0b3J5IjpbMTA4MzU4MTcwOSwtMTA4MjQ5MDY5MCwtMT
+Q4MDczMzEzNywxNzEwNzExNDQ4LDExMjgzNjY4ODksMTYxMDM3
+ODI5MF19
 -->
