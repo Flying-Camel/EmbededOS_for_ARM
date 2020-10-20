@@ -105,9 +105,34 @@ static __attribute__ ((naked)) void Restore_context(void)
 - 티스크가 커널에 스케줄링을 요청하는 동작은 태스크가 CPU 자원을 다음 태스크에 양보한다는 의미를 갖는다.
 - 이런 동작하는 함수를 yield() 라고 하고 작성해 보도록 하겠다.
 - kernel/Kernel.c 와 kernel/Kernel.h 에 파일을 만들고 작성해 보도록 하겠다.
-- 
+- 아래는 Kernel.h이다.
+~~~C
+#ifdef KERNEL_KERNEL_H_
+#define KERNEL_KERNEL_H_
+
+#include "task.h"
+
+void Kernel_yield(void);
+
+#endif
+~~~
+- 아래는 Kernel.c 이다.
+~~~C
+#include "stdint.h"
+#include "stdbool.h"
+
+#include "Kerenl.h"
+
+void Kernel_yield(void)
+{
+    Kernel_task_scheduler();
+}
+~~~
+
+- 위의 간단한 코드를 이요해 Kernel_yield() 함수를 호출해 스케줄러를 호출하면 다음에 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDc1OTkyNzUxLDY5NDYyNTQ3OCw2NzQ0Nz
-UwMTksMTA4MzU4MTcwOSwtMTA4MjQ5MDY5MCwtMTQ4MDczMzEz
-NywxNzEwNzExNDQ4LDExMjgzNjY4ODksMTYxMDM3ODI5MF19
+eyJoaXN0b3J5IjpbMzIwMzY1MDk3LDQ3NTk5Mjc1MSw2OTQ2Mj
+U0NzgsNjc0NDc1MDE5LDEwODM1ODE3MDksLTEwODI0OTA2OTAs
+LTE0ODA3MzMxMzcsMTcxMDcxMTQ0OCwxMTI4MzY2ODg5LDE2MT
+AzNzgyOTBdfQ==
 -->
