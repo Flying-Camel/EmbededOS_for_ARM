@@ -99,9 +99,11 @@ static __attribute__ ((naked)) void Restore_context(void)
 - 그 후 PC를 복구하면서 태스크로 점프한다.
 - 그러면 태스크에서 이어서 작업을 실행하게 된다.
 
-## 10.3 yield
+## 10.3 yield 만들기
+- 위와 같은 스위칭을 하기 위한 스케줄러가 있어야 한다.
+- 여기서는 라운드 로빈이 아닌 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzg5MDE5MzkyLDY3NDQ3NTAxOSwxMDgzNT
-gxNzA5LC0xMDgyNDkwNjkwLC0xNDgwNzMzMTM3LDE3MTA3MTE0
-NDgsMTEyODM2Njg4OSwxNjEwMzc4MjkwXX0=
+eyJoaXN0b3J5IjpbMTY4MDAyMTIxNiw2NzQ0NzUwMTksMTA4Mz
+U4MTcwOSwtMTA4MjQ5MDY5MCwtMTQ4MDczMzEzNywxNzEwNzEx
+NDQ4LDExMjgzNjY4ODksMTYxMDM3ODI5MF19
 -->
