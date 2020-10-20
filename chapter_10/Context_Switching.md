@@ -79,10 +79,26 @@ or
 - 아래의 함수대로 구현한다.
 
 ~~~C
+static __attribute__ ((naked)) void Restore_context(void)
+{
+    __asm__ ("LDR r0, =sNext_tcb");
+    __asm__ ("LDR r0, [r0]");
+    __asm__ ("LDMIA r0!, {sp}");
 
+    __asm__ ("POP {r0}");
+    __asm__ ("MSR cspr, r0");
+    __asm__ ("POP {r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12}");
+    __asm__ ("POP {pc}");
+}
 ~~~
+
+- 첫번째로 해줘야 할 작업은 `sNext_tcb` 에서 스택 포인터 값을 읽어오는 작업이다. 
+- 그 다음으로 태스크 컨트롤 블록의 sp 멤버 변수의 값을 읽어서 ARM 코어의 SP에 값을 쓰는 작업이다.
+- 스택에 저장되어 있는 cpsr의 값을 읽어와 ARM 코어의 cpsr에 값을 적는다.
+- 이어서 범용 레지스터를 복구한다.
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA4MzU4MTcwOSwtMTA4MjQ5MDY5MCwtMT
-Q4MDczMzEzNywxNzEwNzExNDQ4LDExMjgzNjY4ODksMTYxMDM3
-ODI5MF19
+eyJoaXN0b3J5IjpbNjc0NDc1MDE5LDEwODM1ODE3MDksLTEwOD
+I0OTA2OTAsLTE0ODA3MzMxMzcsMTcxMDcxMTQ0OCwxMTI4MzY2
+ODg5LDE2MTAzNzgyOTBdfQ==
 -->
