@@ -96,9 +96,12 @@ static __attribute__ ((naked)) void Restore_context(void)
 - 그 다음으로 태스크 컨트롤 블록의 sp 멤버 변수의 값을 읽어서 ARM 코어의 SP에 값을 쓰는 작업이다.
 - 스택에 저장되어 있는 cpsr의 값을 읽어와 ARM 코어의 cpsr에 값을 적는다.
 - 이어서 범용 레지스터를 복구한다.
-- 그 후 
+- 그 후 PC를 복구하면서 태스크로 점프한다.
+- 그러면 태스크에서 이어서 작업을 실행하게 된다.
+
+## 10.3 yield
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc1OTM4MDcyOSw2NzQ0NzUwMTksMTA4Mz
-U4MTcwOSwtMTA4MjQ5MDY5MCwtMTQ4MDczMzEzNywxNzEwNzEx
-NDQ4LDExMjgzNjY4ODksMTYxMDM3ODI5MF19
+eyJoaXN0b3J5IjpbMzg5MDE5MzkyLDY3NDQ3NTAxOSwxMDgzNT
+gxNzA5LC0xMDgyNDkwNjkwLC0xNDgwNzMzMTM3LDE3MTA3MTE0
+NDgsMTEyODM2Njg4OSwxNjEwMzc4MjkwXX0=
 -->
