@@ -130,9 +130,10 @@ void Kernel_yield(void)
 ~~~
 
 - 위의 간단한 코드를 이요해 Kernel_yield() 함수를 호출해 스케줄러를 호출하면 다음에 동작할 태스크를 선정한다.
-- 위의 코드를 타게 되면 다음에 동작할 태스크를 선정해서 
+- 위의 코드를 타게 되면 다음에 동작할 태스크를 선정해서 컨택스트를 백업하고 스위칭한다.
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA2ODExMDk0Miw0NzU5OTI3NTEsNjk0Nj
+eyJoaXN0b3J5IjpbMTAyMTIyODQ0OSw0NzU5OTI3NTEsNjk0Nj
 I1NDc4LDY3NDQ3NTAxOSwxMDgzNTgxNzA5LC0xMDgyNDkwNjkw
 LC0xNDgwNzMzMTM3LDE3MTA3MTE0NDgsMTEyODM2Njg4OSwxNj
 EwMzc4MjkwXX0=
