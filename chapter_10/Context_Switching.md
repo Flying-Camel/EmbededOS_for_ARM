@@ -101,9 +101,10 @@ static __attribute__ ((naked)) void Restore_context(void)
 
 ## 10.3 yield 만들기
 - 위와 같은 스위칭을 하기 위한 스케줄러가 있어야 한다.
-- 여기서는 라운드 로빈이 아닌 
+- 여기서는 라운드 로빈이 아닌 비선점형 스케줄링을 사용한다.
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY4MDAyMTIxNiw2NzQ0NzUwMTksMTA4Mz
-U4MTcwOSwtMTA4MjQ5MDY5MCwtMTQ4MDczMzEzNywxNzEwNzEx
-NDQ4LDExMjgzNjY4ODksMTYxMDM3ODI5MF19
+eyJoaXN0b3J5IjpbNjk0NjI1NDc4LDY3NDQ3NTAxOSwxMDgzNT
+gxNzA5LC0xMDgyNDkwNjkwLC0xNDgwNzMzMTM3LDE3MTA3MTE0
+NDgsMTEyODM2Njg4OSwxNjEwMzc4MjkwXX0=
 -->
