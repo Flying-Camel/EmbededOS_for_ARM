@@ -102,9 +102,12 @@ static __attribute__ ((naked)) void Restore_context(void)
 ## 10.3 yield 만들기
 - 위와 같은 스위칭을 하기 위한 스케줄러가 있어야 한다.
 - 여기서는 라운드 로빈이 아닌 비선점형 스케줄링을 사용한다.
+- 티스크가 커널에 스케줄링을 요청하는 동작은 태스크가 CPU 자원을 다음 태스크에 양보한다는 의미를 갖는다.
+- 이런 동작하는 함수를 yield() 라고 하고 작성해 보도록 하겠다.
+- kernel/Kernel.c 와 kernel/Kernel.h 에 파일을 만들고 작성해 보도록 하겠다.
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjk0NjI1NDc4LDY3NDQ3NTAxOSwxMDgzNT
-gxNzA5LC0xMDgyNDkwNjkwLC0xNDgwNzMzMTM3LDE3MTA3MTE0
-NDgsMTEyODM2Njg4OSwxNjEwMzc4MjkwXX0=
+eyJoaXN0b3J5IjpbNDc1OTkyNzUxLDY5NDYyNTQ3OCw2NzQ0Nz
+UwMTksMTA4MzU4MTcwOSwtMTA4MjQ5MDY5MCwtMTQ4MDczMzEz
+NywxNzEwNzExNDQ4LDExMjgzNjY4ODksMTYxMDM3ODI5MF19
 -->
