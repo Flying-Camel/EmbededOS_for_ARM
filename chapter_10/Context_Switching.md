@@ -143,7 +143,7 @@ void Kernel_yield(void)
 - `Kernel_task_init()` 함수의 코드를 수정하고 최초 스케줄링을 처리하는 함수를 작성한다.
 ~~~C
 
-void kernel_task_init(void)
+void Kernel_task_init(void)
 {
     sAllocated_tcb_index = 0;
     sCurrent_tcb=0;
@@ -254,10 +254,36 @@ void User_task2(void)
 }
 ~~~
 
+- make 하고 실행하게 되면 아래와 같은 결과물들이 계속 출력되는 것을 확인할 수 있다.
+~~~
+User Task #2, SP=0xAFFFF0
+User Task #0, SP=0x8FFFF0
+User Task #1, SP=0x9FFFF0
+User Task #2, SP=0xAFFFF0
+User Task #0, SP=0x8FFFF0
+User Task #1, SP=0x9FFFF0
+User Task #2, SP=0xAFFFF0
+User Task #0, SP=0x8FFFF0
+User Task #1, SP=0x9FFFF0
+User Task #2, SP=0xAFFFF0
+User Task #0, SP=0x8FFFF0
+User Task #1, SP=0x9FFFF0
+User Task #2, SP=0xAFFFF0
+User Task #0, SP=0x8FFFF0
+User Task #1, SP=0x9FFFF0
+User Task #2, SP=0xAFFFF0
+User Task #0, SP=0x8FFFF0
+User Task #1, SP=0x9FFFF0
+User Task #2, SP=0xAFFFF0
+User Task #0, SP=0x8FFFF0
+User Task #1, SP=0x9FFFF0
+User Task #2, SP=0xAFFFF0
+~~~
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MjgwODQ2NzYsNzU1MDE0NDkwLC05Mj
-A3MjYzOTMsLTQ5NzYwNTg5NSw0NzU5OTI3NTEsNjk0NjI1NDc4
-LDY3NDQ3NTAxOSwxMDgzNTgxNzA5LC0xMDgyNDkwNjkwLC0xND
-gwNzMzMTM3LDE3MTA3MTE0NDgsMTEyODM2Njg4OSwxNjEwMzc4
-MjkwXX0=
+eyJoaXN0b3J5IjpbNjIyNTA3NTEsLTE2MjgwODQ2NzYsNzU1MD
+E0NDkwLC05MjA3MjYzOTMsLTQ5NzYwNTg5NSw0NzU5OTI3NTEs
+Njk0NjI1NDc4LDY3NDQ3NTAxOSwxMDgzNTgxNzA5LC0xMDgyND
+kwNjkwLC0xNDgwNzMzMTM3LDE3MTA3MTE0NDgsMTEyODM2Njg4
+OSwxNjEwMzc4MjkwXX0=
 -->
