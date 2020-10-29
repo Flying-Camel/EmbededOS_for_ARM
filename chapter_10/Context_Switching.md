@@ -141,10 +141,37 @@ void Kernel_yield(void)
 - 즉 최초로 스케줄링할 때는 컨텍스트 복구만 하는 것이다.
 - 0번 태스크 컨트롤 블록의 인덱스를 복구 대상으로 삼는다.
 - `Kernel_task_init()` 함수의 코드를 수정하고 최초 스케줄링을 처리하는 함수를 작성한다.
-- 
+~~~C
+
+void kernel_task_init(void)
+{
+    sAllocated_tcb_index = 0;
+    sCurrent_tcb=0;
+
+    for(uint32_t i = 0 ; i < MAX_TASK_NUM ; i++)
+    {
+        sTask_list[i].stack_base=(uint8_t*)(TASK_STACK_START + (i*USR_TASK_STACK_SIZE));
+        sTask_list[i].sp = (uint32_t)sTask_list[i].stack_base + USR_TASK_STACK_SIZE -4;
+
+        sTask_list[i].sp -= sizeof(KernelTaskContext_t);
+        KernelTaskContext_t* ctx = (KernelTaskContext_t*)sTask_list[i].sp;
+        ctx->pc=0;
+        ctx->spsr=ARM_MODE_BIT_SYS;
+    }
+}
+
+void Kernel_task_start(void)
+{
+    sNext_tcb = &sTask_list[sCurrent_tcb_index];
+    Restore_context();
+}
+~~~
+
+- 위의 코드는 기존에 존재하던 코드에 추가하고 수정한 것들이다.
+- `Kernel_task_start()`의 코드는 `Kernel_task_scheduler()`에서 반, `Kernel_task_context_switching()`에서 반을 가져와서 만든 함수이다.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkyMDcyNjM5MywtNDk3NjA1ODk1LDQ3NT
-k5Mjc1MSw2OTQ2MjU0NzgsNjc0NDc1MDE5LDEwODM1ODE3MDks
-LTEwODI0OTA2OTAsLTE0ODA3MzMxMzcsMTcxMDcxMTQ0OCwxMT
-I4MzY2ODg5LDE2MTAzNzgyOTBdfQ==
+eyJoaXN0b3J5IjpbLTE4NjkxODU5NTUsLTkyMDcyNjM5MywtND
+k3NjA1ODk1LDQ3NTk5Mjc1MSw2OTQ2MjU0NzgsNjc0NDc1MDE5
+LDEwODM1ODE3MDksLTEwODI0OTA2OTAsLTE0ODA3MzMxMzcsMT
+cxMDcxMTQ0OCwxMTI4MzY2ODg5LDE2MTAzNzgyOTBdfQ==
 -->
