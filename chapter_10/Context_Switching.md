@@ -220,10 +220,44 @@ static void Kernel_init(void)
 }
 ~~~
 - 사용자 태스크가 제대로 스택을 할당 받았는지 확인을 위해 로컬 변수를 만들어 스택주소를 출력해 보도록 하자.
-- 
+~~~C
+
+void User_task0(void)
+{
+    uint32_t local = 0;
+    while(true)
+    {
+        debug_printf("User Task #0, SP=0x%x\n",&local);
+        Kernel_yield();
+    }
+}
+
+void User_task1(void)
+{
+    uint32_t local = 0;
+    while(true)
+    {
+        debug_printf("User Task #1, SP=0x%x\n",&local);
+        Kernel_yield();
+    }
+}
+
+
+void User_task2(void)
+{
+    uint32_t local = 0;
+    while(true)
+    {
+        debug_printf("User Task #2, SP=0x%x\n",&local);
+        Kernel_yield();
+    }
+}
+~~~
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzU1MDE0NDkwLC05MjA3MjYzOTMsLTQ5Nz
-YwNTg5NSw0NzU5OTI3NTEsNjk0NjI1NDc4LDY3NDQ3NTAxOSwx
-MDgzNTgxNzA5LC0xMDgyNDkwNjkwLC0xNDgwNzMzMTM3LDE3MT
-A3MTE0NDgsMTEyODM2Njg4OSwxNjEwMzc4MjkwXX0=
+eyJoaXN0b3J5IjpbLTE2MjgwODQ2NzYsNzU1MDE0NDkwLC05Mj
+A3MjYzOTMsLTQ5NzYwNTg5NSw0NzU5OTI3NTEsNjk0NjI1NDc4
+LDY3NDQ3NTAxOSwxMDgzNTgxNzA5LC0xMDgyNDkwNjkwLC0xND
+gwNzMzMTM3LDE3MTA3MTE0NDgsMTEyODM2Njg4OSwxNjEwMzc4
+MjkwXX0=
 -->
