@@ -135,10 +135,15 @@ void Kernel_yield(void)
 - 
 ## 10.4 커널 시작하기
 - 스케줄러를 실행해 커널을 동작해 보도록 하자.
+- 커널에서 태스크를 동작시키기 위해선 먼저 동작중인 태스크를 하나 만들어야 한다.
+- 앞서 작성한 코드들이 현재 동작하는 태스크가 다음 태스크를 지정하는 방식이기 때문이다.
+- 여기서는 최초로 스케줄링할 때는 컨텍스트 백업을 하지 않고 진행하도록 한다. 
+- 즉 최초로 스케줄링할 때는 컨텍스트 복구만 하는 것이다.
+- 0번 태스크 컨트롤 블록의 인덱스를 복구 대상으로 삼는다.
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY1NDc2Njg3LC00OTc2MDU4OTUsNDc1OT
-kyNzUxLDY5NDYyNTQ3OCw2NzQ0NzUwMTksMTA4MzU4MTcwOSwt
-MTA4MjQ5MDY5MCwtMTQ4MDczMzEzNywxNzEwNzExNDQ4LDExMj
-gzNjY4ODksMTYxMDM3ODI5MF19
+eyJoaXN0b3J5IjpbLTE5NTY1OTQ2MTMsLTQ5NzYwNTg5NSw0Nz
+U5OTI3NTEsNjk0NjI1NDc4LDY3NDQ3NTAxOSwxMDgzNTgxNzA5
+LC0xMDgyNDkwNjkwLC0xNDgwNzMzMTM3LDE3MTA3MTE0NDgsMT
+EyODM2Njg4OSwxNjEwMzc4MjkwXX0=
 -->
