@@ -188,9 +188,40 @@ void Kernel_yield(void);
 ~~~
 
 - 이제 `Kernel_start()`함수를 호출하는 코드를 `main()` 함수에 추가하고 QEMU를 실행해서 정말로 어떻게 동작하는지 확인해 보자
-- 
+- Main.c에 아래의 코드를 수정한다.
+~~~C
+
+static void Kernel_init(void)
+{
+    uint32_t taskId;
+
+    Kernel_task_init();
+
+    taskId = Kernel_task_create(User_task0);
+    if(NOT_ENOUGH_TASK_NUM == taskId)
+    {
+        putstr("Task0 Creation Fail\n");
+    }
+
+    taskId = Kernel_task_create(User_task1);
+    if(NOT_ENOUGH_TASK_NUM == taskId)
+    {
+        putstr("Task1 Creation Fail\n");
+    }
+
+    taskId = Kernel_task_create(User_task2);
+    if(NOT_ENOUGH_TASK_NUM == taskId)
+    {
+        putstr("Task2 Creation Fail\n");
+    }
+
+    Kernel_start();
+
+}
+~~~
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzU2MDQ3MzIzLC05MjA3MjYzOTMsLTQ5Nz
+eyJoaXN0b3J5IjpbNjAzODg3NjAwLC05MjA3MjYzOTMsLTQ5Nz
 YwNTg5NSw0NzU5OTI3NTEsNjk0NjI1NDc4LDY3NDQ3NTAxOSwx
 MDgzNTgxNzA5LC0xMDgyNDkwNjkwLC0xNDgwNzMzMTM3LDE3MT
 A3MTE0NDgsMTEyODM2Njg4OSwxNjEwMzc4MjkwXX0=
