@@ -5,6 +5,7 @@
 #include "stdbool.h"
 #include "HalInterrupt.h"
 #include "task.h"
+#include "Kernel.h"
 
 #include "HalTimer.h"
 
@@ -33,7 +34,7 @@ int main(void){
 
     Printf_test();
 
-    Timer_test();
+    //Timer_test();
 
     // Infinity Loop
     for(;;)
@@ -50,6 +51,8 @@ int main(void){
     uint32_t* dummyAddr = (uint32_t*)(1024*1024*100);
     *dummyAddr = sizeof(long);
     */
+
+   Kernel_init();
 
     return 0;
     
@@ -85,7 +88,7 @@ static void Kernel_init(void)
 {
     uint32_t taskId;
 
-    //Kernel_task_init();
+    Kernel_task_init();
 
     taskId = Kernel_task_create(User_task0);
     if(NOT_ENOUGH_TASK_NUM == taskId)
@@ -105,22 +108,37 @@ static void Kernel_init(void)
         putstr("Task2 Creation Fail\n");
     }
 
+    Kernel_start();
+
 }
 
 void User_task0(void)
 {
-    debug_printf("User Task #0");
-    while(true);
+    uint32_t local = 0;
+    while(true)
+    {
+        debug_printf("User Task #0, SP=0x%x\n",&local);
+        Kernel_yield();
+    }
 }
 
 void User_task1(void)
 {
-    debug_printf("User Task #0");
-    while(true);
+    uint32_t local = 0;
+    while(true)
+    {
+        debug_printf("User Task #1, SP=0x%x\n",&local);
+        Kernel_yield();
+    }
 }
+
 
 void User_task2(void)
 {
-    debug_printf("User Task #0");
-    while(true);
+    uint32_t local = 0;
+    while(true)
+    {
+        debug_printf("User Task #2, SP=0x%x\n",&local);
+        Kernel_yield();
+    }
 }
