@@ -219,9 +219,10 @@ static void Kernel_init(void)
 
 }
 ~~~
-
+- 사용자 태스크가 제대로 스택을 할당 받았는지 확인을 위해 로컬 변수를 만들어 스택주소를 출력해 보도록 하자.
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjAzODg3NjAwLC05MjA3MjYzOTMsLTQ5Nz
+eyJoaXN0b3J5IjpbNzU1MDE0NDkwLC05MjA3MjYzOTMsLTQ5Nz
 YwNTg5NSw0NzU5OTI3NTEsNjk0NjI1NDc4LDY3NDQ3NTAxOSwx
 MDgzNTgxNzA5LC0xMDgyNDkwNjkwLC0xNDgwNzMzMTM3LDE3MT
 A3MTE0NDgsMTEyODM2Njg4OSwxNjEwMzc4MjkwXX0=
