@@ -169,9 +169,11 @@ void Kernel_task_start(void)
 
 - 위의 코드는 기존에 존재하던 코드에 추가하고 수정한 것들이다.
 - `Kernel_task_start()`의 코드는 `Kernel_task_scheduler()`에서 반, `Kernel_task_context_switching()`에서 반을 가져와서 만든 함수이다.
+- `Kernel_task_initt()`에서 `sCurrent_tcb`를 0으로 초기화 해 주었으므로, `&sTask_list[sCurrent_tcb_index]`는 0번 태스크 컨트롤 블록을 가리킨다.
+- 그 이후 `Restore_context()` 함수를 호출한다.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NjkxODU5NTUsLTkyMDcyNjM5MywtND
-k3NjA1ODk1LDQ3NTk5Mjc1MSw2OTQ2MjU0NzgsNjc0NDc1MDE5
-LDEwODM1ODE3MDksLTEwODI0OTA2OTAsLTE0ODA3MzMxMzcsMT
-cxMDcxMTQ0OCwxMTI4MzY2ODg5LDE2MTAzNzgyOTBdfQ==
+eyJoaXN0b3J5IjpbMTI3MDY4NjIyOCwtOTIwNzI2MzkzLC00OT
+c2MDU4OTUsNDc1OTkyNzUxLDY5NDYyNTQ3OCw2NzQ0NzUwMTks
+MTA4MzU4MTcwOSwtMTA4MjQ5MDY5MCwtMTQ4MDczMzEzNywxNz
+EwNzExNDQ4LDExMjgzNjY4ODksMTYxMDM3ODI5MF19
 -->
