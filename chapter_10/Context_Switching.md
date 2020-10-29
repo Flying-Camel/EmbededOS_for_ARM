@@ -293,11 +293,17 @@ User Task #2, SP=0xAFFFF0
 - include/MemoryMap.h 에서 살펴보면 `TASK_STACK_START`의 값이 0x800000로 설정된 것을 알 수 있다.
 - 위의 값이 베이스 주소이다.
 - 태스크 스택 간 패딩을 4바이트로 설정했으므로 스택 포인터의 초기 값은 0x8FFFFC이다.
-- 여기에 컴파일러가 사용하는 스택이 몇개 되고, 로컬 변수가 그 다음에 잡히므로 최종 메모리 주소는 0x9
+- 여기에 컴파일러가 사용하는 스택이 몇개 되고, 로컬 변수가 그 다음에 잡히므로 최종 메모리 주소는 0x8FFFF0로 설정 되었다.
+- 의도된 대로 모두 설정된 것을 알 수 있다.
+
+## 10.5  요약
+- 해당 부분이 이 책에서 아마 가장 어려웠을 부분이라고 한다.
+- 이제 태스크가 동시에 동작 하는것으로 보인다.
+- 이제 이 태스크간의 정보를 교환할 수 있도록 하는 부분을 만들어 보도록 하자.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjkzMDc3MTc1LC0xNjI4MDg0Njc2LDc1NT
-AxNDQ5MCwtOTIwNzI2MzkzLC00OTc2MDU4OTUsNDc1OTkyNzUx
-LDY5NDYyNTQ3OCw2NzQ0NzUwMTksMTA4MzU4MTcwOSwtMTA4Mj
-Q5MDY5MCwtMTQ4MDczMzEzNywxNzEwNzExNDQ4LDExMjgzNjY4
-ODksMTYxMDM3ODI5MF19
+eyJoaXN0b3J5IjpbMTYzMzE4ODA5OCwtMTYyODA4NDY3Niw3NT
+UwMTQ0OTAsLTkyMDcyNjM5MywtNDk3NjA1ODk1LDQ3NTk5Mjc1
+MSw2OTQ2MjU0NzgsNjc0NDc1MDE5LDEwODM1ODE3MDksLTEwOD
+I0OTA2OTAsLTE0ODA3MzMxMzcsMTcxMDcxMTQ0OCwxMTI4MzY2
+ODg5LDE2MTAzNzgyOTBdfQ==
 -->
