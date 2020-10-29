@@ -133,9 +133,12 @@ void Kernel_yield(void)
 - 위의 코드를 타게 되면 다음에 동작할 태스크를 선정해서 컨택스트를 백업하고 스위칭한다.
 - 그러면 다음에 동작할 코드의 위치는 태스크의 `kernel_yiedl()`의 리턴 코드 직전이다.
 - 
+## 10.4 커널 시작하기
+- 스케줄러를 실행해 커널을 동작해 보도록 하자.
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ5NzYwNTg5NSw0NzU5OTI3NTEsNjk0Nj
-I1NDc4LDY3NDQ3NTAxOSwxMDgzNTgxNzA5LC0xMDgyNDkwNjkw
-LC0xNDgwNzMzMTM3LDE3MTA3MTE0NDgsMTEyODM2Njg4OSwxNj
-EwMzc4MjkwXX0=
+eyJoaXN0b3J5IjpbMTY1NDc2Njg3LC00OTc2MDU4OTUsNDc1OT
+kyNzUxLDY5NDYyNTQ3OCw2NzQ0NzUwMTksMTA4MzU4MTcwOSwt
+MTA4MjQ5MDY5MCwtMTQ4MDczMzEzNywxNzEwNzExNDQ4LDExMj
+gzNjY4ODksMTYxMDM3ODI5MF19
 -->
