@@ -174,10 +174,24 @@ void Kernel_task_start(void)
 - 따로 백업작업을 하지 않았으므로, 태스크 컨텍스트를 ARM 코어에 덮어 쓴다.
 - 이제 `Kernel_task_start()`함수를 커널 API인 `Kernel_start()`에 연결하고 `main()`함수에서 호출해서 실행해 보도록 하자.
 - `Kernel.h`에 아래의 코드를 추가해 준다.
-- 앞으로 추가할 커널 관련 초기화 함수를
+- 앞으로 추가할 커널 관련 초기화 함수를 모두 모아서 한번에 실행하도록 한다.
+~~~C
+#ifdef KERNEL_KERNEL_H_
+#define KERNEL_KERNEL_H_
+
+#include "task.h"
+
+void Kernel_start(void);
+void Kernel_yield(void);
+
+#endif
+~~~
+
+- 이제 `Kernel_start()`함수를 호출하는 코드를 `main()` 함수에 추가하고 QEMU를 실행해서 정말로 어떻게 동작하는지 확인해 보자
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzODI4OTk5MjYsLTkyMDcyNjM5MywtND
-k3NjA1ODk1LDQ3NTk5Mjc1MSw2OTQ2MjU0NzgsNjc0NDc1MDE5
-LDEwODM1ODE3MDksLTEwODI0OTA2OTAsLTE0ODA3MzMxMzcsMT
-cxMDcxMTQ0OCwxMTI4MzY2ODg5LDE2MTAzNzgyOTBdfQ==
+eyJoaXN0b3J5IjpbMzU2MDQ3MzIzLC05MjA3MjYzOTMsLTQ5Nz
+YwNTg5NSw0NzU5OTI3NTEsNjk0NjI1NDc4LDY3NDQ3NTAxOSwx
+MDgzNTgxNzA5LC0xMDgyNDkwNjkwLC0xNDgwNzMzMTM3LDE3MT
+A3MTE0NDgsMTEyODM2Njg4OSwxNjEwMzc4MjkwXX0=
 -->
