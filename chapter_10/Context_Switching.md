@@ -127,6 +127,12 @@ void Kernel_yield(void)
 {
     Kernel_task_scheduler();
 }
+  
+
+void  Kernel_start(void)
+{
+	Kernel_task_start();
+}
 ~~~
 
 - 위의 간단한 코드를 이요해 Kernel_yield() 함수를 호출해 스케줄러를 호출하면 다음에 동작할 태스크를 선정한다.
@@ -281,9 +287,9 @@ User Task #2, SP=0xAFFFF0
 ~~~
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjIyNTA3NTEsLTE2MjgwODQ2NzYsNzU1MD
-E0NDkwLC05MjA3MjYzOTMsLTQ5NzYwNTg5NSw0NzU5OTI3NTEs
-Njk0NjI1NDc4LDY3NDQ3NTAxOSwxMDgzNTgxNzA5LC0xMDgyND
-kwNjkwLC0xNDgwNzMzMTM3LDE3MTA3MTE0NDgsMTEyODM2Njg4
-OSwxNjEwMzc4MjkwXX0=
+eyJoaXN0b3J5IjpbLTIxMTM3ODI4NDgsLTE2MjgwODQ2NzYsNz
+U1MDE0NDkwLC05MjA3MjYzOTMsLTQ5NzYwNTg5NSw0NzU5OTI3
+NTEsNjk0NjI1NDc4LDY3NDQ3NTAxOSwxMDgzNTgxNzA5LC0xMD
+gyNDkwNjkwLC0xNDgwNzMzMTM3LDE3MTA3MTE0NDgsMTEyODM2
+Njg4OSwxNjEwMzc4MjkwXX0=
 -->
