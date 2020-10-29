@@ -140,10 +140,11 @@ void Kernel_yield(void)
 - 여기서는 최초로 스케줄링할 때는 컨텍스트 백업을 하지 않고 진행하도록 한다. 
 - 즉 최초로 스케줄링할 때는 컨텍스트 복구만 하는 것이다.
 - 0번 태스크 컨트롤 블록의 인덱스를 복구 대상으로 삼는다.
+- `Kernel_task_init()` 함수의 코드를 수정하고 최초 스케줄링을 처리하는 함수를 작성한다.
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NTY1OTQ2MTMsLTQ5NzYwNTg5NSw0Nz
-U5OTI3NTEsNjk0NjI1NDc4LDY3NDQ3NTAxOSwxMDgzNTgxNzA5
-LC0xMDgyNDkwNjkwLC0xNDgwNzMzMTM3LDE3MTA3MTE0NDgsMT
-EyODM2Njg4OSwxNjEwMzc4MjkwXX0=
+eyJoaXN0b3J5IjpbLTkyMDcyNjM5MywtNDk3NjA1ODk1LDQ3NT
+k5Mjc1MSw2OTQ2MjU0NzgsNjc0NDc1MDE5LDEwODM1ODE3MDks
+LTEwODI0OTA2OTAsLTE0ODA3MzMxMzcsMTcxMDcxMTQ0OCwxMT
+I4MzY2ODg5LDE2MTAzNzgyOTBdfQ==
 -->
