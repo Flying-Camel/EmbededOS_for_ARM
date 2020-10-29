@@ -292,8 +292,10 @@ User Task #2, SP=0xAFFFF0
 - 처음에 스택 주소의 차이를 0x100000로 설정 했으므로 정확히 1MB씩이다.
 - include/MemoryMap.h 에서 살펴보면 `TASK_STACK_START`의 값이 0x800000로 설정된 것을 알 수 있다.
 - 위의 값이 베이스 주소이다.
+- 태스크 스택 간 패딩을 4바이트로 설정했으므로 스택 포인터의 초기 값은 0x8FFFFC이다.
+- 여기에 컴파일러가 사용하는 스택이 몇개 되고, 로컬 변수가 그 다음에 잡히므로 최종 메모리 주소는 0x9
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTYxNjcxODc0LC0xNjI4MDg0Njc2LDc1NT
+eyJoaXN0b3J5IjpbNjkzMDc3MTc1LC0xNjI4MDg0Njc2LDc1NT
 AxNDQ5MCwtOTIwNzI2MzkzLC00OTc2MDU4OTUsNDc1OTkyNzUx
 LDY5NDYyNTQ3OCw2NzQ0NzUwMTksMTA4MzU4MTcwOSwtMTA4Mj
 Q5MDY5MCwtMTQ4MDczMzEzNywxNzEwNzExNDQ4LDExMjgzNjY4
