@@ -93,8 +93,10 @@ bool Kernel_event_flag_check(KernelEventFlag_t event)
 }
 ~~~
 - `sEventFlag`는 이벤트 플래그를 32개 기록하면서, 태스크에 전달하는 역할을 하는 커널 자료 구조이다.
-- 
+- `Kernel_event_flag_init()`는 `sEventFlag`를 0으로 초기화하는 역할을 한다.
+- `Kernel_event_flag_set()` 과 `Kernel_event_flag_clear()`는 비트를 0이나 1로 바꾸는 역할을 한다. 어떤 값을 바꿀지는 파라미터로 전달한다.
+- `Kernel_event_flag_check()`는 파라미터로 전달된 특정 이벤트가 `sEventFlag`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExODA3NTE2MTEsLTc3MzgzNzE5Niw1OT
-M3NDI0MTJdfQ==
+eyJoaXN0b3J5IjpbLTE1OTczMTc0NTUsLTExODA3NTE2MTEsLT
+c3MzgzNzE5Niw1OTM3NDI0MTJdfQ==
 -->
