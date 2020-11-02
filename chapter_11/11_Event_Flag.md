@@ -91,8 +91,10 @@ bool Kernel_event_flag_check(KernelEventFlag_t event)
     }
     return false;
 }
-~~
+~~~
+- `sEventFlag`는 이벤트 플래그를 32개 기록하면서, 태스크에 전달하는 역할을 하는 커널 자료 구조이다.
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk1OTI4NDMyNSwtNzczODM3MTk2LDU5Mz
-c0MjQxMl19
+eyJoaXN0b3J5IjpbLTExODA3NTE2MTEsLTc3MzgzNzE5Niw1OT
+M3NDI0MTJdfQ==
 -->
