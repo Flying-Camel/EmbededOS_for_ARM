@@ -95,8 +95,11 @@ bool Kernel_event_flag_check(KernelEventFlag_t event)
 - `sEventFlag`는 이벤트 플래그를 32개 기록하면서, 태스크에 전달하는 역할을 하는 커널 자료 구조이다.
 - `Kernel_event_flag_init()`는 `sEventFlag`를 0으로 초기화하는 역할을 한다.
 - `Kernel_event_flag_set()` 과 `Kernel_event_flag_clear()`는 비트를 0이나 1로 바꾸는 역할을 한다. 어떤 값을 바꿀지는 파라미터로 전달한다.
-- `Kernel_event_flag_check()`는 파라미터로 전달된 특정 이벤트가 `sEventFlag`
+- `Kernel_event_flag_check()`는 파라미터로 전달된 특정 이벤트가 `sEventFlag`에 1로 세팅되어 있는지 확인하는 함수이다.
+- 커널 API를 통해서 처리하도록 하기 위해 추가로 함수를 작성해 준다.
+~~~C
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1OTczMTc0NTUsLTExODA3NTE2MTEsLT
-c3MzgzNzE5Niw1OTM3NDI0MTJdfQ==
+eyJoaXN0b3J5IjpbLTc1MDQ1NDI2NCwtMTE4MDc1MTYxMSwtNz
+czODM3MTk2LDU5Mzc0MjQxMl19
 -->
