@@ -4,7 +4,8 @@
 - 비트맵으로 만들면 각각의 이벤트를 명확하게 구분할 수 있고, 이벤트를 구분하는 코드를 간단하게 구현할 수 있기 때문이다.
 - 각각의 이벤트 값ㅇ르 겹치지 않는 비트 위치에 할당한다.
 - 특정 비트 위치에 독립된 이벤트를 할당해서 이벤트가 있다 없다를 표시하는 방식이다.
-- kernel/event.h 와 event.c
+- kernel/event.h 와 event.c 파일 두개를 만들도록 한다.
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODcxODU2MzI4LDU5Mzc0MjQxMl19
+eyJoaXN0b3J5IjpbLTk3OTI3Mjk5Myw1OTM3NDI0MTJdfQ==
 -->
