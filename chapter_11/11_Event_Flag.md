@@ -129,8 +129,14 @@ KernelEventFlag_t Kernel_wait_events(uint32_t waiting_list)
 
     return KernelEventFlag_Empty;
 }
-~
+~~~
+
+-`Kernel_send_events()`는 이벤트를 전달하는 함수이다.
+- `Kernel_wait_events()`는 이벤트를 기다리는 함수이다.
+- 주의할 점은 event.h에서 선언한 kernelEventFlag_t가 아니라 그냥 uint32_t이라는 점이다.
+- 한번에 이벤트를 여러개를 보내고 받기 위해 구현되어 있다.
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMTc1MTk1NDksLTc1MDQ1NDI2NCwtMT
-E4MDc1MTYxMSwtNzczODM3MTk2LDU5Mzc0MjQxMl19
+eyJoaXN0b3J5IjpbLTQzNTYwOTY5MSwtNzUwNDU0MjY0LC0xMT
+gwNzUxNjExLC03NzM4MzcxOTYsNTkzNzQyNDEyXX0=
 -->
