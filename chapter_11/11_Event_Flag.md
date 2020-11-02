@@ -98,8 +98,39 @@ bool Kernel_event_flag_check(KernelEventFlag_t event)
 - `Kernel_event_flag_check()`는 파라미터로 전달된 특정 이벤트가 `sEventFlag`에 1로 세팅되어 있는지 확인하는 함수이다.
 - 커널 API를 통해서 처리하도록 하기 위해 추가로 함수를 작성해 준다.
 ~~~C
+void Kernel_send_events(uint32_t event_list)
+{
+    for(uint32_t i=0; i<32 ; i++)
+    {
+        if((event_list >> i) &1)
+        {
+            KernelEventFlag_t sending_event = KernelEventFlag_Empty;
+            sending_event = (KernelEventFlag_t)SET_BIT(sending_event, i);
+            Kernel_event_flag_set(sending_event);
+        }
+    }
+}
 
+KernelEventFlag_t Kernel_wait_events(uint32_t waiting_list)
+{
+    for(uint32_t i=0; i<32; i++)
+    {
+        if ((waiting_list >>i) & 1)
+        {
+            KernelEventFlag_t waiting_event = KernelEventFlag_Empty;
+            waiting_event = (KernelEventFlag_t)SET_BIT(waiting_event, i);
+
+            if(Kernel_event_flag_check(waiting_event))
+            {
+                return waiting_event;
+            }
+        }
+    }
+
+    return KernelEventFlag_Empty;
+}
+~
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc1MDQ1NDI2NCwtMTE4MDc1MTYxMSwtNz
-czODM3MTk2LDU5Mzc0MjQxMl19
+eyJoaXN0b3J5IjpbLTIxMTc1MTk1NDksLTc1MDQ1NDI2NCwtMT
+E4MDc1MTYxMSwtNzczODM3MTk2LDU5Mzc0MjQxMl19
 -->
