@@ -55,7 +55,11 @@ bool Kernel_event_flag_check(KernelEventFlag_t event);
 #endif /* KERNEL_EVENT_H_ */
 ~~~
 - 위와 같이 이벤트 플래드를 선언해준다.
-- 아직 입
+- 아직 이벤트를 추가하지는 않고, 6번째줄에 UartIn만 선언해 놓았다.
+- 32비트 변수로는 32개의 이벤트를 표현할 수 있다.
+- 이어서 event.c 파일을 구현하도록 한다.
+~~~C
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY5NDQzMTQwLDU5Mzc0MjQxMl19
+eyJoaXN0b3J5IjpbLTc3MzgzNzE5Niw1OTM3NDI0MTJdfQ==
 -->
