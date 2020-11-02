@@ -59,7 +59,40 @@ bool Kernel_event_flag_check(KernelEventFlag_t event);
 - 32비트 변수로는 32개의 이벤트를 표현할 수 있다.
 - 이어서 event.c 파일을 구현하도록 한다.
 ~~~C
+#include "stdint.h"
+#include "stdbool.h"
 
+#include "stdio.h"
+#include "event.h"
+
+static uint32_t sEventFlag;
+
+void Kernel_event_flag_init(void)
+{
+    sEventFlag=0;
+}
+
+void Kernel_event_flag_set(KernelEventFlag_t event)
+{
+    sEventFlag |= (uint32_t)event;
+}
+
+void Kernel_event_flga_clear(KernelEventFlag_t event)
+{
+    sEventFlag &= ~((uint32_t)event);
+}
+
+bool Kernel_event_flag_check(KernelEventFlag_t event)
+{
+    if (sEventFlag & (uint32_t)event)
+    {
+        Kernel_event_flag_clear(event);
+        return true;
+    }
+    return false;
+}
+~~
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc3MzgzNzE5Niw1OTM3NDI0MTJdfQ==
+eyJoaXN0b3J5IjpbMTk1OTI4NDMyNSwtNzczODM3MTk2LDU5Mz
+c0MjQxMl19
 -->
