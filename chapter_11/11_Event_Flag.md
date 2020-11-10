@@ -141,8 +141,11 @@ KernelEventFlag_t Kernel_wait_events(uint32_t waiting_list)
 - 이벤트는 인터럽트와 엮어서 사용하는것이 일반적이다.
 - 하지만 여기서 QEMU는 에뮬레이터이기 때문에 사용할 수 있는 인터럽트가 한정적이다. 
 - 따라서 UART 입력이 발생하면 그대로 UART로 전송하는 작업을 할 것이다.
+- 이 기능은 태스크의 이벤트 핸들러로 옮겨서 진행하도록 한다.
+- Uart.c를 아래와 같이 수정해준다.
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE2ODg4MzQ5MiwtNTAwMzIxNzgyLC03NT
-A0NTQyNjQsLTExODA3NTE2MTEsLTc3MzgzNzE5Niw1OTM3NDI0
-MTJdfQ==
+eyJoaXN0b3J5IjpbLTQ3NDk0NjQ4OCwxMTY4ODgzNDkyLC01MD
+AzMjE3ODIsLTc1MDQ1NDI2NCwtMTE4MDc1MTYxMSwtNzczODM3
+MTk2LDU5Mzc0MjQxMl19
 -->
