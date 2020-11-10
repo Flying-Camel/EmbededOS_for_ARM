@@ -156,10 +156,46 @@ static void interrupt_handler(){
 - 이제 태스크에서 이벤트를 받아서 처리하는 코드를 넣어보고 실험해 보도록 하자.
 - Main.c를 수정한 코드를 삽입해 주자.
 ~~~C
+static void Kernel_init(void)
+{
+    uint32_t taskId;
 
+    Kernel_task_init();
+    Kernel_event_flag_init();
+    // 중략
+
+}
+
+...
+
+
+void User_task0(void)
+{
+    uint32_t local = 0;
+
+    debug_printf("User Task #0 SP=0x%x\n", &local);
+
+    while(true)
+    {
+        KernelEventFlag_t handle_event = Kernel_wait_events(KernelEventFlag_UartIn|KernelEventFlag_CmdOut);
+        switch(handle_event)
+        {
+        case KernelEventFlag_UartIn:
+            debug_printf("\nEvent handled by Task0\n");
+            break;
+        case KernelEventFlag_CmdOut:
+            debug_printf("\nCmdOut Event by Task0\n");sssssssss
+            break;
+        }
+        Kernel_yield();
+    }
+}
 ~~~
+- 크게 두부분을 수정해 준다.
+- 첫번째는 `Kernel_init()`에 이벤트 플래그의 초기화 함수를 호출하는 부분을 추가하는 것이다.
+- 두번째는 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ0OTI4NjI5MCwtNDc0OTQ2NDg4LDExNj
+eyJoaXN0b3J5IjpbMTk4MzI0MzY3NywtNDc0OTQ2NDg4LDExNj
 g4ODM0OTIsLTUwMDMyMTc4MiwtNzUwNDU0MjY0LC0xMTgwNzUx
 NjExLC03NzM4MzcxOTYsNTkzNzQyNDEyXX0=
 -->
