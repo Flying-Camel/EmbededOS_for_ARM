@@ -193,9 +193,9 @@ void User_task0(void)
 ~~~
 - 크게 두부분을 수정해 준다.
 - 첫번째는 `Kernel_init()`에 이벤트 플래그의 초기화 함수를 호출하는 부분을 추가하는 것이다.
-- 두번째는 
+- 두번째는 User_task0()`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk4MzI0MzY3NywtNDc0OTQ2NDg4LDExNj
-g4ODM0OTIsLTUwMDMyMTc4MiwtNzUwNDU0MjY0LC0xMTgwNzUx
-NjExLC03NzM4MzcxOTYsNTkzNzQyNDEyXX0=
+eyJoaXN0b3J5IjpbNDM0MjYxOTM1LC00NzQ5NDY0ODgsMTE2OD
+g4MzQ5MiwtNTAwMzIxNzgyLC03NTA0NTQyNjQsLTExODA3NTE2
+MTEsLTc3MzgzNzE5Niw1OTM3NDI0MTJdfQ==
 -->
