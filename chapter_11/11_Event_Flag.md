@@ -193,9 +193,12 @@ void User_task0(void)
 ~~~
 - 크게 두부분을 수정해 준다.
 - 첫번째는 `Kernel_init()`에 이벤트 플래그의 초기화 함수를 호출하는 부분을 추가하는 것이다.
-- 두번째는 User_task0()`
+- 두번째는 `User_task0()` 함수에 이벤트 처리 함수를 추가하는 것이다.
+- while문 안에 있던 스택 주소 출력 코드를 밖으로 빼내고, 이벤트를 기다리는 `KernelEventFlag_UartIn` 플래그를 사용해 이벤트를 기다린다.
+- 이 API는 기다리는 이벤트 중 하나가 도착하면 이벤트 값 자체를 리턴한다.
+- 여기서 이제 QEMU를 실행해 ㅈ
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDM0MjYxOTM1LC00NzQ5NDY0ODgsMTE2OD
-g4MzQ5MiwtNTAwMzIxNzgyLC03NTA0NTQyNjQsLTExODA3NTE2
-MTEsLTc3MzgzNzE5Niw1OTM3NDI0MTJdfQ==
+eyJoaXN0b3J5IjpbMTE4MTU3MjQyMywtNDc0OTQ2NDg4LDExNj
+g4ODM0OTIsLTUwMDMyMTc4MiwtNzUwNDU0MjY0LC0xMTgwNzUx
+NjExLC03NzM4MzcxOTYsNTkzNzQyNDEyXX0=
 -->
