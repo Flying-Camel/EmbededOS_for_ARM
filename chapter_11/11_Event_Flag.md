@@ -143,9 +143,9 @@ KernelEventFlag_t Kernel_wait_events(uint32_t waiting_list)
 - 따라서 UART 입력이 발생하면 그대로 UART로 전송하는 작업을 할 것이다.
 - 이 기능은 태스크의 이벤트 핸들러로 옮겨서 진행하도록 한다.
 - Uart.c를 아래와 같이 수정해준다.
-
+~~~
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ3NDk0NjQ4OCwxMTY4ODgzNDkyLC01MD
-AzMjE3ODIsLTc1MDQ1NDI2NCwtMTE4MDc1MTYxMSwtNzczODM3
-MTk2LDU5Mzc0MjQxMl19
+eyJoaXN0b3J5IjpbMTY5MTQwOTU1MCwtNDc0OTQ2NDg4LDExNj
+g4ODM0OTIsLTUwMDMyMTc4MiwtNzUwNDU0MjY0LC0xMTgwNzUx
+NjExLC03NzM4MzcxOTYsNTkzNzQyNDEyXX0=
 -->
