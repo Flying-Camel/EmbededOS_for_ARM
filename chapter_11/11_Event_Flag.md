@@ -196,9 +196,11 @@ void User_task0(void)
 - 두번째는 `User_task0()` 함수에 이벤트 처리 함수를 추가하는 것이다.
 - while문 안에 있던 스택 주소 출력 코드를 밖으로 빼내고, 이벤트를 기다리는 `KernelEventFlag_UartIn` 플래그를 사용해 이벤트를 기다린다.
 - 이 API는 기다리는 이벤트 중 하나가 도착하면 이벤트 값 자체를 리턴한다.
-- 여기서 이제 QEMU를 실행해 ㅈ
+- 여기서 이제 QEMU를 실행해 자판을 누르면 "Event handled"라는 문장이 출력될 것이다.
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE4MTU3MjQyMywtNDc0OTQ2NDg4LDExNj
-g4ODM0OTIsLTUwMDMyMTc4MiwtNzUwNDU0MjY0LC0xMTgwNzUx
-NjExLC03NzM4MzcxOTYsNTkzNzQyNDEyXX0=
+eyJoaXN0b3J5IjpbLTE1Nzk4ODE3OTgsLTQ3NDk0NjQ4OCwxMT
+Y4ODgzNDkyLC01MDAzMjE3ODIsLTc1MDQ1NDI2NCwtMTE4MDc1
+MTYxMSwtNzczODM3MTk2LDU5Mzc0MjQxMl19
 -->
