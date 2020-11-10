@@ -143,9 +143,23 @@ KernelEventFlag_t Kernel_wait_events(uint32_t waiting_list)
 - 따라서 UART 입력이 발생하면 그대로 UART로 전송하는 작업을 할 것이다.
 - 이 기능은 태스크의 이벤트 핸들러로 옮겨서 진행하도록 한다.
 - Uart.c를 아래와 같이 수정해준다.
+~~~C
+static void interrupt_handler(){
+    uint8_t ch = Hal_uart_get_char();
+    Hal_uart_put_char(ch);
+
+    // Chapter 11에서 추가함.
+    Kernel_send_events(KernelEventFlag_UartIn);
+}
+~~~
+- 이렇게 한줄 추가해 줌으로써 인터럽트와 이벤트의 연결이 끝났다. 
+- 이제 태스크에서 이벤트를 받아서 처리하는 코드를 넣어보고 실험해 보도록 하자.
+- Main.c를 수정한 코드를 삽입해 주자.
+~~~C
+
 ~~~
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY5MTQwOTU1MCwtNDc0OTQ2NDg4LDExNj
+eyJoaXN0b3J5IjpbMTQ0OTI4NjI5MCwtNDc0OTQ2NDg4LDExNj
 g4ODM0OTIsLTUwMDMyMTc4MiwtNzUwNDU0MjY0LC0xMTgwNzUx
 NjExLC03NzM4MzcxOTYsNTkzNzQyNDEyXX0=
 -->
