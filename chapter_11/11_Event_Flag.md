@@ -200,10 +200,14 @@ void User_task0(void)
 
 ## 11.3 사용자 정의 이벤트
 - 이벤트는 언제나 필요하다고 생각되면 사용하지 않는 이벤트 플래그 하나에 이름을 등록해 태스크에서 태스크로 이벤트를 보낼 수 있다.
-- 
+- 위에서는 UART 입력에 KernelEventFlag_UartIn 이벤트를 연결했다.
+- 그리고 Task0에서 이 이벤트를 받았다는것을 알려주는 출력을 하여 이벤트를 처리했다.
+- 이 상태에서 사용하지 않는 이벤트 플래그 하나에 이름을 붙여주고 이 이벤트 플래그를 Task0에서 보내보도록 하자.
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEyMDY3Njk1MiwtMTU3OTg4MTc5OCwtND
-c0OTQ2NDg4LDExNjg4ODM0OTIsLTUwMDMyMTc4MiwtNzUwNDU0
-MjY0LC0xMTgwNzUxNjExLC03NzM4MzcxOTYsNTkzNzQyNDEyXX
-0=
+eyJoaXN0b3J5IjpbLTE4MzMzMDE0ODAsLTE1Nzk4ODE3OTgsLT
+Q3NDk0NjQ4OCwxMTY4ODgzNDkyLC01MDAzMjE3ODIsLTc1MDQ1
+NDI2NCwtMTE4MDc1MTYxMSwtNzczODM3MTk2LDU5Mzc0MjQxMl
+19
 -->
