@@ -197,10 +197,12 @@ void User_task0(void)
 - while문 안에 있던 스택 주소 출력 코드를 밖으로 빼내고, 이벤트를 기다리는 `KernelEventFlag_UartIn` 플래그를 사용해 이벤트를 기다린다.
 - 이 API는 기다리는 이벤트 중 하나가 도착하면 이벤트 값 자체를 리턴한다.
 - 여기서 이제 QEMU를 실행해 자판을 누르면 "Event handled"라는 문장이 출력될 것이다.
+- 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1Nzk4ODE3OTgsLTQ3NDk0NjQ4OCwxMT
-Y4ODgzNDkyLC01MDAzMjE3ODIsLTc1MDQ1NDI2NCwtMTE4MDc1
-MTYxMSwtNzczODM3MTk2LDU5Mzc0MjQxMl19
+eyJoaXN0b3J5IjpbLTM1OTM0MjE1NSwtMTU3OTg4MTc5OCwtND
+c0OTQ2NDg4LDExNjg4ODM0OTIsLTUwMDMyMTc4MiwtNzUwNDU0
+MjY0LC0xMTgwNzUxNjExLC03NzM4MzcxOTYsNTkzNzQyNDEyXX
+0=
 -->
