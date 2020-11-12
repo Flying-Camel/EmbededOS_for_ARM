@@ -247,11 +247,12 @@ void User_task1(void)
 ~~~
 
 - `Kernel_send_events()` 커널 API는 Task0의 이벤트 처리 루틴 코드 안에서 호출된다.
-- UART 인터럽트 핸들러에서 `KernelEventFlag_UartIn` 이벤트를 보내고 스케줄러에 의해 Task0이 실행되면 `KernelEventFlag_UartIn` 이벤트를 확인하고 받아온다.
-- 
+- 즉 UART 인터럽트 핸들러에서 `KernelEventFlag_UartIn` 이벤트를 보내고 스케줄러에 의해 Task0이 실행되면 `KernelEventFlag_UartIn` 이벤트를 확인하고 받아온다.
+- 그러면 Task0코드에 있는 case 부분이 실행이 된다.
+- 이 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkwMjAzNzgzLDg2NDk3MDA4NSwtMTgzMz
-MwMTQ4MCwtMTU3OTg4MTc5OCwtNDc0OTQ2NDg4LDExNjg4ODM0
-OTIsLTUwMDMyMTc4MiwtNzUwNDU0MjY0LC0xMTgwNzUxNjExLC
-03NzM4MzcxOTYsNTkzNzQyNDEyXX0=
+eyJoaXN0b3J5IjpbMTc2OTk5NjI2MywxOTAyMDM3ODMsODY0OT
+cwMDg1LC0xODMzMzAxNDgwLC0xNTc5ODgxNzk4LC00NzQ5NDY0
+ODgsMTE2ODg4MzQ5MiwtNTAwMzIxNzgyLC03NTA0NTQyNjQsLT
+ExODA3NTE2MTEsLTc3MzgzNzE5Niw1OTM3NDI0MTJdfQ==
 -->
