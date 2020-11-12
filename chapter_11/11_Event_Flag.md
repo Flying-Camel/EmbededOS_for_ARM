@@ -196,18 +196,16 @@ void User_task0(void)
 - 두번째는 `User_task0()` 함수에 이벤트 처리 함수를 추가하는 것이다.
 - while문 안에 있던 스택 주소 출력 코드를 밖으로 빼내고, 이벤트를 기다리는 `KernelEventFlag_UartIn` 플래그를 사용해 이벤트를 기다린다.
 - 이 API는 기다리는 이벤트 중 하나가 도착하면 이벤트 값 자체를 리턴한다.
-- 여기서 이제 QEMU를 실행해 자판을 누르면 "Event handled"라는 문장이 출력될 것이다.
+- 위의 코드는 11.3 부분까지 모두 작성된 코드이다.
 
 ## 11.3 사용자 정의 이벤트
 - 이벤트는 언제나 필요하다고 생각되면 사용하지 않는 이벤트 플래그 하나에 이름을 등록해 태스크에서 태스크로 이벤트를 보낼 수 있다.
 - 위에서는 UART 입력에 KernelEventFlag_UartIn 이벤트를 연결했다.
 - 그리고 Task0에서 이 이벤트를 받았다는것을 알려주는 출력을 하여 이벤트를 처리했다.
-- 이 상태에서 사용하지 않는 이벤트 플래그 하나에 이름을 붙여주고 이 이벤트 플래그를 Task0에서 보내보도록 하자.
-
-
+- `Kernel_send_events()` 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MzMzMDE0ODAsLTE1Nzk4ODE3OTgsLT
-Q3NDk0NjQ4OCwxMTY4ODgzNDkyLC01MDAzMjE3ODIsLTc1MDQ1
-NDI2NCwtMTE4MDc1MTYxMSwtNzczODM3MTk2LDU5Mzc0MjQxMl
-19
+eyJoaXN0b3J5IjpbLTIxMjA4MjkxMTcsLTE4MzMzMDE0ODAsLT
+E1Nzk4ODE3OTgsLTQ3NDk0NjQ4OCwxMTY4ODgzNDkyLC01MDAz
+MjE3ODIsLTc1MDQ1NDI2NCwtMTE4MDc1MTYxMSwtNzczODM3MT
+k2LDU5Mzc0MjQxMl19
 -->
