@@ -203,12 +203,55 @@ void User_task0(void)
 - 위에서는 UART 입력에 `KernelEventFlag_UartIn` 이벤트를 연결했다.
 - 그리고 Task0에서 이 이벤트를 받았다는것을 알려주는 출력을 하여 이벤트를 처리했다.
 - 이제 사용하지 않는 이벤트 플러그 하나인 `Reserved01`을 `CmdIn`으로 변경한다.
+- 커맨들가 입력되는것을 가져오는 이벤트이다.
+- 아래는 수정된 `boot/Main.c`이다.
+
+~~~C
+void User_task0(void)
+{
+    uint32_t local = 0;
+
+    debug_printf("User Task #0 SP=0x%x\n", &local);
+
+    while(true)
+    {
+        KernelEventFlag_t handle_event = Kernel_wait_events(KernelEventFlag_UartIn|KernelEventFlag_CmdOut);
+        switch(handle_event)
+        {
+        case KernelEventFlag_UartIn:
+            debug_printf("\nEvent handled by Task0\n");
+            break;
+        }
+        Kernel_yield();
+    }
+}
+
+void User_task1(void)
+{
+    uint32_t local = 0;
+
+    debug_printf("User Task #1 SP=0x%x\n", &local);
+
+    while(true)
+    {
+        KernelEventFlag_t handle_event = Kernel_wait_events(KernelEventFlag_CmdIn);
+        switch(handle_event)
+        {
+        case KernelEventFlag_CmdIn:
+            debug_printf("\nEvent handled by Task1\n");
+            break;
+        }
+        Kernel_yield();
+    }
+}
+~~~
+
 - `Kernel_send_events()` 커널 API는 Task0의 이벤트 처리 루틴 코드 안에서 호출된다.
 - UART 인터럽트 핸들러에서 `KernelEventFlag_UartIn` 이벤트를 보내고 스케줄러에 의해 Task0이 실행되면 `KernelEventFlag_UartIn` 이벤트를 확인하고 받아온다.
 - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0Mzk3MzgzMiw4NjQ5NzAwODUsLTE4Mz
-MzMDE0ODAsLTE1Nzk4ODE3OTgsLTQ3NDk0NjQ4OCwxMTY4ODgz
-NDkyLC01MDAzMjE3ODIsLTc1MDQ1NDI2NCwtMTE4MDc1MTYxMS
-wtNzczODM3MTk2LDU5Mzc0MjQxMl19
+eyJoaXN0b3J5IjpbMTkwMjAzNzgzLDg2NDk3MDA4NSwtMTgzMz
+MwMTQ4MCwtMTU3OTg4MTc5OCwtNDc0OTQ2NDg4LDExNjg4ODM0
+OTIsLTUwMDMyMTc4MiwtNzUwNDU0MjY0LC0xMTgwNzUxNjExLC
+03NzM4MzcxOTYsNTkzNzQyNDEyXX0=
 -->
