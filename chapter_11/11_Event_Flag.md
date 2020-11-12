@@ -202,10 +202,12 @@ void User_task0(void)
 - 이벤트는 언제나 필요하다고 생각되면 사용하지 않는 이벤트 플래그 하나에 이름을 등록해 태스크에서 태스크로 이벤트를 보낼 수 있다.
 - 위에서는 UART 입력에 KernelEventFlag_UartIn 이벤트를 연결했다.
 - 그리고 Task0에서 이 이벤트를 받았다는것을 알려주는 출력을 하여 이벤트를 처리했다.
-- `Kernel_send_events()` 
+- `Kernel_send_events()` 커널 API는 Task0의 이벤트 처리 루틴 코드 안에서 호출된다.
+- UART 인터럽트 핸들러에서 `KernelEventFlag_UartIn` 이벤트를 보내고 스케줄러에 의해 Task0이 실행되면 `KernelEventFlag_UartIn` 이벤트를 확인하고 받아온다.
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMjA4MjkxMTcsLTE4MzMzMDE0ODAsLT
-E1Nzk4ODE3OTgsLTQ3NDk0NjQ4OCwxMTY4ODgzNDkyLC01MDAz
-MjE3ODIsLTc1MDQ1NDI2NCwtMTE4MDc1MTYxMSwtNzczODM3MT
-k2LDU5Mzc0MjQxMl19
+eyJoaXN0b3J5IjpbODY0OTcwMDg1LC0xODMzMzAxNDgwLC0xNT
+c5ODgxNzk4LC00NzQ5NDY0ODgsMTE2ODg4MzQ5MiwtNTAwMzIx
+NzgyLC03NTA0NTQyNjQsLTExODA3NTE2MTEsLTc3MzgzNzE5Ni
+w1OTM3NDI0MTJdfQ==
 -->
