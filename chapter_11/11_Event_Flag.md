@@ -281,9 +281,32 @@ static void interrupt_handler(){
 - 이제 `Main.c`에 있는 Task0 함수를 수정해 이벤트를 여러개 보내도록 수정한다.
 ~~~C
 
+void User_task0(void)
+{
+    uint32_t local = 0;
+
+    debug_printf("User Task #0 SP=0x%x\n", &local);
+
+    while(true)
+    {
+        KernelEventFlag_t handle_event = Kernel_wait_events(KernelEventFlag_UartIn|KernelEventFlag_CmdOut);
+        switch(handle_event)
+        {
+        case KernelEventFlag_UartIn:
+            debug_printf("\nEvent handled by Task0\n");
+            break;
+        case KernelEventFlag_CmdOut:
+            debug_printf("\nCmdOut Event by Task0\n");
+            break;
+        }
+        Kernel_yield();
+    }
+}
 ~~~
+- `KernelEventFlag_CmdOut`을 처리하는 구문을 추가해 주었다.
+- 이후 동작을 확인해 보면 `KernelEventFlag_UartIn`이벤트와 `KernelEventFlag_CmdIn`플래
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk1NTYzMTI4OSwxNjIwMjM3MDY1LDE5MD
+eyJoaXN0b3J5IjpbLTc4ODc0NjMwNSwxNjIwMjM3MDY1LDE5MD
 IwMzc4Myw4NjQ5NzAwODUsLTE4MzMzMDE0ODAsLTE1Nzk4ODE3
 OTgsLTQ3NDk0NjQ4OCwxMTY4ODgzNDkyLC01MDAzMjE3ODIsLT
 c1MDQ1NDI2NCwtMTE4MDc1MTYxMSwtNzczODM3MTk2LDU5Mzc0
