@@ -248,13 +248,15 @@ void User_task1(void)
 
 - `Kernel_send_events()` 커널 API는 Task0의 이벤트 처리 루틴 코드 안에서 호출된다.
 - 즉 UART 인터럽트 핸들러에서 `KernelEventFlag_UartIn` 이벤트를 보내고 스케줄러에 의해 Task0이 실행되면 `KernelEventFlag_UartIn` 이벤트를 확인하고 받아온다.
-- 그러면 Task0코드에 있는 case 부분이 실행이 된다.
+- 그러면 Task0코드에 있는 `case` 부분이 실행이 된다.
 - 이 구간에서 다시 `Kernel_send_events()` API 코드가 호출이 되어 `KernelEventFlag_CmdIn` 이벤트를 보낸다. 그리고 `Kernel_yield()`를 호출해서 스케줄링을 한다.
 - 그 이후 스케줄링은 Task1이 받게되고, `KerneleventFlag_CmdIn`을 기다리고 있다. 
 - 이후 코드에서 이벤트를 처리한다.
+- 위의 코드가 정상적으로 작동하게 되면
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYyMDIzNzA2NSwxOTAyMDM3ODMsODY0OT
-cwMDg1LC0xODMzMzAxNDgwLC0xNTc5ODgxNzk4LC00NzQ5NDY0
-ODgsMTE2ODg4MzQ5MiwtNTAwMzIxNzgyLC03NTA0NTQyNjQsLT
-ExODA3NTE2MTEsLTc3MzgzNzE5Niw1OTM3NDI0MTJdfQ==
+eyJoaXN0b3J5IjpbMTcxNzU1OTUyMywxNjIwMjM3MDY1LDE5MD
+IwMzc4Myw4NjQ5NzAwODUsLTE4MzMzMDE0ODAsLTE1Nzk4ODE3
+OTgsLTQ3NDk0NjQ4OCwxMTY4ODgzNDkyLC01MDAzMjE3ODIsLT
+c1MDQ1NDI2NCwtMTE4MDc1MTYxMSwtNzczODM3MTk2LDU5Mzc0
+MjQxMl19
 -->
