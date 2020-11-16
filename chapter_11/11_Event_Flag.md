@@ -338,12 +338,20 @@ while(true)
 - 처리할 이벤트가 있으면 pendingEvent변수는 계속 true이므로 모든 이벤트를 처리할 때까지 switch문이 실행된다.
 - 위의 코드로 작성된 task구문을 사용하게 되면 아래와 같이 결과가 나온다.
 	- Event handled by Task0 --> UartIn 이벤트 응답.
+	- CmdOut Event by Task0 --> CmdOut 이벤트 응답.
 	- Event handled by Task1 --> cmdIn 이벤트 응답.
-
+- 아까와는 다르게 Task0에서 모든 이벤트가 처리된 다음 Task1의 이벤트가 처리되었다.
+- 위의 두가지 방법 중 어느것이 더 나은것은 아니다.
+- RTOS의 요구사항에 따라 코드를 다르게 작성하면 된다.
+## 11.5 요약
+- 이 장에서는 이벤트 기능을 만들어 보았다.
+- 이벤트 플래그를 비트맵으로 만들어 각 태스크가 이벤트를 보내고 받도록 했다.
+- 이벤틑 각 태스크간의 정보 전달 뿐만 아니라 인터럽트 핸들러에서 태스크로 정보를 전달할 때에도 유용하게 쓼 ㅜ 있다.
+- 다량의 정보를 저
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzQ1MTc3ODcsMjMxOTMzMzE5LDE2MjAyMz
-cwNjUsMTkwMjAzNzgzLDg2NDk3MDA4NSwtMTgzMzMwMTQ4MCwt
-MTU3OTg4MTc5OCwtNDc0OTQ2NDg4LDExNjg4ODM0OTIsLTUwMD
-MyMTc4MiwtNzUwNDU0MjY0LC0xMTgwNzUxNjExLC03NzM4Mzcx
-OTYsNTkzNzQyNDEyXX0=
+eyJoaXN0b3J5IjpbLTk4MjI4MzQ5OCwyMzE5MzMzMTksMTYyMD
+IzNzA2NSwxOTAyMDM3ODMsODY0OTcwMDg1LC0xODMzMzAxNDgw
+LC0xNTc5ODgxNzk4LC00NzQ5NDY0ODgsMTE2ODg4MzQ5MiwtNT
+AwMzIxNzgyLC03NTA0NTQyNjQsLTExODA3NTE2MTEsLTc3Mzgz
+NzE5Niw1OTM3NDI0MTJdfQ==
 -->
