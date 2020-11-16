@@ -277,11 +277,15 @@ static void interrupt_handler(){
 }
 ~~~
 - `Kernel_send_events(KernelEventFlag_UartIn | KernelEventFlag_CmdIn);` 부분에서 볼 수 있듯이, 여러개의 이벤트를 한꺼번에 보내는것을 알 수 있다.
-- 
+- 아래쪽 코드를 보면 `X`를 눌렀을 때에만 `CmdOut` 명령을 보내도록 했다.
+- 이제 `Main.c`에 있는 Task0 함수를 수정해 이벤트를 여러개 보내도록 수정한다.
+~~~C
+
+~~~
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQxNzIxMDksMTYyMDIzNzA2NSwxOTAyMD
-M3ODMsODY0OTcwMDg1LC0xODMzMzAxNDgwLC0xNTc5ODgxNzk4
-LC00NzQ5NDY0ODgsMTE2ODg4MzQ5MiwtNTAwMzIxNzgyLC03NT
-A0NTQyNjQsLTExODA3NTE2MTEsLTc3MzgzNzE5Niw1OTM3NDI0
-MTJdfQ==
+eyJoaXN0b3J5IjpbLTk1NTYzMTI4OSwxNjIwMjM3MDY1LDE5MD
+IwMzc4Myw4NjQ5NzAwODUsLTE4MzMzMDE0ODAsLTE1Nzk4ODE3
+OTgsLTQ3NDk0NjQ4OCwxMTY4ODgzNDkyLC01MDAzMjE3ODIsLT
+c1MDQ1NDI2NCwtMTE4MDc1MTYxMSwtNzczODM3MTk2LDU5Mzc0
+MjQxMl19
 -->
