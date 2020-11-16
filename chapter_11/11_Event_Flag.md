@@ -304,11 +304,13 @@ void User_task0(void)
 }
 ~~~
 - `KernelEventFlag_CmdOut`을 처리하는 구문을 추가해 주었다.
-- 이후 동작을 확인해 보면 `KernelEventFlag_UartIn`이벤트와 `KernelEventFlag_CmdIn`플래
+- 이후 동작을 확인해 보면 `KernelEventFlag_UartIn`이벤트와 `KernelEventFlag_CmdIn` 이벤트를 핸들러가 동시에 보내는것을 알 수 있다.
+- `X`를 누르게 되면 UART 핸들러는 등록된 이벤트를 모두 발생시킨다.
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc4ODc0NjMwNSwxNjIwMjM3MDY1LDE5MD
-IwMzc4Myw4NjQ5NzAwODUsLTE4MzMzMDE0ODAsLTE1Nzk4ODE3
-OTgsLTQ3NDk0NjQ4OCwxMTY4ODgzNDkyLC01MDAzMjE3ODIsLT
-c1MDQ1NDI2NCwtMTE4MDc1MTYxMSwtNzczODM3MTk2LDU5Mzc0
-MjQxMl19
+eyJoaXN0b3J5IjpbMzg3Mjg4NjA0LDE2MjAyMzcwNjUsMTkwMj
+AzNzgzLDg2NDk3MDA4NSwtMTgzMzMwMTQ4MCwtMTU3OTg4MTc5
+OCwtNDc0OTQ2NDg4LDExNjg4ODM0OTIsLTUwMDMyMTc4MiwtNz
+UwNDU0MjY0LC0xMTgwNzUxNjExLC03NzM4MzcxOTYsNTkzNzQy
+NDEyXX0=
 -->
