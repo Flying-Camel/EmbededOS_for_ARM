@@ -252,9 +252,13 @@ void User_task1(void)
 - 이 구간에서 다시 `Kernel_send_events()` API 코드가 호출이 되어 `KernelEventFlag_CmdIn` 이벤트를 보낸다. 그리고 `Kernel_yield()`를 호출해서 스케줄링을 한다.
 - 그 이후 스케줄링은 Task1이 받게되고, `KerneleventFlag_CmdIn`을 기다리고 있다. 
 - 이후 코드에서 이벤트를 처리한다.
-- 위의 코드가 정상적으로 작동하게 되면
+- 위의 코드가 정상적으로 작동하게 되면 키보드를 이용해 입력을 주었을 시 `Event handled by Task0`이라는 문구가 출력이 되고 이벤트를 받은 Task1에서 `Event handled by Task1`이라는 문구가 출력이 된다.
+- 이렇게 사용자 정의 이벤트가 완료가 되었다.
+
+## 11.4 여러 이벤트 플래그를 동시에 보내고 처리하기.
+- 이벤트 플래그를 설계할 때 비트로 처리하는 이유는 여러개의 이벤트를 동시에 처리학 ㅣ우
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcxNzU1OTUyMywxNjIwMjM3MDY1LDE5MD
+eyJoaXN0b3J5IjpbLTgxNzM4NDgyOSwxNjIwMjM3MDY1LDE5MD
 IwMzc4Myw4NjQ5NzAwODUsLTE4MzMzMDE0ODAsLTE1Nzk4ODE3
 OTgsLTQ3NDk0NjQ4OCwxMTY4ODgzNDkyLC01MDAzMjE3ODIsLT
 c1MDQ1NDI2NCwtMTE4MDc1MTYxMSwtNzczODM3MTk2LDU5Mzc0
