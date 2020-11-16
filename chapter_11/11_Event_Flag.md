@@ -312,12 +312,34 @@ void User_task0(void)
 	- CmdOut Event by Task0 --> CmdOut 이벤트 응답.
 - 위의 설명대로 태스크에서 이벤트를 한번에 하나밖에 처리하지 못하는데, 아래와 같이 코드를 작성하면, 태스크가 더 이상 처리할 이벤트가 없을때까지 이벤트를 처리하고 `Kernel_yield()`를 호출한다.
 ~~~C
-
+while(true)
+    {
+        bool pendingEvent = true;
+        while(pendingEvent)
+        {
+            KernelEventFlag_t handle_event = Kernel_wait_events(KernelEventFlag_UartIn|KernelEventFlag_CmdOut);
+            switch(handle_event)
+            {
+            case KernelEventFlag_UartIn:
+                debug_printf("\nEvent handled by Task0\n");
+                break;
+            case KernelEventFlag_CmdOut:
+                debug_printf("\nCmdOut Event by Task0\n");
+                break;
+            default :
+                pendingEvent = false;
+                break;
+            }            
+        }
+        Kernel_yield();
+    }
 ~~~
+- 이벤트를 처리하는 switch 구문을 pendingEvent 플래그로 감싸서 처리한다.
+- 처리할 이벤특 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjMxOTMzMzE5LDE2MjAyMzcwNjUsMTkwMj
-AzNzgzLDg2NDk3MDA4NSwtMTgzMzMwMTQ4MCwtMTU3OTg4MTc5
-OCwtNDc0OTQ2NDg4LDExNjg4ODM0OTIsLTUwMDMyMTc4MiwtNz
-UwNDU0MjY0LC0xMTgwNzUxNjExLC03NzM4MzcxOTYsNTkzNzQy
-NDEyXX0=
+eyJoaXN0b3J5IjpbLTIwNjc4OTA5MDYsMjMxOTMzMzE5LDE2Mj
+AyMzcwNjUsMTkwMjAzNzgzLDg2NDk3MDA4NSwtMTgzMzMwMTQ4
+MCwtMTU3OTg4MTc5OCwtNDc0OTQ2NDg4LDExNjg4ODM0OTIsLT
+UwMDMyMTc4MiwtNzUwNDU0MjY0LC0xMTgwNzUxNjExLC03NzM4
+MzcxOTYsNTkzNzQyNDEyXX0=
 -->
