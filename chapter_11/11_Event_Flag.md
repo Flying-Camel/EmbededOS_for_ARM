@@ -310,9 +310,12 @@ void User_task0(void)
 	- Event handled by Task0 --> UartIn 이벤트 응답.
 	- Event handled by Task1 --> cmdIn 이벤트 응답.
 	- CmdOut Event by Task0 --> CmdOut 이벤트 응답.
-- 
+- 위의 설명대로 태스크에서 이벤트를 한번에 하나밖에 처리하지 못하는데, 아래와 같이 코드를 작성하면, 태스크가 더 이상 처리할 이벤트가 없을때까지 이벤트를 처리하고 `Kernel_yield()`를 호출한다.
+~~~C
+
+~~~
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUxNTc0NzcwLDE2MjAyMzcwNjUsMTkwMj
+eyJoaXN0b3J5IjpbMjMxOTMzMzE5LDE2MjAyMzcwNjUsMTkwMj
 AzNzgzLDg2NDk3MDA4NSwtMTgzMzMwMTQ4MCwtMTU3OTg4MTc5
 OCwtNDc0OTQ2NDg4LDExNjg4ODM0OTIsLTUwMDMyMTc4MiwtNz
 UwNDU0MjY0LC0xMTgwNzUxNjExLC03NzM4MzcxOTYsNTkzNzQy
