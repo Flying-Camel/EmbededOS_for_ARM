@@ -335,11 +335,15 @@ while(true)
     }
 ~~~
 - 이벤트를 처리하는 switch 구문을 pendingEvent 플래그로 감싸서 처리한다.
-- 처리할 이벤특 
+- 처리할 이벤트가 있으면 pendingEvent변수는 계속 true이므로 모든 이벤트를 처리할 때까지 switch문이 실행된다.
+- 위의 코드로 작성된 task구문을 사용하게 되면 아래와 같이 결과가 나온다.
+	- Event handled by Task0 --> UartIn 이벤트 응답.
+	- Event handled by Task1 --> cmdIn 이벤트 응답.
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNjc4OTA5MDYsMjMxOTMzMzE5LDE2Mj
-AyMzcwNjUsMTkwMjAzNzgzLDg2NDk3MDA4NSwtMTgzMzMwMTQ4
-MCwtMTU3OTg4MTc5OCwtNDc0OTQ2NDg4LDExNjg4ODM0OTIsLT
-UwMDMyMTc4MiwtNzUwNDU0MjY0LC0xMTgwNzUxNjExLC03NzM4
-MzcxOTYsNTkzNzQyNDEyXX0=
+eyJoaXN0b3J5IjpbMzQ1MTc3ODcsMjMxOTMzMzE5LDE2MjAyMz
+cwNjUsMTkwMjAzNzgzLDg2NDk3MDA4NSwtMTgzMzMwMTQ4MCwt
+MTU3OTg4MTc5OCwtNDc0OTQ2NDg4LDExNjg4ODM0OTIsLTUwMD
+MyMTc4MiwtNzUwNDU0MjY0LC0xMTgwNzUxNjExLC03NzM4Mzcx
+OTYsNTkzNzQyNDEyXX0=
 -->
