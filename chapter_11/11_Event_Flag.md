@@ -260,13 +260,28 @@ void User_task1(void)
 - 하나의 이벤트를 더 추가하도록 한다. (위의 코드에는 이미 적용되어 있음)
 - Reserved02 이었던 영역에 추가해 CmdOut이라는 이름을 붙인다.
 - 그리고 이벤트 핸들러를 수정해 주도록 한다.
+- hal/rbpv/Uart.c 에 있는 부분이다.
 
 ~~~C
+static void interrupt_handler(){
+    uint8_t ch = Hal_uart_get_char();
+    Hal_uart_put_char(ch);
 
+    // Chapter 11에서 추가함.
+    Kernel_send_events(KernelEventFlag_UartIn | KernelEventFlag_CmdIn);
+
+    if(ch == 'X')
+    {
+        Kernel_send_events(KernelEventFlag_CmdOut);
+    }
+}
+~~~
+- `Kernel_send_events(KernelEventFlag_UartIn | KernelEventFlag_CmdIn);` 부분에서 볼 수 있듯이, 여러개의 이벤트를 한꺼번에 보내는것을 알 수 있다.
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MjYwMTQ1NjAsMTYyMDIzNzA2NSwxOT
-AyMDM3ODMsODY0OTcwMDg1LC0xODMzMzAxNDgwLC0xNTc5ODgx
-Nzk4LC00NzQ5NDY0ODgsMTE2ODg4MzQ5MiwtNTAwMzIxNzgyLC
-03NTA0NTQyNjQsLTExODA3NTE2MTEsLTc3MzgzNzE5Niw1OTM3
-NDI0MTJdfQ==
+eyJoaXN0b3J5IjpbLTQxNzIxMDksMTYyMDIzNzA2NSwxOTAyMD
+M3ODMsODY0OTcwMDg1LC0xODMzMzAxNDgwLC0xNTc5ODgxNzk4
+LC00NzQ5NDY0ODgsMTE2ODg4MzQ5MiwtNTAwMzIxNzgyLC03NT
+A0NTQyNjQsLTExODA3NTE2MTEsLTc3MzgzNzE5Niw1OTM3NDI0
+MTJdfQ==
 -->
