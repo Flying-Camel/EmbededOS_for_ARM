@@ -256,11 +256,14 @@ void User_task1(void)
 - 이렇게 사용자 정의 이벤트가 완료가 되었다.
 
 ## 11.4 여러 이벤트 플래그를 동시에 보내고 처리하기.
-- 이벤트 플래그를 설계할 때 비트로 처리하는 이유는 여러개의 이벤트를 동시에 처리학 ㅣ우
+- 이벤트 플래그를 설계할 때 비트로 처리하는 이유는 여러개의 이벤트를 동시에 처리하기 위해서이다.
+- 하나의 이벤트를 더 추가하도록 한다. (위의 코드에는 이미 적용되어 있음)
+- Reserved02 이었던 영역에 추가해 CmdOut이라는 이름을 붙인다.
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgxNzM4NDgyOSwxNjIwMjM3MDY1LDE5MD
-IwMzc4Myw4NjQ5NzAwODUsLTE4MzMzMDE0ODAsLTE1Nzk4ODE3
-OTgsLTQ3NDk0NjQ4OCwxMTY4ODgzNDkyLC01MDAzMjE3ODIsLT
-c1MDQ1NDI2NCwtMTE4MDc1MTYxMSwtNzczODM3MTk2LDU5Mzc0
-MjQxMl19
+eyJoaXN0b3J5IjpbLTE4MDI1Nzg0NDMsMTYyMDIzNzA2NSwxOT
+AyMDM3ODMsODY0OTcwMDg1LC0xODMzMzAxNDgwLC0xNTc5ODgx
+Nzk4LC00NzQ5NDY0ODgsMTE2ODg4MzQ5MiwtNTAwMzIxNzgyLC
+03NTA0NTQyNjQsLTExODA3NTE2MTEsLTc3MzgzNzE5Niw1OTM3
+NDI0MTJdfQ==
 -->
