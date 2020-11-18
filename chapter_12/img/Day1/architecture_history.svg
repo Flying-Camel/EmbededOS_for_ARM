@@ -1,0 +1,372 @@
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="540.7584" height="329.0448" xml:space="preserve" color-interpolation-filters="sRGB" class="st18" version="1.1">  
+ <style type="text/css">
+	<![CDATA[
+		.st1 {fill:#4f81bd;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st2 {fill:#000000;font-family:Arial,Helvetica,sans-serif;font-size:1.16666em}
+		.st3 {font-size:1em}
+		.st4 {stroke:#ffffff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.7119}
+		.st5 {fill:#c2cde1;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st6 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st7 {fill:#000000;font-family:Arial,Helvetica,sans-serif;font-size:0.833336em}
+		.st8 {font-size:1.51474em}
+		.st9 {font-family:Symbol;font-size:0.799995em}
+		.st10 {font-size:0.799995em}
+		.st11 {font-size:1em;font-weight:bold}
+		.st12 {stroke:#ffffff;stroke-linecap:butt;stroke-width:1.7119}
+		.st13 {stroke:#ffffff;stroke-dasharray:3.42381,1.7119;stroke-linecap:butt;stroke-width:1.7119}
+		.st14 {fill:#b5cb85;stroke:#ffffff;stroke-dasharray:1,0.5;stroke-linecap:butt;stroke-width:0.5}
+		.st15 {fill:#a5b5d3;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.24}
+		.st16 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.24}
+		.st17 {fill:#000000;font-family:Arial,Helvetica,sans-serif;font-size:0.666664em}
+		.st18 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style> 
+ <g> 
+  <title>Page-1</title>  
+  <g id="shape1-1" transform="translate(244.266,-194.184)"> 
+   <title>Sheet.1</title> 
+   <desc>
+    v8
+   </desc>   
+   <path d="M0 195.46 L0 246.78 L159.59 246.78 L159.59 195.46 L0 195.46 L0 195.46 Z" class="st1" /> 
+   <text x="72.4" y="225.32" class="st2">
+    v
+    <tspan class="st3">
+     8
+    </tspan>
+   </text> 
+  </g> 
+  <g id="shape2-5" transform="translate(243.271,-193.747)"> 
+   <title>Sheet.2</title> 
+   <path d="M0 195.46 L160.16 195.46 L160.16 246.78 L0 246.78 L0 195.46 L0 195.46" class="st4" /> 
+  </g> 
+  <g id="shape3-8" transform="translate(242.816,-1.73721)"> 
+   <title>Sheet.3</title> 
+   <path d="M0 54.31 L46.92 54.31 L46.92 54.31 L67.03 54.31 L80.44 54.31 L80.44 166.59 L90.49 190.65 L80.44 214.71 L80.44
+						 246.78 L67.03 246.78 L46.92 246.78 L46.92 246.78 L0 246.78 L0 214.71 L0 166.59 L0 166.59 L0 54.31 L0 54.31
+						 Z" class="st5" /> 
+  </g> 
+  <g id="shape4-10" transform="translate(242.816,-1.73721)"> 
+   <title>Sheet.4</title> 
+   <path d="M0 54.77 L46.92 54.77 L46.92 54.77 L67.03 54.77 L80.44 54.77 L80.44 166.78 L90.49 190.78 L80.44 214.79 L80.44
+						 246.78 L67.03 246.78 L46.92 246.78 L46.92 246.78 L0 246.78 L0 214.79 L0 166.78 L0 166.78 L0 54.77 L0 54.77" class="st4" /> 
+  </g> 
+  <g id="shape5-13" transform="translate(162.482,-14.5872)"> 
+   <title>Sheet.5</title> 
+   <path d="M0 67.16 L46.9 67.16 L46.9 67.16 L66.98 67.16 L80.38 67.16 L80.38 171.94 L90.43 194.39 L80.38 216.84 L80.38
+						 246.78 L66.98 246.78 L46.9 246.78 L46.9 246.78 L0 246.78 L0 216.84 L0 171.94 L0 171.94 L0 67.16 L0 67.16
+						 Z" class="st5" /> 
+  </g> 
+  <g id="shape6-15" transform="translate(162.482,-14.5872)"> 
+   <title>Sheet.6</title> 
+   <path d="M0 67.16 L46.9 67.16 L46.9 67.16 L66.98 67.16 L80.38 67.16 L80.38 171.94 L90.43 194.39 L80.38 216.84 L80.38
+						 246.78 L66.98 246.78 L46.9 246.78 L46.9 246.78 L0 246.78 L0 216.84 L0 171.94 L0 171.94 L0 67.16 L0 67.16" class="st4" /> 
+  </g> 
+  <g id="shape7-18" transform="translate(162.482,-193.982)"> 
+   <title>Sheet.7</title> 
+   <desc>
+    v7
+   </desc>   
+   <path d="M0 208.28 L0 246.78 L80.38 246.78 L80.38 208.28 L0 208.28 L0 208.28 Z" class="st1" /> 
+   <text x="32.8" y="231.73" class="st2">
+    v7
+   </text> 
+  </g> 
+  <g id="shape8-21" transform="translate(162.482,-193.982)"> 
+   <title>Sheet.8</title> 
+   <path d="M0 208.28 L80.38 208.28 L80.38 246.78 L0 246.78 L0 208.28 L0 208.28" class="st4" /> 
+  </g> 
+  <g id="shape9-24" transform="translate(82.0465,-27.3867)"> 
+   <title>Sheet.9</title> 
+   <path d="M0 79.96 L46.92 79.96 L46.92 79.96 L67.03 79.96 L80.44 79.96 L80.44 177.28 L90.49 198.12 L80.44 218.99 L80.44
+						 246.78 L67.03 246.78 L46.92 246.78 L46.92 246.78 L0 246.78 L0 218.99 L0 177.28 L0 177.28 L0 79.96 L0 79.96
+						 Z" class="st5" /> 
+  </g> 
+  <g id="shape10-26" transform="translate(82.0465,-27.3867)"> 
+   <title>Sheet.10</title> 
+   <path d="M0 79.96 L46.92 79.96 L46.92 79.96 L67.03 79.96 L80.44 79.96 L80.44 177.28 L90.49 198.12 L80.44 218.99 L80.44
+						 246.78 L67.03 246.78 L46.92 246.78 L46.92 246.78 L0 246.78 L0 218.99 L0 177.28 L0 177.28 L0 79.96 L0 79.96" class="st4" /> 
+  </g> 
+  <g id="shape11-29" transform="translate(82.0465,-194.209)"> 
+   <title>Sheet.11</title> 
+   <desc>
+    v6
+   </desc>   
+   <path d="M0 214.67 L0 246.78 L80.44 246.78 L80.44 214.67 L0 214.67 L0 214.67 Z" class="st1" /> 
+   <text x="32.82" y="234.93" class="st2">
+    v6
+   </text> 
+  </g> 
+  <g id="shape12-32" transform="translate(82.0465,-194.209)"> 
+   <title>Sheet.12</title> 
+   <path d="M0 214.67 L80.44 214.67 L80.44 246.78 L0 246.78 L0 214.67 L0 214.67" class="st4" /> 
+  </g> 
+  <g id="shape13-35" transform="translate(1.7119,-40.2492)"> 
+   <title>Sheet.13</title>  
+   <path d="M0 92.82 L46.89 92.82 L46.89 92.82 L66.98 92.82 L80.38 92.82 L80.38 182.63 L90.43 201.87 L80.38 221.12 L80.38
+						 246.78 L66.98 246.78 L46.89 246.78 L46.89 246.78 L0 246.78 L0 221.12 L0 182.63 L0 182.63 L0 92.82 L0 92.82
+						 Z" class="st5" /> 
+  </g> 
+  <g id="shape14-37" transform="translate(1.7119,-40.2492)"> 
+   <title>Sheet.14</title> 
+   <path d="M0 92.82 L46.9 92.82 L46.9 92.82 L66.98 92.82 L80.38 92.82 L80.38 182.63 L90.43 201.87 L80.38 221.12 L80.38
+						 246.78 L66.98 246.78 L46.9 246.78 L46.9 246.78 L0 246.78 L0 221.12 L0 182.63 L0 182.63 L0 92.82 L0 92.82" class="st4" /> 
+  </g> 
+  <g id="shape15-40" transform="translate(1.7119,-194.196)"> 
+   <title>Sheet.15</title> 
+   <desc>
+    v5
+   </desc>   
+   <path d="M0 221.12 L0 246.78 L80.38 246.78 L80.38 221.12 L0 221.12 L0 221.12 Z" class="st1" /> 
+   <text x="32.8" y="238.15" class="st2">
+    v5
+   </text> 
+  </g> 
+  <g id="shape16-43" transform="translate(1.7119,-194.196)"> 
+   <title>Sheet.16</title> 
+   <path d="M0 221.12 L80.38 221.12 L80.38 246.78 L0 246.78 L0 221.12 L0 221.12" class="st4" /> 
+  </g> 
+  <g id="shape17-46" transform="translate(3.7432,-39.7875)"> 
+   <title>Sheet.17</title> 
+   <desc>
+    VFPv2
+   </desc>   
+   <rect x="0" y="92.8235" width="79.3701" height="153.96" class="st6" /> 
+   <text x="4.35" y="114.82" class="st7">
+    VFPv2
+   </text> 
+  </g> 
+  <g id="shape18-49" transform="translate(83.1133,-39.7875)"> 
+   <title>Sheet.18</title> 
+   <desc>
+    Thumb-2 TrustZone SIMD
+   </desc>   
+   <rect x="0" y="92.8235" width="79.3701" height="153.96" class="st6" /> 
+   <text x="4.35" y="114.82" class="st7">
+    Thumb
+    <tspan class="st3">
+     -
+    </tspan>
+    <tspan class="st3">
+     2
+    </tspan>
+    <tspan x="4.35" dy="12.0000384" class="st3">
+     TrustZone
+    </tspan>
+    <tspan x="4.35" dy="12.0000384" class="st3">
+     SIMD
+    </tspan>
+   </text> 
+  </g> 
+  <g id="shape19-56" transform="translate(162.483,-39.7875)"> 
+   <title>Sheet.19</title> 
+   <desc>
+    VFPv3/v4 NEON
+   </desc>   
+   <rect x="0" y="92.8235" width="79.3701" height="153.96" class="st6" /> 
+   <text x="4.35" y="114.82" class="st7">
+    VFPv3/v4
+    <tspan x="4.35" dy="12.0000384" class="st3">
+     NEON
+    </tspan>
+   </text> 
+  </g> 
+  <g id="shape20-60" transform="translate(244.688,-49.1803)"> 
+   <title>Sheet.20</title> 
+   <desc>
+    A32+T32 ISAs Scalar FP (SP and DP) Adv SIMD (SP Float) AArch32
+   </desc>   
+   <rect x="0" y="156.075" width="79.3701" height="90.7087" class="st6" /> 
+   <text x="7.3" y="170.71" class="st7">
+    A32+T32
+    <tspan class="st3"> 
+    </tspan>
+    <tspan class="st3">
+     ISAs
+    </tspan>
+    <tspan class="st8"> 
+    </tspan>
+    <tspan x="11.78" dy="14.80004736" class="st9">
+     ·
+    </tspan>
+    <tspan class="st9"> 
+    </tspan>
+    <tspan class="st10">
+     Scalar FP
+    </tspan>
+    <tspan class="st10"> 
+    </tspan>
+    <tspan class="st10">
+     (
+    </tspan>
+    <tspan class="st10">
+     SP 
+    </tspan>
+    <tspan x="19" dy="12.040038528" class="st10">
+     and DP
+    </tspan>
+    <tspan class="st10">
+     )
+    </tspan>
+    <tspan x="11.78" dy="12.120038784" class="st9">
+     ·
+    </tspan>
+    <tspan class="st9"> 
+    </tspan>
+    <tspan class="st10">
+     Adv SIMD 
+    </tspan>
+    <tspan class="st10">
+     (
+    </tspan>
+    <tspan class="st10">
+     SP 
+    </tspan>
+    <tspan x="19" dy="12.040038528" class="st10">
+     Float
+    </tspan>
+    <tspan class="st10">
+     )
+    </tspan>
+    <tspan x="7.96" dy="28.030089696" class="st11"> 
+    </tspan>
+    <tspan class="st11">
+     AArch
+    </tspan>
+    <tspan class="st11">
+     32
+    </tspan>
+   </text> 
+  </g> 
+  <g id="shape21-84" transform="translate(321.224,-1.73715)"> 
+   <title>Sheet.21</title> 
+   <path d="M0 54.31 L13.71 54.31 L13.71 54.31 L34.25 54.31 L82.2 54.31 L82.2 86.4 L82.2 86.4 L82.2 134.51 L82.2 246.78
+						 L34.25 246.78 L13.71 246.78 L13.71 246.78 L0 246.78 L0 134.51 L0 150.55 L0 86.4 L0 54.31 L0 54.31 Z" class="st5" /> 
+  </g> 
+  <g id="shape22-86" transform="translate(318.462,-193.747) rotate(0.0169264)"> 
+   <title>Sheet.22</title> 
+   <path d="M0 246.78 L85.47 246.78" class="st12" /> 
+  </g> 
+  <g id="shape23-89" transform="translate(650.212,53.036) rotate(90)"> 
+   <title>Sheet.23</title> 
+   <path d="M0 246.78 L192.01 246.78" class="st12" /> 
+  </g> 
+  <g id="shape24-92" transform="translate(318.462,-1.73714) rotate(0.0169264)"> 
+   <title>Sheet.24</title> 
+   <path d="M0 246.78 L85.47 246.78" class="st12" /> 
+  </g> 
+  <g id="shape25-95" transform="translate(570.838,96.888) rotate(90.3093)"> 
+   <title>Sheet.25</title> 
+   <path d="M0 246.78 L149.49 246.78" class="st13" /> 
+  </g> 
+  <g id="shape26-98" transform="translate(264.531,-15.1646)"> 
+   <title>Sheet.26</title> 
+   <desc>
+    Crypto
+   </desc>   
+   <rect x="0" y="229.775" width="39.685" height="17.0079" rx="5.66929" ry="5.66929" class="st14" /> 
+   <text x="5.12" y="241.28" class="st7">
+    Crypto
+   </text> 
+  </g> 
+  <g id="shape27-101" transform="translate(346.735,-15.1646)"> 
+   <title>Sheet.27</title> 
+   <desc>
+    Crypto
+   </desc>   
+   <rect x="0" y="229.775" width="39.685" height="17.0079" rx="5.66929" ry="5.66929" class="st14" /> 
+   <text x="5.12" y="241.28" class="st7">
+    Crypto
+   </text> 
+  </g> 
+  <g id="shape28-104" transform="translate(497.141,55.8707) rotate(90)"> 
+   <title>Arrow box</title>  
+   <path d="M12.05 218.44 L12.05 229.78 L5.67 229.78 L18.43 246.78 L31.18 229.78 L24.8 229.78 L24.8 218.44 L36.85 218.44
+						 L36.85 107.89 L0 107.89 L0 218.44 L12.05 218.44 Z" class="st15" /> 
+  </g> 
+  <g id="shape29-106" transform="translate(287.208,-157.66)"> 
+   <title>Arrow box.11</title> 
+   <desc>
+    Key Feature ARMv7-A Compatibility
+   </desc>   
+   <rect x="0" y="216.365" width="90.7087" height="30.4179" class="st16" /> 
+   <text x="5.34" y="229.17" class="st17">
+    Key Feature ARMv7-A 
+    <tspan x="22.46" dy="9.5999616" class="st3">
+     Compatibility
+    </tspan>
+   </text> 
+  </g> 
+  <g id="shape30-110" transform="translate(321.224,-49.1803)"> 
+   <title>Sheet.30</title> 
+   <desc>
+    A64 ISAs Scalar FP (SP and DP) Adv SIMD (SP &amp; DP Float) AArch64
+   </desc>   
+   <rect x="0" y="156.075" width="79.3701" height="90.7087" class="st6" /> 
+   <text x="6.15" y="170.71" class="st7">
+    A
+    <tspan class="st3">
+     64 
+    </tspan>
+    <tspan class="st3">
+     ISAs
+    </tspan>
+    <tspan class="st8"> 
+    </tspan>
+    <tspan x="11.78" dy="14.80004736" class="st9">
+     ·
+    </tspan>
+    <tspan class="st9"> 
+    </tspan>
+    <tspan class="st10">
+     Scalar FP
+    </tspan>
+    <tspan class="st10"> 
+    </tspan>
+    <tspan class="st10">
+     (
+    </tspan>
+    <tspan class="st10">
+     SP 
+    </tspan>
+    <tspan x="19" dy="12.040038528" class="st10">
+     and DP
+    </tspan>
+    <tspan class="st10">
+     )
+    </tspan>
+    <tspan x="11.78" dy="12.120038784" class="st9">
+     ·
+    </tspan>
+    <tspan class="st9"> 
+    </tspan>
+    <tspan class="st10">
+     Adv SIMD 
+    </tspan>
+    <tspan class="st10">
+     (
+    </tspan>
+    <tspan class="st10">
+     SP 
+    </tspan>
+    <tspan class="st10">
+     &amp; 
+    </tspan>
+    <tspan x="19" dy="12.040038528" class="st10">
+     DP Float
+    </tspan>
+    <tspan class="st10">
+     )
+    </tspan>
+    <tspan x="6.15" dy="28.030089696" class="st11"> 
+    </tspan>
+    <tspan class="st11">
+     AArch
+    </tspan>
+    <tspan class="st11">
+     64
+    </tspan>
+   </text> 
+  </g> 
+ </g> 
+</svg>
