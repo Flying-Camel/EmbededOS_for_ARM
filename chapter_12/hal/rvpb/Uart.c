@@ -53,11 +53,13 @@ static void interrupt_handler(){
     uint8_t ch = Hal_uart_get_char();
     Hal_uart_put_char(ch);
 
-    // Chapter 11에서 추가함.
-    Kernel_send_events(KernelEventFlag_UartIn | KernelEventFlag_CmdIn);
+    Kernel_send_msg(KernelMsgQ_Task0, &ch,1);
+    Kernel_send_events(KernelEventFlag_UartIn);
 
-    if(ch == 'X')
-    {
-        Kernel_send_events(KernelEventFlag_CmdOut);
-    }
+    // Chapter 11에서 추가함.
+    //Kernel_send_events(KernelEventFlag_UartIn | KernelEventFlag_CmdIn);
+    //if(ch == 'X')
+    //{
+    //    Kernel_send_events(KernelEventFlag_CmdOut);
+    //}
 }
